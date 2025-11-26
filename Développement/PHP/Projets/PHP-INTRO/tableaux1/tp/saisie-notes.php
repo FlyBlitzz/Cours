@@ -4,16 +4,21 @@ $note = "";
 $nombreNotes = 0;
 while ($note != "q") {
     $note = readline("Saisir une note (q pour arrêter) : ");
-    if ($note == "q") {
-    } elseif ($note < 0 || $note > 20) {
-        echo "La note saisie est incorrecte \n";
-    } else {
+    if ($note >= 0 && $note <= 20) {
         $notes[] = $note;
-        $nombreNotes++;
+    } else {
+        echo "Erreur : la note doit être comprise entre 0 et 20.\n";
     }
 }
-echo "Vous avez saisi " . $nombreNotes . " notes. \n";
-echo "Les notes saisies sont ";
-foreach ($notes as $note) {
-    echo $note . " ";
-}
+echo "\nVous avez saisies " . count($notes) . " notes.\n";
+echo "Les notes saisies sont $notes\n";
+
+
+
+
+
+
+
+
+
+
