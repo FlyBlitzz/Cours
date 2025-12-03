@@ -31,3 +31,7 @@ $question1 = $questions[0];
 echo $question1;
 $question = explode("|", $question1);
 print_r($question);
+
+echo "========================================\n";
+echo "BIENVENUE DANS LE QUIZ BTS SIO\n";
+echo "========================================\n";
