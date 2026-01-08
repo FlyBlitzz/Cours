@@ -1,0 +1,86 @@
+Cybersécurité
+
+
+CompTIA Security+
+Certificat de niveau débutant couvrant les fondamentaux sécurité réseau et gestion de risques.
+
+CISSP (Certified Information Systems Security Professional)
+Validation avancée des compétences en gouvernance et gestion de la sécurité des SI.
+
+CEH (Certified Ethical Hacker)
+Porte sur les techniques de hacking éthique et les tests d’intrusion.
+
+CISM (Certified Information Security Manager)
+Axée sur la gouvernance de la sécurité, risques et conformité.
+
+OSCP (Offensive Security Certified Professional)
+Focalisé sur les tests d’intrusion.
+
+Google Cybersecurity Certificate
+Programme d'initiation aux fondamentaux de cybersécurité.
+
+EC-Council – C|PENT, C|CISO, C|ND, C|HFI
+Certifications spécialisées alignées au cadre européen ECSF.
+
+
+DevOps
+
+
+AWS Certified DevOps Engineer – Professional
+Orchestration CI/CD, automatisation, monitoring AWS.
+
+Microsoft Certified: Azure DevOps Engineer Expert (AZ-400)
+Intégration CI/CD avec Azure DevOps et GitHub Actions.
+
+Google Professional Cloud DevOps Engineer
+Combinaison DevOps & SRE sur GCP.
+
+Certified Kubernetes Administrator (CKA)
+Administrateur de clusters Kubernetes.
+
+Docker Certified Associate (DCA)
+Pour la gestion de conteneurs Docker.
+
+HashiCorp Certified: Terraform Associate
+Avec Terraform pour l'infrastructure as code.
+
+Certified Jenkins Engineer (CJE)
+Pour l'automatisation via Jenkins CI/CD.
+
+Red Hat Certified Specialist in Ansible Automation
+Pour l'automatisation via Ansible.
+
+
+Prometheus Certified Associate (PCA)
+Sur la surveillance dans les environnements cloud natifs.
+
+GitLab Certified DevOps Professional
+Intégration GitLab CI/CD pour pipelines d’équipe.
+
+
+IA & Machine Learning
+
+
+AWS Certified Machine Learning – Specialty
+Pour architectes ML sur AWS.
+
+Google Cloud Professional Machine Learning Engineer
+Pour ingénieurs ML sur Google Cloud.
+
+Microsoft Azure AI Engineer Associate
+Pour solutions IA sur Azure.
+
+Microsoft Azure AI Fundamentals
+Concepts de base IA/ML avec Azure.
+
+
+TensorFlow Developer Certificate
+Développement avec TensorFlow.
+
+
+Stanford / DeepLearning.AI / DataCamp / IBM / eCornell Certifications
+Divers programmes reconnus en ML et IA.
+
+
+Sources:
+[enisa.europa.eu], [coursera.org], [jedha.co], [synapsys-groupe.com], [devopstraininginstitute.com], [geeksforgeeks.org], [passitexams.com], [skilr.com], [proftia.com], [learn.microsoft.com]
