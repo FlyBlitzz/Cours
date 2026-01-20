@@ -16,10 +16,21 @@ foreach ($grille as $ligne) {
             $caseVide++;
         }
     }
-    if ($grille[$compte][0] == "X" && $grille[$compte][1] == "X" && $grille[$compte][2] == "X") {
-        echo "'X' a gagné";
-    }
     echo PHP_EOL;
-    $compte++;
 }
-echo "Il y a $caseVide case(s) vide(s)";
+
+echo "Il y a $caseVide case(s) vide(s) \n";
+$ligneGagnante = true;
+
+foreach ($grille[0] as $case) {
+    if ($case !== "X") {
+        $ligneGagnante = false;
+        break;
+    }
+}
+
+if ($ligneGagnante) {
+    echo "Victoire de X sur la première ligne ! \n";
+} else {
+    echo "Pas de victoire de X sur la première ligne. \n";
+}
