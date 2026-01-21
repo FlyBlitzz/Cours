@@ -1,0 +1,22 @@
+/ HTML_CSS
+├─ assets/
+│  ├─ icons/
+│  │  └─ favicon.ico         → Icons
+│  └─ img/
+│     ├─ produits/           → Illustrations produits
+│     ├─ hero.jpg            → Image bannière (libre ou prise par toi)
+│     ├─ logo-salapex.jpg
+│     └─ organigramme.jpg
+├─ css/
+│  └─ styles.css
+├─ js/
+│  └─ main.js                → (option : scroll doux, menu mobile)
+├─ 404.html
+├─ about.html
+├─ contact.html
+├─ index.html
+├─ mentions-legales.html
+├─ politique-confidentialite.html
+├─ products.html
+├─ robots.txt
+└─ sitemap.xml
