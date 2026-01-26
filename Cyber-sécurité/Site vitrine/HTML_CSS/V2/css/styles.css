@@ -1,0 +1,73 @@
+/* Salapex — styles custom (en complément de Tailwind CDN)
+   Objectif : thème “deep emerald”, accessibilité (focus), modales, impression.
+*/
+
+:root{
+  color-scheme: light dark;
+  --brand: #065f46;            /* emerald-800 */
+  --brand-600: #059669;        /* emerald-600 */
+  --brand-700: #047857;        /* emerald-700 */
+  --brand-900: #064e3b;        /* emerald-900 */
+  --focus: rgba(5, 150, 105, .85);
+}
+
+html{ scroll-behavior: smooth; }
+
+/* Focus visible */
+:focus-visible{
+  outline: 3px solid var(--focus);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Subtle background pattern */
+.bg-grid{
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(148,163,184,.35) 1px, transparent 0);
+  background-size: 18px 18px;
+}
+
+/* Modal animation */
+.modal-enter{ animation: modalIn .18s ease-out; }
+@keyframes modalIn{
+  from { transform: translateY(10px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* Print (devis) */
+@media print{
+  header, nav, .no-print, footer{ display:none !important; }
+  body{ background: #fff !important; }
+  .print-area{ display:block !important; }
+  .print-card{ break-inside: avoid; }
+}
+
+/* ------------------------------------------------------------
+   Thème deep emerald (surcharge des utilitaires Tailwind “bleus”)
+   Objectif : garder le HTML tel quel tout en harmonisant la charte.
+------------------------------------------------------------ */
+
+/* Backgrounds */
+.bg-blue-700{ background-color: var(--brand-700) !important; }
+.bg-blue-800{ background-color: var(--brand-900) !important; }
+.bg-blue-50{ background-color: rgba(5, 150, 105, .10) !important; }
+
+/* Text */
+.text-blue-700{ color: var(--brand-700) !important; }
+.text-blue-800{ color: var(--brand-900) !important; }
+.text-blue-900{ color: var(--brand-900) !important; }
+
+/* Hover */
+.hover\:bg-blue-800:hover{ background-color: var(--brand-900) !important; }
+.hover\:text-blue-800:hover{ color: var(--brand-900) !important; }
+
+/* Rings / borders */
+.ring-blue-100{ --tw-ring-color: rgba(5, 150, 105, .22) !important; }
+.border-blue-500{ border-color: rgba(5, 150, 105, .75) !important; }
+
+/* Gradients (quelques cas fréquents) */
+.from-blue-50{ --tw-gradient-from: rgba(5, 150, 105, .10) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(5, 150, 105, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+.to-indigo-50{ --tw-gradient-to: rgba(6, 95, 70, .10) var(--tw-gradient-to-position) !important; }
+
+/* Sélection */
+::selection{ background: rgba(16, 185, 129, .25); color: #0f172a; }

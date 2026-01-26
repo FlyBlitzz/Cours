@@ -1,0 +1,1437 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salapex — La technologie simplifiée</title>
+  <meta name="description" content="Salapex : ordinateurs prêts à l’emploi, accessoires ergonomiques et packs tout-en-un pour particuliers et petites entreprises." />
+  <meta name="theme-color" content="#047857" />
+
+  <!-- Tailwind CSS (CDN) -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- Styles custom (thème deep emerald + modales + print) -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-200/80 selection:text-slate-900">
+  <!-- Skip link -->
+  <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-xl focus:shadow">Aller au contenu</a>
+
+  <!-- Header -->
+  <header class="sticky top-0 z-50 border-b border-white/10 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white">
+    <div class="mx-auto max-w-6xl px-4">
+      <div class="flex items-center justify-between py-4">
+        <a href="#accueil" class="group flex items-center gap-3" aria-label="Aller à l’accueil Salapex">
+          <span class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
+            <img src="assets/img/logo-salapex.jpg" alt="Logo Salapex" class="h-full w-full object-cover" onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<span class=\'text-sm font-extrabold\'>S</span>')" />
+          </span>
+          <div class="leading-tight">
+            <div class="text-lg font-extrabold tracking-tight">Salapex</div>
+            <div class="text-sm text-white/90 italic">La technologie simplifiée</div>
+          </div>
+        </a>
+
+        <button id="menuBtn" class="md:hidden inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 backdrop-blur hover:bg-white/15" aria-expanded="false" aria-controls="mobileNav">
+          <span class="text-sm font-semibold">Menu</span>
+          <svg id="menuIcon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+
+        <nav class="hidden md:block" aria-label="Navigation principale">
+          <ul class="flex flex-wrap items-center gap-2">
+            <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#accueil">Accueil</a></li>
+            <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#activite">Activité</a></li>
+            <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#produits">Produits</a></li>
+            <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#entreprise">Entreprise</a></li>
+            <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#contact">Contact</a></li>
+            <li>
+              <a class="rounded-xl bg-white text-blue-700 px-3 py-2 text-sm font-extrabold shadow hover:bg-slate-50" href="#devis">Devis rapide</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+
+      <nav id="mobileNav" class="md:hidden hidden pb-4" aria-label="Navigation mobile">
+        <div class="grid gap-2 rounded-2xl bg-white/10 p-3 ring-1 ring-white/15 backdrop-blur">
+          <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#accueil">Accueil</a>
+          <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#activite">Activité</a>
+          <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#produits">Produits</a>
+          <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#entreprise">Entreprise</a>
+          <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#contact">Contact</a>
+          <a class="rounded-xl bg-white px-3 py-2 text-sm font-extrabold text-blue-700 shadow hover:bg-slate-50" href="#devis">Devis rapide</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="contenu" class="mx-auto max-w-6xl px-4">
+    <!-- Hero / Accueil -->
+    <section id="accueil" class="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+      <div class="absolute inset-0 bg-grid opacity-[.35]" aria-hidden="true"></div>
+      <div class="relative grid gap-8 p-7 md:grid-cols-2 md:p-10">
+        <div class="flex flex-col justify-center">
+          <p class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 ring-1 ring-blue-100">
+            <span class="h-2 w-2 rounded-full bg-blue-600"></span>
+            Ordinateurs prêts à l’emploi • Ergonomie • Packs tout-en-un
+          </p>
+          <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
+            Salapex<br>
+            <span class="text-blue-700">La technologie simplifiée</span>
+          </h1>
+          <p class="mt-4 max-w-prose text-base leading-relaxed text-slate-600 md:text-lg">
+            Chez Salapex, tout est pensé pour gagner du temps : des ordinateurs <strong>déjà configurés</strong>, des accessoires <strong>ergonomiques</strong>, et des packs <strong>prêts à brancher</strong> pour particuliers et petites entreprises.
+          </p>
+
+          <div class="no-print mt-6 flex flex-wrap gap-3">
+            <a href="#produits" class="rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800">Découvrir les produits</a>
+            <a href="#entreprise" class="rounded-2xl bg-slate-900 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-slate-800">Notre histoire & équipe</a>
+            <a href="#contact" class="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-extrabold text-slate-900 shadow-sm hover:bg-slate-50">Demander un devis</a>
+          </div>
+
+          <dl class="mt-8 grid grid-cols-2 gap-4 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Délai</dt>
+              <dd class="mt-1 text-sm font-bold text-slate-900">Devis sous 24–48h ouvrées</dd>
+            </div>
+            <div>
+              <dt class="text-xs font-semibold uppercase tracking-wide text-slate-500">Service</dt>
+              <dd class="mt-1 text-sm font-bold text-slate-900">Configuration & prise en main</dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-900 via-slate-900 to-blue-900 p-6 text-white shadow-sm">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h2 class="text-xl font-extrabold">Ce que vous recevez</h2>
+              <p class="mt-1 text-sm text-white/80">Un poste de travail prêt à produire dès le premier jour.</p>
+            </div>
+            <span class="rounded-2xl bg-white/10 px-3 py-1 text-xs font-bold ring-1 ring-white/15">Pack</span>
+          </div>
+
+          <ul class="mt-5 grid gap-3">
+            <li class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/15">
+              <div class="text-sm font-extrabold">Ordinateur configuré</div>
+              <div class="mt-1 text-sm text-white/80">Mises à jour, comptes, sauvegarde, logiciels essentiels.</div>
+            </li>
+            <li class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/15">
+              <div class="text-sm font-extrabold">Accessoires ergonomiques</div>
+              <div class="mt-1 text-sm text-white/80">Claviers, souris, casques sélectionnés pour le confort.</div>
+            </li>
+            <li class="rounded-2xl bg-white/10 p-4 ring-1 ring-white/15">
+              <div class="text-sm font-extrabold">Assistance</div>
+              <div class="mt-1 text-sm text-white/80">Conseil, recommandation, et prise en main (selon offre).</div>
+            </li>
+          </ul>
+
+          <div class="mt-6 rounded-2xl bg-gradient-to-r from-emerald-400/15 to-cyan-400/10 p-4 ring-1 ring-white/15">
+            <p class="text-sm">
+              <span class="font-extrabold">Promesse Salapex :</span>
+              pas de jargon inutile, pas de friction — <span class="font-semibold">juste un poste fiable</span>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Activité -->
+    <section id="activite" class="mt-12">
+      <div class="flex items-end justify-between gap-4">
+        <div>
+          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Notre activité</h2>
+          <p class="mt-2 max-w-3xl text-slate-600">
+            Nous combinons matériel, configuration et ergonomie pour réduire les frictions au quotidien — à la maison comme au bureau.
+          </p>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-5 md:grid-cols-3">
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-extrabold">Ordinateurs prêts à l’emploi</h3>
+          <p class="mt-2 text-slate-600">PC fixes / portables configurés pour être simples : mises à jour, sécurité, outils essentiels, optimisation.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>• Installation et paramétrage</li>
+            <li>• Sauvegarde / restauration</li>
+            <li>• Comptes & prise en main</li>
+          </ul>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-extrabold">Accessoires ergonomiques</h3>
+          <p class="mt-2 text-slate-600">Claviers, souris verticales, casques : sélection orientée confort et prévention des TMS.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>• Recommandation selon usage</li>
+            <li>• Options silencieuses / compactes</li>
+            <li>• Conseils de posture</li>
+          </ul>
+        </article>
+
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-extrabold">Packs « tout-en-un »</h3>
+          <p class="mt-2 text-slate-600">Combinaisons prêtes à brancher pour particuliers et petites équipes : productivité immédiate.</p>
+          <ul class="mt-4 space-y-2 text-sm text-slate-700">
+            <li>• Pack Bureau (essentiel)</li>
+            <li>• Pack Télétravail (confort)</li>
+            <li>• Pack Pro (performance)</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="md:col-span-2">
+            <h3 class="text-lg font-extrabold">Pourquoi les clients choisissent Salapex</h3>
+            <p class="mt-2 text-slate-600">Un parcours d’achat clair, une configuration sérieuse, et des conseils pragmatiques.</p>
+            <div class="mt-4 grid gap-3 sm:grid-cols-2">
+              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+                <div class="text-sm font-extrabold">Simplicité</div>
+                <div class="mt-1 text-sm text-slate-600">Tout fonctionne dès le branchement.</div>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+                <div class="text-sm font-extrabold">Confort</div>
+                <div class="mt-1 text-sm text-slate-600">Ergonomie au centre du poste.</div>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+                <div class="text-sm font-extrabold">Fiabilité</div>
+                <div class="mt-1 text-sm text-slate-600">Tests, contrôle qualité, support.</div>
+              </div>
+              <div class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+                <div class="text-sm font-extrabold">Transparence</div>
+                <div class="mt-1 text-sm text-slate-600">Prix indicatifs + devis clair.</div>
+              </div>
+            </div>
+          </div>
+          <aside class="rounded-3xl bg-gradient-to-br from-blue-50 to-indigo-50 p-6 ring-1 ring-blue-100">
+            <h3 class="text-lg font-extrabold text-slate-900">Idéal pour</h3>
+            <ul class="mt-3 space-y-2 text-sm text-slate-700">
+              <li>• Télétravail et études</li>
+              <li>• TPE / indépendants</li>
+              <li>• Migration vers un nouveau PC</li>
+              <li>• Prévention fatigue & douleurs</li>
+            </ul>
+            <a href="#produits" class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800">Voir les packs</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Produits (primordial) -->
+    <section id="produits" class="mt-12">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+        <div>
+          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Produits & packs</h2>
+          <p class="mt-2 max-w-3xl text-slate-600">Filtrez, comparez, puis ajoutez au devis. Les prix sont indicatifs : un conseiller finalise selon vos besoins.</p>
+        </div>
+        <div class="no-print flex gap-2">
+          <button id="resetFiltersBtn" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold text-slate-900 hover:bg-slate-50">Réinitialiser</button>
+          <a href="#devis" class="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-slate-800">Voir le devis</a>
+        </div>
+      </div>
+
+      <div class="mt-6 grid gap-4 lg:grid-cols-12">
+        <!-- Filters -->
+        <aside class="no-print lg:col-span-4">
+          <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+            <div class="flex items-center justify-between">
+              <h3 class="text-base font-extrabold">Filtres</h3>
+              <span id="resultCount" class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">—</span>
+            </div>
+
+            <label class="mt-4 block text-sm font-bold text-slate-800" for="searchInput">Recherche</label>
+            <input id="searchInput" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="search" placeholder="Ex : pack, ergonomique, portable…" autocomplete="off" />
+
+            <div class="mt-4">
+              <div class="text-sm font-bold text-slate-800">Catégorie</div>
+              <div id="categoryChips" class="mt-2 flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="mt-4">
+              <div class="text-sm font-bold text-slate-800">Besoin</div>
+              <div id="usecaseChips" class="mt-2 flex flex-wrap gap-2"></div>
+            </div>
+
+            <div class="mt-5 rounded-2xl bg-blue-50 p-4 ring-1 ring-blue-100">
+              <div class="text-sm font-extrabold text-blue-900">Conseil express</div>
+              <p class="mt-1 text-sm text-blue-900/80">Vous ne savez pas quoi choisir ? Ajoutez 2–3 produits au devis : on vous rappelle avec une recommandation.</p>
+              <a href="#contact" class="mt-3 inline-flex w-full items-center justify-center rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white hover:bg-blue-800">Être conseillé</a>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Products grid -->
+        <div class="lg:col-span-8">
+          <div id="productsGrid" class="grid gap-5 md:grid-cols-2"></div>
+
+          <p class="mt-4 text-center text-sm text-slate-500">Prix indicatifs. Devis gratuit sous 24–48h ouvrées.</p>
+        </div>
+      </div>
+
+      <!-- Comparatif rapide -->
+      <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h3 class="text-lg font-extrabold">Comparatif rapide (packs)</h3>
+            <p class="mt-1 text-sm text-slate-600">Pour aller vite, voici 3 profils fréquents.</p>
+          </div>
+          <a href="#devis" class="no-print text-sm font-extrabold text-blue-700 hover:text-blue-800">Ajouter un pack au devis →</a>
+        </div>
+
+        <div class="mt-5 overflow-x-auto">
+          <table class="w-full min-w-[720px] border-separate border-spacing-0 overflow-hidden rounded-2xl ring-1 ring-slate-200">
+            <thead class="bg-slate-50">
+              <tr>
+                <th class="px-4 py-3 text-left text-xs font-extrabold uppercase tracking-wide text-slate-600">Pack</th>
+                <th class="px-4 py-3 text-left text-xs font-extrabold uppercase tracking-wide text-slate-600">Pour qui ?</th>
+                <th class="px-4 py-3 text-left text-xs font-extrabold uppercase tracking-wide text-slate-600">Points forts</th>
+                <th class="px-4 py-3 text-left text-xs font-extrabold uppercase tracking-wide text-slate-600">À partir de</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-slate-200 bg-white">
+              <tr>
+                <td class="px-4 py-3 font-extrabold">Bureau Essentiel</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Bureautique, e-mails, visioconf</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Prêt à l’emploi + accessoires indispensables</td>
+                <td class="px-4 py-3 text-sm font-extrabold">799 € TTC</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-extrabold">Télétravail Confort</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Journées longues, prévention TMS</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Ergonomie renforcée + casque confort</td>
+                <td class="px-4 py-3 text-sm font-extrabold">999 € TTC</td>
+              </tr>
+              <tr>
+                <td class="px-4 py-3 font-extrabold">Pro Performance</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Multi-tâche, outils pro, petites équipes</td>
+                <td class="px-4 py-3 text-sm text-slate-700">Matériel plus puissant + prise en main</td>
+                <td class="px-4 py-3 text-sm font-extrabold">1290 € TTC</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Devis rapide (panier) -->
+    <section id="devis" class="mt-12">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Devis rapide</h2>
+            <p class="mt-2 max-w-3xl text-slate-600">Ajoutez des produits, décrivez votre besoin, puis envoyez. Vous pouvez aussi imprimer une fiche.</p>
+          </div>
+          <div class="no-print flex flex-wrap gap-2">
+            <button id="printDevisBtn" class="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-slate-800">Imprimer</button>
+            <button id="clearDevisBtn" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">Vider</button>
+          </div>
+        </div>
+
+        <div class="mt-6 grid gap-6 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <div class="rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-100">
+              <h3 class="text-base font-extrabold">Produits sélectionnés</h3>
+              <div id="devisItems" class="mt-4 grid gap-3"></div>
+              <div id="devisEmpty" class="mt-4 hidden rounded-2xl border border-dashed border-slate-300 bg-white p-6 text-center">
+                <p class="text-sm font-bold text-slate-800">Votre devis est vide.</p>
+                <p class="mt-1 text-sm text-slate-600">Ajoutez des produits depuis la section “Produits & packs”.</p>
+              </div>
+              <div class="mt-4 flex items-center justify-between rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                <div class="text-sm font-bold text-slate-700">Total indicatif</div>
+                <div id="devisTotal" class="text-lg font-extrabold text-slate-900">0 €</div>
+              </div>
+            </div>
+
+            <div class="print-area mt-6 hidden">
+              <div class="print-card rounded-2xl border border-slate-200 bg-white p-6">
+                <h3 class="text-lg font-extrabold">Fiche devis — Salapex</h3>
+                <p class="mt-1 text-sm text-slate-600">Imprimé le <span id="printDate"></span>. Prix indicatifs.</p>
+                <div class="mt-4" id="printItems"></div>
+                <div class="mt-4 text-sm"><strong>Total indicatif :</strong> <span id="printTotal"></span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:col-span-5">
+            <form id="devisForm" class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
+              <h3 class="text-base font-extrabold">Envoyer la demande</h3>
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="clientName">Nom</label>
+              <input id="clientName" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="text" autocomplete="name" required />
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="clientEmail">Email</label>
+              <input id="clientEmail" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="email" autocomplete="email" inputmode="email" required />
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="clientType">Profil</label>
+              <select id="clientType" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500">
+                <option value="Particulier">Particulier</option>
+                <option value="Indépendant">Indépendant</option>
+                <option value="TPE">Petite entreprise (TPE)</option>
+                <option value="Association">Association</option>
+              </select>
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="needText">Votre besoin (optionnel)</label>
+              <textarea id="needText" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" rows="4" placeholder="Ex : bureautique + visio, 3 postes, besoin d’un PC silencieux…"></textarea>
+
+              <div class="mt-4 flex items-start gap-2">
+                <input id="consentDevis" type="checkbox" class="mt-1 h-4 w-4" required />
+                <label for="consentDevis" class="text-sm text-slate-700">
+                  J’accepte que mes informations soient utilisées pour me recontacter au sujet du devis.
+                </label>
+              </div>
+
+              <button class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800" type="submit">Envoyer (mailto)</button>
+              <p class="mt-3 text-xs text-slate-500">
+                L’envoi se fait via votre messagerie (mailto) pour une démo statique. En production, on brancherait un backend (ou un service de formulaire).
+              </p>
+
+              <div id="devisToast" class="mt-4 hidden rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900 ring-1 ring-emerald-100"></div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Entreprise : histoire + équipe + architecture -->
+    <section id="entreprise" class="mt-12">
+      <div class="flex flex-col gap-2">
+        <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Entreprise</h2>
+        <p class="max-w-3xl text-slate-600">Découvrez l’histoire, l’équipe, et une proposition d’architecture du site (structure recommandée).</p>
+      </div>
+
+      <div class="mt-6 grid gap-6 lg:grid-cols-12">
+        <!-- Histoire -->
+        <article class="lg:col-span-7 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-extrabold">Notre histoire</h3>
+          <p class="mt-2 text-sm text-slate-600">Une entreprise née d’une frustration simple : perdre du temps sur la configuration.</p>
+
+          <ol class="mt-5 grid gap-3">
+            <li class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+              <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">2022</div>
+              <div class="mt-1 text-sm font-semibold text-slate-900">Création de Salapex</div>
+              <div class="mt-1 text-sm text-slate-600">Objectif : rendre l’achat d’un PC aussi simple que le brancher.</div>
+            </li>
+            <li class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+              <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">2023</div>
+              <div class="mt-1 text-sm font-semibold text-slate-900">Premiers packs télétravail</div>
+              <div class="mt-1 text-sm text-slate-600">PC + accessoires + checklist d’installation.</div>
+            </li>
+            <li class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+              <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">2024</div>
+              <div class="mt-1 text-sm font-semibold text-slate-900">Virage ergonomie</div>
+              <div class="mt-1 text-sm text-slate-600">Sélection d’accessoires orientée confort et prévention des TMS.</div>
+            </li>
+            <li class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+              <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">2025</div>
+              <div class="mt-1 text-sm font-semibold text-slate-900">Accompagnement “prise en main”</div>
+              <div class="mt-1 text-sm text-slate-600">Aide à la migration et paramétrage pour petites structures.</div>
+            </li>
+            <li class="rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+              <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">2026</div>
+              <div class="mt-1 text-sm font-semibold text-slate-900">Extension du catalogue pro</div>
+              <div class="mt-1 text-sm text-slate-600">Packs plus performants + services complémentaires.</div>
+            </li>
+          </ol>
+        </article>
+
+        <!-- Architecture proposée -->
+        <aside class="lg:col-span-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+          <h3 class="text-lg font-extrabold">Architecture du site (proposée)</h3>
+          <p class="mt-2 text-sm text-slate-600">Une structure claire, orientée produits, avec pages légales.</p>
+
+          <div class="mt-5 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+            <div class="text-sm font-extrabold text-slate-900">Plan recommandé</div>
+            <ul class="mt-2 space-y-2 text-sm text-slate-700">
+              <li>• Accueil (promesse + preuves + CTA)</li>
+              <li>• Produits (Ordinateurs / Accessoires / Packs) + filtres</li>
+              <li>• Packs (comparatif + cas d’usage)</li>
+              <li>• Entreprise (Histoire, équipe, fiches de postes)</li>
+              <li>• Support / FAQ (conseils, prise en main)</li>
+              <li>• Contact (devis + coordonnées)</li>
+              <li>• Mentions légales + Politique de confidentialité</li>
+            </ul>
+          </div>
+
+          <div class="mt-4 rounded-2xl bg-blue-50 p-4 ring-1 ring-blue-100">
+            <div class="text-sm font-extrabold text-blue-900">Version actuelle</div>
+            <p class="mt-1 text-sm text-blue-900/80">Vous aviez une architecture multi-pages. Ici, je fournis une version one-page (démo) qui regroupe tout — tout en conservant une structure “par sections”.</p>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Équipe + fiches de postes -->
+      <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
+          <div>
+            <h3 class="text-lg font-extrabold">Notre équipe (fiches de postes)</h3>
+            <p class="mt-1 text-sm text-slate-600">Cliquez sur un rôle pour consulter les missions et compétences, ou ouvrir la fiche PDF.</p>
+          </div>
+          <div class="no-print flex flex-wrap gap-2">
+            <button data-doc-open="assets/img/organigramme.jpg" data-doc-title="Organigramme — Salapex" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">Voir l’organigramme (JPG)</button>
+            <button data-doc-open="assets/img/logo-salapex.jpg" data-doc-title="Logo — Salapex" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">Voir le logo (JPG)</button>
+          </div>
+        </div>
+
+        <div class="mt-6 rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-100">
+          <div class="text-sm font-extrabold text-slate-900">Documents (PDF)</div>
+          <p class="mt-1 text-sm text-slate-600">Placez vos fichiers dans <code>assets/pdf/</code> puis mettez à jour les chemins ci-dessous si besoin.</p>
+          <div class="no-print mt-4 flex flex-wrap gap-2" id="pdfLinks">
+            <!-- Remplacez les noms des fichiers par les vôtres -->
+            <button data-doc-open="assets/pdf/fiche-poste-pdg.pdf" data-doc-title="Fiche de poste — PDG" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — PDG</button>
+            <button data-doc-open="assets/pdf/fiche-poste-marketing.pdf" data-doc-title="Fiche de poste — Responsable Marketing" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Marketing</button>
+            <button data-doc-open="assets/pdf/fiche-poste-production.pdf" data-doc-title="Fiche de poste — Responsable Production" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Production</button>
+            <button data-doc-open="assets/pdf/fiche-poste-admin.pdf" data-doc-title="Fiche de poste — Support administratif" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Administratif</button>
+            <button data-doc-open="assets/pdf/fiche-poste-technicien-it.pdf" data-doc-title="Fiche de poste — Technicien(ne) IT" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — IT</button>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Si un PDF est manquant, la modale affichera un message d’erreur. (Ceci est normal en démo.)</p>
+        </div>
+
+        <div id="teamGrid" class="mt-6 grid gap-4 md:grid-cols-2"></div>
+      </div>
+
+      <!-- FAQ -->
+      <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h3 class="text-lg font-extrabold">FAQ</h3>
+        <div class="mt-4 grid gap-3" id="faq"></div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact" class="mt-12 mb-16">
+      <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <div class="grid gap-6 lg:grid-cols-12">
+          <div class="lg:col-span-7">
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Contact</h2>
+            <p class="mt-2 max-w-2xl text-slate-600">Une question, une demande de recommandation, ou un devis ? Écrivez-nous.</p>
+
+            <form id="contactForm" class="mt-6">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label class="block text-sm font-bold text-slate-800" for="cName">Nom</label>
+                  <input id="cName" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="text" autocomplete="name" required />
+                </div>
+                <div>
+                  <label class="block text-sm font-bold text-slate-800" for="cEmail">Email</label>
+                  <input id="cEmail" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="email" autocomplete="email" inputmode="email" required />
+                </div>
+              </div>
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="cSubject">Sujet</label>
+              <input id="cSubject" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="text" placeholder="Devis, pack, accessoires, support…" required />
+
+              <label class="mt-4 block text-sm font-bold text-slate-800" for="cMessage">Message</label>
+              <textarea id="cMessage" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" rows="6" required placeholder="Décrivez votre besoin (usage, budget, contraintes, quantité)…"></textarea>
+
+              <div class="mt-4 flex items-start gap-2">
+                <input id="cConsent" type="checkbox" class="mt-1 h-4 w-4" required />
+                <label for="cConsent" class="text-sm text-slate-700">J’accepte que mes informations soient utilisées pour me répondre.</label>
+              </div>
+
+              <button class="no-print mt-5 inline-flex items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800" type="submit">Envoyer (mailto)</button>
+
+              <div id="contactToast" class="mt-4 hidden rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900 ring-1 ring-emerald-100"></div>
+
+              <p class="mt-3 text-xs text-slate-500">Réponse sous 24–48h ouvrées. En production, ajout d’un backend + pages “Mentions légales” & “Confidentialité”.</p>
+            </form>
+          </div>
+
+          <aside class="lg:col-span-5">
+            <div class="rounded-3xl bg-slate-50 p-6 ring-1 ring-slate-100">
+              <h3 class="text-base font-extrabold">Coordonnées</h3>
+              <dl class="mt-4 grid gap-3 text-sm">
+                <div class="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <dt class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Email</dt>
+                  <dd class="mt-1 font-bold text-slate-900"><a class="text-blue-700 hover:text-blue-800" href="mailto:contact@salapex.fr">contact@salapex.fr</a></dd>
+                </div>
+                <div class="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <dt class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Téléphone</dt>
+                  <dd class="mt-1 font-bold text-slate-900"><a class="text-blue-700 hover:text-blue-800" href="tel:+33123456789">01 23 45 67 89</a></dd>
+                </div>
+                <div class="rounded-2xl bg-white p-4 ring-1 ring-slate-200">
+                  <dt class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Horaires</dt>
+                  <dd class="mt-1 text-slate-700">Lun–Ven : 9h–18h</dd>
+                </div>
+              </dl>
+
+              <div class="mt-5 overflow-hidden rounded-3xl ring-1 ring-slate-200">
+                <iframe title="Carte (exemple)" class="h-56 w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=2.337%2C48.853%2C2.357%2C48.863&layer=mapnik"></iframe>
+              </div>
+              <p class="mt-3 text-xs text-slate-500">Carte indicative (démo).</p>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-6xl px-4 py-10">
+      <div class="grid gap-6 md:grid-cols-2 md:items-center">
+        <div>
+          <div class="flex items-center gap-3">
+            <span class="grid h-10 w-10 place-items-center rounded-2xl bg-slate-900 text-white">
+              <span class="text-sm font-extrabold">S</span>
+            </span>
+            <div>
+              <div class="text-base font-extrabold">Salapex</div>
+              <div class="text-sm text-slate-600 italic">La technologie simplifiée</div>
+            </div>
+          </div>
+          <p class="mt-3 text-sm text-slate-600">Ordinateurs prêts à l’emploi, accessoires ergonomiques et packs tout-en-un.</p>
+        </div>
+        <div class="flex flex-wrap gap-2 md:justify-end">
+          <a class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50" href="#produits">Produits</a>
+          <a class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50" href="#entreprise">Entreprise</a>
+          <a class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50" href="#contact">Contact</a>
+          <button id="backToTop" class="no-print rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white hover:bg-blue-800">Haut de page</button>
+        </div>
+      </div>
+
+      <div class="mt-6 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
+        <p>© <span id="year"></span> Salapex — Tous droits réservés.</p>
+        <p>Démo one-page : pages légales à prévoir (mentions légales, confidentialité).</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Document modal (PDF/JPG) -->
+  <div id="docModal" class="fixed inset-0 z-[70] hidden" role="dialog" aria-modal="true" aria-labelledby="docModalTitle">
+    <div id="docModalBackdrop" class="absolute inset-0 bg-slate-900/70"></div>
+    <div class="relative mx-auto mt-6 w-[min(980px,94vw)]">
+      <div class="modal-enter overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-2xl">
+        <div class="flex items-start justify-between gap-3 border-b border-slate-200 p-5">
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">Document</div>
+            <h3 id="docModalTitle" class="mt-1 text-lg font-extrabold text-slate-900">—</h3>
+            <p id="docModalMeta" class="mt-1 text-sm text-slate-600">—</p>
+          </div>
+          <div class="no-print flex gap-2">
+            <a id="docModalOpenNew" class="rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold hover:bg-slate-50" href="#" target="_blank" rel="noopener">Ouvrir</a>
+            <button id="docModalClose" class="rounded-2xl bg-slate-900 px-3 py-2 text-sm font-extrabold text-white hover:bg-slate-800">Fermer</button>
+          </div>
+        </div>
+        <div class="p-5">
+          <div id="docModalError" class="hidden rounded-2xl bg-amber-50 p-4 text-sm text-amber-900 ring-1 ring-amber-100"></div>
+          <div class="mt-4 overflow-hidden rounded-2xl ring-1 ring-slate-200 bg-slate-50">
+            <iframe id="docModalFrame" class="h-[70vh] w-full bg-white" title="Aperçu document" loading="lazy"></iframe>
+          </div>
+          <p class="mt-3 text-xs text-slate-500">Astuce : si l’aperçu PDF ne s’affiche pas (selon navigateur), utilisez “Ouvrir”.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product modal -->
+  <div id="modal" class="fixed inset-0 z-[60] hidden" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div id="modalBackdrop" class="absolute inset-0 bg-slate-900/60"></div>
+    <div class="relative mx-auto mt-10 w-[min(900px,92vw)]">
+      <div class="modal-enter overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-xl">
+        <div class="flex items-start justify-between gap-3 border-b border-slate-200 p-5">
+          <div>
+            <div id="modalKicker" class="text-xs font-extrabold uppercase tracking-wide text-blue-700">Produit</div>
+            <h3 id="modalTitle" class="mt-1 text-lg font-extrabold text-slate-900">—</h3>
+            <p id="modalDesc" class="mt-1 text-sm text-slate-600">—</p>
+          </div>
+          <button id="closeModalBtn" class="no-print rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold hover:bg-slate-50" aria-label="Fermer">Fermer</button>
+        </div>
+        <div class="grid gap-5 p-5 md:grid-cols-2">
+          <div class="rounded-3xl bg-gradient-to-br from-slate-900 to-blue-900 p-5 text-white">
+            <div class="flex items-center justify-between">
+              <div class="text-xs font-bold text-white/80">Prix indicatif</div>
+              <span id="modalBadge" class="rounded-full bg-white/10 px-3 py-1 text-xs font-extrabold ring-1 ring-white/15">—</span>
+            </div>
+            <div id="modalPrice" class="mt-2 text-3xl font-extrabold">—</div>
+            <div class="mt-4 rounded-2xl bg-white/10 p-4 ring-1 ring-white/15">
+              <div class="text-sm font-extrabold">Ce que ça inclut</div>
+              <ul id="modalFeatures" class="mt-2 space-y-2 text-sm text-white/85"></ul>
+            </div>
+            <button id="modalAddBtn" class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-white px-4 py-3 text-sm font-extrabold text-blue-800 hover:bg-slate-50">Ajouter au devis</button>
+          </div>
+          <div>
+            <div class="rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-100">
+              <div class="text-sm font-extrabold">Pour quel usage ?</div>
+              <div id="modalUse" class="mt-2 flex flex-wrap gap-2"></div>
+            </div>
+            <div class="mt-4 rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-100">
+              <div class="text-sm font-extrabold">Notes Salapex</div>
+              <p id="modalNotes" class="mt-2 text-sm text-slate-600">—</p>
+            </div>
+            <div class="no-print mt-4 flex gap-2">
+              <a href="#contact" id="modalContactLink" class="inline-flex flex-1 items-center justify-center rounded-2xl bg-blue-700 px-4 py-3 text-sm font-extrabold text-white hover:bg-blue-800">Parler à un conseiller</a>
+              <a href="#devis" class="inline-flex items-center justify-center rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm font-bold hover:bg-slate-50">Voir devis</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // ---------- Data ----------
+    const PRODUCTS = [
+      {
+        id: 'pack-bureau-essentiel',
+        name: 'Pack Bureau Essentiel',
+        category: 'Packs',
+        usecases: ['Bureautique', 'Visioconférence'],
+        price: 799,
+        priceLabel: 'à partir de 799 € TTC',
+        badge: 'Prêt à l’emploi',
+        short: 'Un pack simple pour travailler immédiatement : PC + accessoires indispensables.',
+        features: [
+          'PC (SSD) configuré + mises à jour appliquées',
+          'Clavier & souris ergonomiques',
+          'Casque confort',
+          'Sauvegarde / restauration (image système)'
+        ],
+        notes: "Idéal pour la bureautique, la navigation, la visio. Nous adaptons la puissance selon vos logiciels.",
+        tags: ['pack', 'tout-en-un', 'installation']
+      },
+      {
+        id: 'pack-teletravail-confort',
+        name: 'Pack Télétravail Confort',
+        category: 'Packs',
+        usecases: ['Télétravail', 'Confort'],
+        price: 999,
+        priceLabel: 'à partir de 999 € TTC',
+        badge: 'Ergonomie +',
+        short: 'Pour les journées longues : ergonomie renforcée et configuration soignée.',
+        features: [
+          'PC configuré (SSD) + sécurisation de base',
+          'Souris verticale + clavier confort',
+          'Casque à réduction de bruit (selon stock)',
+          'Checklist posture & réglages'
+        ],
+        notes: "Recommandé si vous passez 6h+ par jour au poste. L’objectif : réduire fatigue et tensions. ",
+        tags: ['pack', 'ergonomie', 'tms']
+      },
+      {
+        id: 'pack-pro-performance',
+        name: 'Pack Pro Performance',
+        category: 'Packs',
+        usecases: ['Petite entreprise', 'Productivité'],
+        price: 1290,
+        priceLabel: 'à partir de 1290 € TTC',
+        badge: 'Pro',
+        short: 'Performance + accompagnement : pour outils pros, multi-tâches et TPE.',
+        features: [
+          'PC plus puissant (selon besoin)',
+          'Suite bureautique installée (si fournie)',
+          'Pack accessoires complet',
+          'Assistance prise en main (1h)'
+        ],
+        notes: "Pensé pour les indépendants et TPE : plus de marge, plus de confort, et une prise en main pour partir vite.",
+        tags: ['pack', 'pro', 'assistance']
+      },
+      {
+        id: 'pc-pret-a-lemploi',
+        name: 'Ordinateur prêt à l’emploi (config)',
+        category: 'Ordinateurs',
+        usecases: ['Migration', 'Simplicité'],
+        price: 590,
+        priceLabel: 'à partir de 590 € TTC',
+        badge: 'Configuré',
+        short: 'Configuration complète sur une machine sélectionnée selon votre usage.',
+        features: [
+          'Mises à jour + optimisation',
+          'Comptes utilisateurs',
+          'Antivirus / sécurité (selon OS)',
+          'Transfert de données possible (option)'
+        ],
+        notes: "Nous vous orientons vers un modèle adapté (fixe ou portable). L’important : simplicité et stabilité.",
+        tags: ['ordinateur', 'configuration', 'installation']
+      },
+      {
+        id: 'clavier-ergonomique-split',
+        name: 'Clavier ergonomique split',
+        category: 'Accessoires',
+        usecases: ['Ergonomie', 'Confort'],
+        price: 119,
+        priceLabel: 'à partir de 119 € TTC',
+        badge: 'Ergo',
+        short: 'Réduit la tension des poignets grâce à une position plus naturelle.',
+        features: [
+          'Disposition séparée (split)',
+          'Repose-poignets (selon modèle)',
+          'Réglages inclinaison (selon modèle)',
+          'Conseils d’adaptation'
+        ],
+        notes: "Il faut parfois 2–5 jours d’adaptation. Nous recommandons selon votre façon de taper.",
+        tags: ['clavier', 'ergonomique', 'tms']
+      },
+      {
+        id: 'souris-verticale',
+        name: 'Souris verticale',
+        category: 'Accessoires',
+        usecases: ['Ergonomie', 'Télétravail'],
+        price: 69,
+        priceLabel: 'à partir de 69 € TTC',
+        badge: 'Confort',
+        short: 'Une prise plus neutre pour limiter la pronation de l’avant-bras.',
+        features: [
+          'Prise en main naturelle',
+          'DPI réglable (selon modèle)',
+          'Version filaire ou sans fil',
+          'Recommandation taille main'
+        ],
+        notes: "Très apprécié en télétravail : simple à adopter, impact rapide sur le confort.",
+        tags: ['souris', 'ergonomie', 'tms']
+      },
+      {
+        id: 'casque-confort',
+        name: 'Casque confort (visio)',
+        category: 'Accessoires',
+        usecases: ['Visioconférence', 'Productivité'],
+        price: 89,
+        priceLabel: 'à partir de 89 € TTC',
+        badge: 'Audio clair',
+        short: 'Micro lisible et port confortable pour les réunions et appels.',
+        features: [
+          'Micro optimisé voix',
+          'Arceau confortable',
+          'Compatibilité PC',
+          'Conseil selon environnement (bruit)'
+        ],
+        notes: "On privilégie la lisibilité micro : c’est souvent le point le plus critique en visio.",
+        tags: ['casque', 'visio', 'confort']
+      }
+    ];
+
+    const TEAM = [
+      {
+        name: 'François Mercer',
+        role: 'PDG',
+        summary: 'Vision produit, stratégie, partenariats.',
+        missions: [
+          'Définir la vision : “technologie simplifiée”',
+          'Arbitrer la gamme (packs, accessoires, services)',
+          'Piloter la qualité et la satisfaction client'
+        ],
+        skills: ['Gestion', 'Relation client', 'Pilotage qualité'],
+        tools: ['CRM', 'Tableaux de bord', 'Process internes'],
+        kpis: ['Satisfaction', 'Taux de retour', 'Temps moyen de livraison']
+      },
+      {
+        name: 'Estelle Martin',
+        role: 'Responsable Marketing',
+        summary: 'Positionnement, acquisition, contenu, offres.',
+        missions: [
+          'Présenter une offre lisible (packs, comparatifs)',
+          'Créer des contenus (FAQ, conseils ergonomie)',
+          'Optimiser conversion (CTA, formulaires, landing)'
+        ],
+        skills: ['Copywriting', 'SEO', 'Analyse'],
+        tools: ['Analytics', 'CMS', 'Emailing'],
+        kpis: ['Leads', 'Taux de conversion', 'Trafic organique']
+      },
+      {
+        name: 'Richard Bernard',
+        role: 'Responsable Production',
+        summary: 'Assemblage, configuration, tests.',
+        missions: [
+          'Standardiser la préparation des PC',
+          'Tester stabilité et performances',
+          'Documenter la configuration / restauration'
+        ],
+        skills: ['Systèmes', 'Procédures', 'Qualité'],
+        tools: ['Images système', 'Checklists', 'Outils de diagnostic'],
+        kpis: ['Taux incident', 'Temps de préparation', 'Conformité checklists']
+      },
+      {
+        name: 'Donna Thomas',
+        role: 'Support administratif',
+        summary: 'Devis, factures, suivi.',
+        missions: [
+          'Éditer devis et factures',
+          'Suivre commandes et livraisons',
+          'Assurer conformité RGPD (consentement, durée)'
+        ],
+        skills: ['Organisation', 'Rigueur', 'Relation client'],
+        tools: ['Suite bureautique', 'ERP / facturation'],
+        kpis: ['Délai devis', 'Taux d’erreur', 'Satisfaction']
+      },
+      {
+        name: 'Olivia Petit',
+        role: 'Technicienne IT',
+        summary: 'Support, conseil, prise en main.',
+        missions: [
+          'Recommander configurations selon usage',
+          'Accompagner migration et prise en main',
+          'Rédiger guides (posture, réglages, bonnes pratiques)'
+        ],
+        skills: ['Support', 'Pédagogie', 'Diagnostic'],
+        tools: ['Outils remote', 'Base de connaissances'],
+        kpis: ['Temps résolution', 'CSAT', 'Taux réouverture tickets']
+      }
+    ];
+
+    const FAQ = [
+      {
+        q: "Qu’est-ce qu’un ordinateur “prêt à l’emploi” ?",
+        a: "Un PC que nous préparons avant livraison : mises à jour, réglages essentiels, tests, et une configuration stable. L’objectif : brancher et utiliser."
+      },
+      {
+        q: "Est-ce adapté à une petite entreprise (TPE) ?",
+        a: "Oui. Nous proposons des packs pros, une préparation homogène, et un accompagnement de prise en main."
+      },
+      {
+        q: "Puis-je acheter uniquement des accessoires ?",
+        a: "Bien sûr : claviers, souris, casques, recommandations ergonomiques selon votre usage."
+      },
+      {
+        q: "Les prix affichés sont-ils définitifs ?",
+        a: "Ils sont indicatifs. Le devis final dépend du stock, de la configuration et de vos besoins (quantité, logiciels, migration, etc.)."
+      }
+    ];
+
+    // ---------- Helpers ----------
+    const euro = (n) => new Intl.NumberFormat('fr-FR', { style: 'currency', currency: 'EUR', maximumFractionDigits: 0 }).format(n);
+
+    const uniq = (arr) => Array.from(new Set(arr));
+
+    // ---------- UI State ----------
+    const state = {
+      search: '',
+      category: 'Tous',
+      usecase: 'Tous',
+      modalId: null,
+      devis: {} // {id: qty}
+    };
+
+    // ---------- DOM ----------
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    const productsGrid = $('#productsGrid');
+    const categoryChips = $('#categoryChips');
+    const usecaseChips = $('#usecaseChips');
+    const resultCount = $('#resultCount');
+
+    const searchInput = $('#searchInput');
+    const resetFiltersBtn = $('#resetFiltersBtn');
+
+    const modal = $('#modal');
+    const modalBackdrop = $('#modalBackdrop');
+    const closeModalBtn = $('#closeModalBtn');
+    const modalTitle = $('#modalTitle');
+    const modalDesc = $('#modalDesc');
+    const modalKicker = $('#modalKicker');
+    const modalPrice = $('#modalPrice');
+    const modalBadge = $('#modalBadge');
+    const modalFeatures = $('#modalFeatures');
+    const modalUse = $('#modalUse');
+    const modalNotes = $('#modalNotes');
+    const modalAddBtn = $('#modalAddBtn');
+
+    const devisItems = $('#devisItems');
+    const devisEmpty = $('#devisEmpty');
+    const devisTotal = $('#devisTotal');
+    const clearDevisBtn = $('#clearDevisBtn');
+    const printDevisBtn = $('#printDevisBtn');
+    const printDate = $('#printDate');
+    const printItems = $('#printItems');
+    const printTotal = $('#printTotal');
+
+    const devisForm = $('#devisForm');
+    const devisToast = $('#devisToast');
+
+    const contactForm = $('#contactForm');
+    const contactToast = $('#contactToast');
+
+    // Document modal DOM
+    const docModal = $('#docModal');
+    const docModalBackdrop = $('#docModalBackdrop');
+    const docModalClose = $('#docModalClose');
+    const docModalTitle = $('#docModalTitle');
+    const docModalMeta = $('#docModalMeta');
+    const docModalOpenNew = $('#docModalOpenNew');
+    const docModalFrame = $('#docModalFrame');
+    const docModalError = $('#docModalError');
+
+    // ---------- LocalStorage ----------
+    const LS_KEY = 'salapex_devis_v1';
+    function loadDevis(){
+      try {
+        const raw = localStorage.getItem(LS_KEY);
+        if (!raw) return;
+        const data = JSON.parse(raw);
+        if (data && typeof data === 'object') state.devis = data;
+      } catch (_) {}
+    }
+    function saveDevis(){
+      try { localStorage.setItem(LS_KEY, JSON.stringify(state.devis)); } catch (_) {}
+    }
+
+    // ---------- Chips rendering ----------
+    function chip(label, active, onClick){
+      const btn = document.createElement('button');
+      btn.type = 'button';
+      btn.textContent = label;
+      btn.className = [
+        'rounded-full px-3 py-1 text-xs font-extrabold ring-1 transition',
+        active ? 'bg-blue-700 text-white ring-blue-700' : 'bg-white text-slate-700 ring-slate-200 hover:bg-slate-50'
+      ].join(' ');
+      btn.addEventListener('click', onClick);
+      return btn;
+    }
+
+    function renderChips(){
+      categoryChips.innerHTML = '';
+      usecaseChips.innerHTML = '';
+
+      const categories = ['Tous', ...uniq(PRODUCTS.map(p => p.category))];
+      const usecases = ['Tous', ...uniq(PRODUCTS.flatMap(p => p.usecases))];
+
+      categories.forEach(c => {
+        categoryChips.appendChild(chip(c, state.category === c, () => { state.category = c; render(); }));
+      });
+
+      usecases.forEach(u => {
+        usecaseChips.appendChild(chip(u, state.usecase === u, () => { state.usecase = u; render(); }));
+      });
+    }
+
+    // ---------- Products rendering ----------
+    function matches(p){
+      const q = state.search.trim().toLowerCase();
+      const hay = [p.name, p.category, p.short, p.badge, p.notes, ...(p.features||[]), ...(p.tags||[]), ...(p.usecases||[])].join(' ').toLowerCase();
+      const okSearch = !q || hay.includes(q);
+      const okCat = state.category === 'Tous' || p.category === state.category;
+      const okUse = state.usecase === 'Tous' || (p.usecases || []).includes(state.usecase);
+      return okSearch && okCat && okUse;
+    }
+
+    function productCard(p){
+      const el = document.createElement('article');
+      el.className = 'rounded-3xl border border-slate-200 bg-white p-5 shadow-sm hover:shadow-md transition';
+      el.innerHTML = `
+        <div class="flex items-start justify-between gap-3">
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">${p.category}</div>
+            <h3 class="mt-1 text-lg font-extrabold text-slate-900">${p.name}</h3>
+            <p class="mt-2 text-sm text-slate-600">${p.short}</p>
+          </div>
+          <span class="rounded-full bg-emerald-50 px-3 py-1 text-xs font-extrabold text-emerald-800 ring-1 ring-emerald-100">${p.badge}</span>
+        </div>
+
+        <div class="mt-4 flex flex-wrap gap-2">
+          ${(p.usecases||[]).slice(0, 3).map(u => `<span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">${u}</span>`).join('')}
+        </div>
+
+        <div class="mt-5 flex items-center justify-between gap-3">
+          <div>
+            <div class="text-xs font-bold text-slate-500">Prix indicatif</div>
+            <div class="text-lg font-extrabold text-slate-900">${p.priceLabel}</div>
+          </div>
+          <div class="no-print flex gap-2">
+            <button data-open="${p.id}" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">Détails</button>
+            <button data-add="${p.id}" class="rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white hover:bg-blue-800">Ajouter</button>
+          </div>
+        </div>
+      `;
+      return el;
+    }
+
+    function renderProducts(){
+      const filtered = PRODUCTS.filter(matches);
+      productsGrid.innerHTML = '';
+      filtered.forEach(p => productsGrid.appendChild(productCard(p)));
+      resultCount.textContent = `${filtered.length} résultat${filtered.length>1?'s':''}`;
+
+      // bind buttons
+      productsGrid.querySelectorAll('[data-open]').forEach(btn => btn.addEventListener('click', () => openModal(btn.getAttribute('data-open'))));
+      productsGrid.querySelectorAll('[data-add]').forEach(btn => btn.addEventListener('click', () => addToDevis(btn.getAttribute('data-add'), 1)));
+    }
+
+    // ---------- Modal ----------
+    function openModal(id){
+      const p = PRODUCTS.find(x => x.id === id);
+      if (!p) return;
+      state.modalId = id;
+
+      modalKicker.textContent = p.category;
+      modalTitle.textContent = p.name;
+      modalDesc.textContent = p.short;
+      modalPrice.textContent = p.priceLabel;
+      modalBadge.textContent = p.badge;
+      modalNotes.textContent = p.notes;
+
+      modalFeatures.innerHTML = '';
+      (p.features || []).forEach(f => {
+        const li = document.createElement('li');
+        li.textContent = '• ' + f;
+        modalFeatures.appendChild(li);
+      });
+
+      modalUse.innerHTML = '';
+      (p.usecases || []).forEach(u => {
+        const span = document.createElement('span');
+        span.className = 'rounded-full bg-white px-3 py-1 text-xs font-bold text-slate-700 ring-1 ring-slate-200';
+        span.textContent = u;
+        modalUse.appendChild(span);
+      });
+
+      modalAddBtn.onclick = () => addToDevis(p.id, 1);
+
+      modal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+
+      // Focus management
+      closeModalBtn.focus();
+    }
+
+    function closeModal(){
+      state.modalId = null;
+      modal.classList.add('hidden');
+      document.body.style.overflow = '';
+    }
+
+    closeModalBtn.addEventListener('click', closeModal);
+    modalBackdrop.addEventListener('click', closeModal);
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    });
+
+    // ---------- Devis ----------
+    function addToDevis(id, qty){
+      if (!PRODUCTS.some(p => p.id === id)) return;
+      state.devis[id] = (state.devis[id] || 0) + (qty || 1);
+      saveDevis();
+      renderDevis();
+
+      // Provide immediate feedback
+      const p = PRODUCTS.find(x => x.id === id);
+      toast(devisToast, `Ajouté au devis : <strong>${escapeHtml(p.name)}</strong>.`, 2600);
+    }
+
+    function removeFromDevis(id){
+      delete state.devis[id];
+      saveDevis();
+      renderDevis();
+    }
+
+    function setQty(id, qty){
+      const q = Math.max(1, Math.min(99, Number(qty)||1));
+      state.devis[id] = q;
+      saveDevis();
+      renderDevis();
+    }
+
+    function computeTotal(){
+      let total = 0;
+      for (const [id, q] of Object.entries(state.devis)){
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) continue;
+        total += (p.price || 0) * (q || 0);
+      }
+      return total;
+    }
+
+    function devisRow(p, qty){
+      const el = document.createElement('div');
+      el.className = 'rounded-2xl border border-slate-200 bg-white p-4';
+      el.innerHTML = `
+        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <div class="text-xs font-extrabold uppercase tracking-wide text-blue-700">${p.category}</div>
+            <div class="mt-1 font-extrabold text-slate-900">${p.name}</div>
+            <div class="mt-1 text-sm text-slate-600">${p.priceLabel}</div>
+          </div>
+          <div class="no-print flex flex-wrap items-center gap-2">
+            <label class="text-xs font-bold text-slate-600" for="qty-${p.id}">Qté</label>
+            <input id="qty-${p.id}" class="w-20 rounded-xl border border-slate-300 bg-white px-3 py-2 text-sm" type="number" min="1" max="99" value="${qty}">
+            <button data-open="${p.id}" class="rounded-2xl border border-slate-300 bg-white px-3 py-2 text-sm font-bold hover:bg-slate-50">Détails</button>
+            <button data-remove="${p.id}" class="rounded-2xl bg-slate-900 px-3 py-2 text-sm font-extrabold text-white hover:bg-slate-800">Retirer</button>
+          </div>
+        </div>
+      `;
+
+      el.querySelector(`#qty-${CSS.escape(p.id)}`).addEventListener('change', (e) => setQty(p.id, e.target.value));
+      el.querySelector('[data-open]').addEventListener('click', () => openModal(p.id));
+      el.querySelector('[data-remove]').addEventListener('click', () => removeFromDevis(p.id));
+      return el;
+    }
+
+    function renderDevis(){
+      devisItems.innerHTML = '';
+      const entries = Object.entries(state.devis);
+      if (entries.length === 0){
+        devisEmpty.classList.remove('hidden');
+      } else {
+        devisEmpty.classList.add('hidden');
+      }
+
+      for (const [id, qty] of entries){
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) continue;
+        devisItems.appendChild(devisRow(p, qty));
+      }
+
+      const total = computeTotal();
+      devisTotal.textContent = euro(total);
+
+      // Print area
+      const now = new Date();
+      printDate.textContent = now.toLocaleDateString('fr-FR', { year:'numeric', month:'long', day:'numeric' });
+      printItems.innerHTML = '';
+      for (const [id, qty] of entries){
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) continue;
+        const row = document.createElement('div');
+        row.className = 'mt-2';
+        row.innerHTML = `<div><strong>${escapeHtml(p.name)}</strong> — Qté: ${qty} — ${escapeHtml(p.priceLabel)}</div>`;
+        printItems.appendChild(row);
+      }
+      printTotal.textContent = euro(total);
+    }
+
+    clearDevisBtn.addEventListener('click', () => {
+      state.devis = {};
+      saveDevis();
+      renderDevis();
+      toast(devisToast, 'Devis vidé.', 2000);
+    });
+
+    printDevisBtn.addEventListener('click', () => {
+      renderDevis();
+      window.print();
+    });
+
+    // ---------- Forms (mailto demo) ----------
+    function buildDevisEmail(){
+      const entries = Object.entries(state.devis);
+      const items = entries.map(([id, qty]) => {
+        const p = PRODUCTS.find(x => x.id === id);
+        if (!p) return null;
+        return `- ${p.name} (x${qty}) — ${p.priceLabel}`;
+      }).filter(Boolean).join('\n');
+
+      const total = euro(computeTotal());
+
+      const name = $('#clientName').value.trim();
+      const email = $('#clientEmail').value.trim();
+      const type = $('#clientType').value;
+      const need = $('#needText').value.trim();
+
+      const subject = `Demande de devis — ${name}`;
+      const body = [
+        `Bonjour Salapex,`,
+        ``,
+        `Je souhaite un devis.`,
+        ``,
+        `Profil : ${type}`,
+        `Nom : ${name}`,
+        `Email : ${email}`,
+        ``,
+        `Produits sélectionnés :`,
+        items || '(aucun produit sélectionné)',
+        ``,
+        `Total indicatif : ${total}`,
+        ``,
+        need ? `Besoin / contexte :\n${need}` : 'Besoin / contexte : (non précisé)',
+        ``,
+        `Merci,`,
+        name
+      ].join('\n');
+
+      return { subject, body };
+    }
+
+    devisForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const consent = $('#consentDevis').checked;
+      if (!consent) return;
+
+      const { subject, body } = buildDevisEmail();
+      const mailto = `mailto:contact@salapex.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      toast(devisToast, 'Votre messagerie va s’ouvrir avec le devis prérempli.', 5000);
+    });
+
+    contactForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = $('#cName').value.trim();
+      const email = $('#cEmail').value.trim();
+      const subject = $('#cSubject').value.trim();
+      const msg = $('#cMessage').value.trim();
+      const consent = $('#cConsent').checked;
+      if (!consent) return;
+
+      const fullSubject = `Contact — ${subject}`;
+      const body = [
+        `Bonjour Salapex,`,
+        ``,
+        `Nom : ${name}`,
+        `Email : ${email}`,
+        ``,
+        `Message :`,
+        msg
+      ].join('\n');
+
+      const mailto = `mailto:contact@salapex.fr?subject=${encodeURIComponent(fullSubject)}&body=${encodeURIComponent(body)}`;
+      window.location.href = mailto;
+      toast(contactToast, 'Votre messagerie va s’ouvrir avec le message prérempli.', 5000);
+    });
+
+    // ---------- Team / FAQ rendering ----------
+    function renderTeam(){
+      const grid = $('#teamGrid');
+      grid.innerHTML = '';
+      TEAM.forEach((m, idx) => {
+        const card = document.createElement('article');
+        card.className = 'rounded-3xl border border-slate-200 bg-white p-5 shadow-sm';
+
+        const id = `team-${idx}`;
+        card.innerHTML = `
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h4 class="text-base font-extrabold text-slate-900">${escapeHtml(m.name)}</h4>
+              <p class="mt-1 text-sm font-semibold text-blue-700">${escapeHtml(m.role)}</p>
+              <p class="mt-2 text-sm text-slate-600">${escapeHtml(m.summary)}</p>
+            </div>
+            <span class="rounded-full bg-slate-100 px-3 py-1 text-xs font-bold text-slate-700">Fiche de poste</span>
+          </div>
+
+          <details class="mt-4 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
+            <summary class="cursor-pointer text-sm font-extrabold text-slate-900">Voir les détails</summary>
+            <div class="mt-3 grid gap-3">
+              <div>
+                <div class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Missions</div>
+                <ul class="mt-2 list-disc pl-5 text-sm text-slate-700">
+                  ${m.missions.map(x => `<li>${escapeHtml(x)}</li>`).join('')}
+                </ul>
+              </div>
+              <div class="grid gap-3 sm:grid-cols-3">
+                <div>
+                  <div class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Compétences</div>
+                  <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                    ${m.skills.map(x => `<li>• ${escapeHtml(x)}</li>`).join('')}
+                  </ul>
+                </div>
+                <div>
+                  <div class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Outils</div>
+                  <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                    ${m.tools.map(x => `<li>• ${escapeHtml(x)}</li>`).join('')}
+                  </ul>
+                </div>
+                <div>
+                  <div class="text-xs font-extrabold uppercase tracking-wide text-slate-500">Indicateurs</div>
+                  <ul class="mt-2 space-y-1 text-sm text-slate-700">
+                    ${m.kpis.map(x => `<li>• ${escapeHtml(x)}</li>`).join('')}
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </details>
+        `;
+
+        grid.appendChild(card);
+      });
+    }
+
+    function renderFAQ(){
+      const wrap = $('#faq');
+      wrap.innerHTML = '';
+      FAQ.forEach((item) => {
+        const el = document.createElement('details');
+        el.className = 'rounded-2xl border border-slate-200 bg-white p-4';
+        el.innerHTML = `
+          <summary class="cursor-pointer text-sm font-extrabold text-slate-900">${escapeHtml(item.q)}</summary>
+          <p class="mt-2 text-sm text-slate-600">${escapeHtml(item.a)}</p>
+        `;
+        wrap.appendChild(el);
+      });
+    }
+
+    // ---------- Toast ----------
+    let toastTimer = null;
+    function toast(node, html, ms){
+      node.innerHTML = html;
+      node.classList.remove('hidden');
+      if (toastTimer) clearTimeout(toastTimer);
+      toastTimer = setTimeout(() => node.classList.add('hidden'), ms || 2500);
+    }
+
+    // Basic HTML escaping for dynamic injected strings
+    function escapeHtml(str){
+      return String(str)
+        .replaceAll('&','&amp;')
+        .replaceAll('<','&lt;')
+        .replaceAll('>','&gt;')
+        .replaceAll('"','&quot;')
+        .replaceAll("'",'&#039;');
+    }
+
+    // ---------- Navigation (mobile + back to top) ----------
+    const menuBtn = $('#menuBtn');
+    const mobileNav = $('#mobileNav');
+    menuBtn?.addEventListener('click', () => {
+      const open = !mobileNav.classList.contains('hidden');
+      mobileNav.classList.toggle('hidden');
+      menuBtn.setAttribute('aria-expanded', String(!open));
+    });
+
+    // Close mobile nav after click
+    mobileNav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      mobileNav.classList.add('hidden');
+      menuBtn.setAttribute('aria-expanded', 'false');
+    }));
+
+    $('#backToTop').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    // Active nav links
+    const sections = ['accueil','activite','produits','entreprise','contact','devis']
+      .map(id => document.getElementById(id))
+      .filter(Boolean);
+
+    const links = $$('.navlink');
+    const linkByHash = new Map(links.map(a => [a.getAttribute('href'), a]));
+
+    const io = new IntersectionObserver((entries) => {
+      const visible = entries
+        .filter(e => e.isIntersecting)
+        .sort((a,b) => b.intersectionRatio - a.intersectionRatio)[0];
+      if (!visible) return;
+      const hash = '#' + visible.target.id;
+      links.forEach(a => a.classList.remove('bg-white/10'));
+      const current = linkByHash.get(hash);
+      if (current) current.classList.add('bg-white/10');
+    }, { rootMargin: '-35% 0px -55% 0px', threshold: [0.05, 0.1, 0.2] });
+
+    sections.forEach(s => io.observe(s));
+
+    // ---------- Filters binding ----------
+    searchInput.addEventListener('input', (e) => {
+      state.search = e.target.value;
+      renderProducts();
+    });
+
+    resetFiltersBtn.addEventListener('click', () => {
+      state.search = '';
+      state.category = 'Tous';
+      state.usecase = 'Tous';
+      searchInput.value = '';
+      render();
+    });
+
+    // ---------- Init ----------
+    function render(){
+      renderChips();
+      renderProducts();
+      renderDevis();
+    }
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    loadDevis();
+    renderTeam();
+    renderFAQ();
+    render();
+
+    // Improve UX: open modal from URL hash ?product=
+    const params = new URLSearchParams(location.search);
+    const openId = params.get('product');
+    if (openId && PRODUCTS.some(p => p.id === openId)) openModal(openId);
+  </script>
+</body>
+</html>

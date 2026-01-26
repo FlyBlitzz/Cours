@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Salapex — La technologie simplifiée</title>
+  <meta name="description" content="Salapex : ordinateurs prêts à l'emploi, accessoires ergonomiques et packs tout-en-un pour particuliers et petites entreprises." />
+  <meta name="theme-color" content="#047857" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <div class="logo-section">
+        <img src="assets/img/logo-salapex.jpg" alt="Logo Salapex" />
+        <div>
+          <h1>Salapex</h1>
+          <p class="slogan">La technologie simplifiée</p>
+        </div>
+      </div>
+
+      <button class="menu-toggle" id="menuToggle" aria-label="Menu">☰ Menu</button>
+
+      <nav id="navMenu">
+        <ul>
+          <li><a href="#accueil">Accueil</a></li>
+          <li><a href="#activite">Activité</a></li>
+          <li><a href="#produits">Produits</a></li>
+          <li><a href="#entreprise">Entreprise</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#devis" class="btn">Devis rapide</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section id="accueil" class="hero">
+      <div>
+        <h1>Bienvenue chez Salapex</h1>
+        <p class="lead">
+          Plus besoin de passer des heures à configurer votre matériel. Nos ordinateurs sont <strong>prêts à l'emploi</strong>, nos accessoires sont <strong>ergonomiques</strong>, et nos <strong>packs tout-en-un</strong> combinent le meilleur des deux — pour les particuliers et les petites entreprises.
+        </p>
+        <div class="mt-3">
+          <a href="#produits" class="btn">Découvrir nos produits</a>
+          <a href="#entreprise" class="btn outline ml-2">Notre histoire</a>
+        </div>
+      </div>
+      <img src="assets/img/hero.jpg" alt="Poste de travail ergonomique avec ordinateur prêt à l'emploi" />
+    </section>
+
+    <!-- POURQUOI NOUS CHOISIR -->
+    <section id="valeurs">
+      <h2>Pourquoi nous choisir ?</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="content">
+            <h3>🎯 Simplicité</h3>
+            <p class="muted">Tout fonctionne dès le branchement : logiciels essentiels préinstallés, mises à jour appliquées, paramétrage optimisé.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <h3>🪑 Confort</h3>
+            <p class="muted">Claviers, souris et casques ergonomiques sélectionnés pour réduire la fatigue et prévenir les TMS.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="content">
+            <h3>✅ Fiabilité</h3>
+            <p class="muted">Matériel testé, image système sauvegardée et assistance pour la prise en main.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ACTIVITÉ -->
+    <section id="activite">
+      <h2>Notre activité</h2>
+      <div class="grid grid-3">
+        <article class="card">
+          <div class="content">
+            <h3>💻 Ordinateurs prêts à l'emploi</h3>
+            <p class="muted">PC fixes et portables configurés pour être simples : mises à jour, sécurité, outils essentiels, optimisation.</p>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li>Installation et paramétrage</li>
+              <li>Sauvegarde / restauration</li>
+              <li>Comptes & prise en main</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="content">
+            <h3>⌨️ Accessoires ergonomiques</h3>
+            <p class="muted">Claviers, souris verticales, casques : sélection orientée confort et prévention des TMS.</p>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li>Recommandation selon usage</li>
+              <li>Options silencieuses / compactes</li>
+              <li>Conseils de posture</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="content">
+            <h3>📦 Packs « tout-en-un »</h3>
+            <p class="muted">Combinaisons prêtes à brancher pour particuliers et petites équipes : productivité immédiate.</p>
+            <ul style="margin-left: 20px; margin-top: 12px;">
+              <li>Pack Bureau (essentiel)</li>
+              <li>Pack Télétravail (confort)</li>
+              <li>Pack Pro (performance)</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- PRODUITS (SECTION PRIMORDIALE) -->
+    <section id="produits">
+      <h2>Nos Produits & Packs</h2>
+      <p class="center muted mb-3">Filtrez, comparez, et demandez un devis personnalisé. Prix indicatifs.</p>
+
+      <!-- FILTRES -->
+      <div class="filters">
+        <h3>🔍 Filtres</h3>
+        <input type="search" id="searchInput" placeholder="Chercher un produit…" />
+
+        <div>
+          <label>Catégorie</label>
+          <div class="chips" id="categoryChips"></div>
+        </div>
+
+        <div style="margin-top: 12px;">
+          <label>Usage</label>
+          <div class="chips" id="usecaseChips"></div>
+        </div>
+
+        <p class="muted mt-2" id="resultCount">Résultats</p>
+      </div>
+
+      <!-- GRILLE PRODUITS -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rempli par JavaScript -->
+      </div>
+
+      <p class="center muted mt-4">Prix indicatifs. Devis gratuit sous 24–48h. <a href="#contact">Contacter un conseiller</a></p>
+    </section>
+
+    <!-- MODAL DÉTAILS PRODUIT -->
+    <div id="productModal" class="modal">
+      <div class="modal-content">
+        <button class="modal-close" onclick="closeProductModal()">✕</button>
+        <h3 id="modalTitle"></h3>
+        <p id="modalDescription" class="muted"></p>
+        <div id="modalFeatures" style="margin: 16px 0; padding: 16px; background: #f3f4f6; border-radius: 8px;"></div>
+        <p><strong>Prix indicatif :</strong> <span id="modalPrice"></span></p>
+        <p id="modalNotes" class="muted"></p>
+        <div class="mt-3">
+          <button class="btn" onclick="addToDevis()">Ajouter au devis</button>
+          <button class="btn secondary ml-2" onclick="closeProductModal()">Fermer</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DEVIS RAPIDE -->
+    <section id="devis">
+      <h2>Devis Rapide</h2>
+      <div class="devis-section">
+        <h3>Produits sélectionnés</h3>
+        <div class="devis-list" id="devisList">
+          <p class="muted center">Votre devis est vide. <a href="#produits">Ajouter des produits</a></p>
+        </div>
+        <div class="devis-total">
+          <span>Total indicatif</span>
+          <span id="devisTotal">0 €</span>
+        </div>
+
+        <div class="mt-3">
+          <button class="btn" onclick="printDevis()">🖨️ Imprimer</button>
+          <button class="btn secondary ml-2" onclick="clearDevis()">Vider</button>
+        </div>
+
+        <!-- Formulaire de demande -->
+        <hr style="margin: 28px 0; border: 1px solid #e5e7eb;" />
+        <h3>Demander un devis</h3>
+        <form id="devisForm" onsubmit="submitDevisForm(event)">
+          <div class="form-group">
+            <label for="devisName">Nom</label>
+            <input type="text" id="devisName" required />
+          </div>
+          <div class="form-group">
+            <label for="devisEmail">Email</label>
+            <input type="email" id="devisEmail" required />
+          </div>
+          <div class="form-group">
+            <label for="devisType">Profil</label>
+            <select id="devisType">
+              <option>Particulier</option>
+              <option>Indépendant</option>
+              <option>TPE</option>
+              <option>Association</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="devisNeed">Votre besoin (optionnel)</label>
+            <textarea id="devisNeed" rows="4" placeholder="Décrivez votre situation…"></textarea>
+          </div>
+          <div class="checkbox-group">
+            <input type="checkbox" id="devisConsent" required />
+            <label for="devisConsent">J'accepte que mes informations soient utilisées pour me recontacter</label>
+          </div>
+          <button type="submit" class="btn">Envoyer (mailto)</button>
+          <p class="muted mt-2">L'envoi se fait via votre messagerie.</p>
+        </form>
+      </div>
+    </section>
+
+    <!-- ENTREPRISE -->
+    <section id="entreprise">
+      <h2>Entreprise</h2>
+
+      <!-- HISTOIRE -->
+      <h3 style="text-align: center; margin-top: 32px; margin-bottom: 28px;">📖 Notre Histoire</h3>
+      <div class="timeline">
+        <div class="milestone">
+          <div class="year">2022</div>
+          <div class="box">
+            <strong>Création de Salapex</strong><br />
+            Objectif : rendre l'achat d'un PC aussi simple que le brancher.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="year">2023</div>
+          <div class="box">
+            <strong>Premiers packs télétravail</strong><br />
+            PC + accessoires + checklist d'installation.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="year">2024</div>
+          <div class="box">
+            <strong>Virage ergonomie</strong><br />
+            Sélection d'accessoires orientée confort et prévention des TMS.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="year">2025</div>
+          <div class="box">
+            <strong>Accompagnement « prise en main »</strong><br />
+            Aide à la migration et paramétrage pour petites structures.
+          </div>
+        </div>
+        <div class="milestone">
+          <div class="year">2026</div>
+          <div class="box">
+            <strong>Extension du catalogue pro</strong><br />
+            Packs plus performants + services complémentaires.
+          </div>
+        </div>
+      </div>
+
+      <!-- LOGO & ORGANIGRAMME -->
+      <h3 style="text-align: center; margin-top: 32px; margin-bottom: 28px;">🎨 Logo & Organigramme</h3>
+      <div class="media-gallery">
+        <div class="media-item">
+          <img src="assets/img/logo-salapex.jpg" alt="Logo Salapex" />
+          <div class="media-item-caption">Logo Salapex</div>
+        </div>
+        <div class="media-item">
+          <img src="assets/img/organigramme.jpg" alt="Organigramme Salapex" />
+          <div class="media-item-caption">Structure de l'entreprise</div>
+        </div>
+      </div>
+
+      <!-- ÉQUIPE & FICHES DE POSTES -->
+      <h3 style="text-align: center; margin-top: 32px; margin-bottom: 28px;">👥 Notre Équipe & Fiches de Postes</h3>
+      <p class="center muted mb-3">Cliquez sur un rôle pour consulter la fiche de poste complète (PDF) ou voir les détails.</p>
+
+      <div class="team-grid" id="teamGrid">
+        <!-- Rempli par JavaScript -->
+      </div>
+
+      <!-- FAQ -->
+      <h3 style="text-align: center; margin-top: 32px; margin-bottom: 28px;">❓ FAQ</h3>
+      <div id="faqContainer">
+        <!-- Rempli par JavaScript -->
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="grid grid-2">
+        <div>
+          <h3>Nous contacter</h3>
+          <form id="contactForm" onsubmit="submitContactForm(event)">
+            <div class="form-group">
+              <label for="contactName">Nom</label>
+              <input type="text" id="contactName" required />
+            </div>
+            <div class="form-group">
+              <label for="contactEmail">Email</label>
+              <input type="email" id="contactEmail" required />
+            </div>
+            <div class="form-group">
+              <label for="contactSubject">Sujet</label>
+              <input type="text" id="contactSubject" placeholder="Devis, question…" required />
+            </div>
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" rows="6" required></textarea>
+            </div>
+            <div class="checkbox-group">
+              <input type="checkbox" id="contactConsent" required />
+              <label for="contactConsent">J'accepte que mes informations soient utilisées</label>
+            </div>
+            <button type="submit" class="btn">Envoyer (mailto)</button>
+          </form>
+        </div>
+
+        <div>
+          <h3>Coordonnées</h3>
+          <div class="card">
+            <div class="content">
+              <p>
+                <strong>Email :</strong><br />
+                <a href="mailto:contact@salapex.fr">contact@salapex.fr</a>
+              </p>
+              <p>
+                <strong>Téléphone :</strong><br />
+                <a href="tel:+33123456789">01 23 45 67 89</a>
+              </p>
+              <p>
+                <strong>Horaires :</strong><br />
+                Lun–Ven : 9h–18h<br />
+                Sam : 10h–14h
+              </p>
+              <p class="mt-3 muted">
+                Démo statique. Architecture multi-pages recommandée en production.
+              </p>
+            </div>
+          </div>
+
+          <!-- Carte (optionnel) -->
+          <div class="card mt-3">
+            <iframe
+              title="Localisation Salapex"
+              width="100%"
+              height="300"
+              style="border: none; border-radius: 8px;"
+              src="https://www.openstreetmap.org/export/embed.html?bbox=2.337%2C48.853%2C2.357%2C48.863&layer=mapnik"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>
+      © 2026 Salapex – La technologie simplifiée – Tous droits réservés.
+      <br />
+      <a href="#">Mentions légales</a> | <a href="#">Politique de confidentialité</a>
+    </p>
+  </footer>
+
+  <!-- SCRIPT -->
+  <script>
+    // ============================================
+    // DONNÉES PRODUITS
+    // ============================================
+
+    const PRODUCTS = [
+      {
+        id: 1,
+        name: 'Pack Bureau Essentiel',
+        category: 'Packs',
+        usecases: ['Bureautique', 'Visioconférence'],
+        price: 799,
+        description: 'Pack simple pour travailler immédiatement : PC + accessoires indispensables.',
+        features: [
+          'PC (SSD) configuré + mises à jour',
+          'Clavier & souris ergonomiques',
+          'Casque confort',
+          'Sauvegarde / restauration (image système)'
+        ],
+        notes: 'Idéal pour la bureautique, navigation, visio. Nous adaptons la puissance selon vos logiciels.'
+      },
+      {
+        id: 2,
+        name: 'Pack Télétravail Confort',
+        category: 'Packs',
+        usecases: ['Télétravail', 'Confort'],
+        price: 999,
+        description: 'Pour les journées longues : ergonomie renforcée et configuration soignée.',
+        features: [
+          'PC configuré (SSD) + sécurisation',
+          'Souris verticale + clavier confort',
+          'Casque à réduction de bruit',
+          'Checklist posture & réglages'
+        ],
+        notes: 'Recommandé si vous passez 6h+ par jour au poste. Objectif : réduire fatigue et tensions.'
+      },
+      {
+        id: 3,
+        name: 'Pack Pro Performance',
+        category: 'Packs',
+        usecases: ['Petite entreprise', 'Productivité'],
+        price: 1290,
+        description: 'Performance + accompagnement : pour outils pros, multi-tâches et TPE.',
+        features: [
+          'PC plus puissant (selon besoin)',
+          'Suite bureautique installée',
+          'Pack accessoires complet',
+          'Assistance prise en main (1h)'
+        ],
+        notes: 'Pensé pour indépendants et TPE : plus de marge, plus de confort, prise en main.'
+      },
+      {
+        id: 4,
+        name: 'Ordinateur prêt à l\'emploi',
+        category: 'Ordinateurs',
+        usecases: ['Migration', 'Simplicité'],
+        price: 590,
+        description: 'Configuration complète sur une machine sélectionnée selon votre usage.',
+        features: [
+          'Mises à jour + optimisation',
+          'Comptes utilisateurs',
+          'Antivirus / sécurité',
+          'Transfert de données possible (option)'
+        ],
+        notes: 'Nous vous orientons vers un modèle adapté (fixe ou portable).'
+      },
+      {
+        id: 5,
+        name: 'Clavier ergonomique split',
+        category: 'Accessoires',
+        usecases: ['Ergonomie', 'Confort'],
+        price: 119,
+        description: 'Réduit la tension des poignets grâce à une position plus naturelle.',
+        features: [
+          'Disposition séparée (split)',
+          'Repose-poignets',
+          'Réglages inclinaison',
+          'Conseils d\'adaptation'
+        ],
+        notes: 'Il faut parfois 2–5 jours d\'adaptation. Nous recommandons selon votre façon de taper.'
+      },
+      {
+        id: 6,
+        name: 'Souris verticale',
+        category: 'Accessoires',
+        usecases: ['Ergonomie', 'Télétravail'],
+        price: 69,
+        description: 'Une prise plus neutre pour limiter la pronation de l\'avant-bras.',
+        features: [
+          'Prise en main naturelle',
+          'DPI réglable',
+          'Version filaire ou sans fil',
+          'Recommandation taille main'
+        ],
+        notes: 'Très apprécié en télétravail : simple à adopter, impact rapide.'
+      },
+      {
+        id: 7,
+        name: 'Casque confort (visio)',
+        category: 'Accessoires',
+        usecases: ['Visioconférence', 'Productivité'],
+        price: 89,
+        description: 'Micro lisible et port confortable pour les réunions et appels.',
+        features: [
+          'Micro optimisé voix',
+          'Arceau confortable',
+          'Compatibilité PC',
+          'Conseil selon environnement'
+        ],
+        notes: 'On privilégie la lisibilité micro : point critique en visio.'
+      }
+    ];
+
+    const TEAM = [
+      {
+        name: 'François Mercer',
+        role: 'PDG',
+        summary: 'Vision produit, stratégie, partenariats.',
+        pdfFile: 'assets/fiches-postes/francois-mercer-pdg.pdf'
+      },
+      {
+        name: 'Estelle Martin',
+        role: 'Responsable Marketing',
+        summary: 'Positionnement, acquisition, contenu.',
+        pdfFile: 'assets/fiches-postes/estelle-martin-marketing.pdf'
+      },
+      {
+        name: 'Richard Bernard',
+        role: 'Responsable Production',
+        summary: 'Assemblage, configuration, tests.',
+        pdfFile: 'assets/fiches-postes/richard-bernard-production.pdf'
+      },
+      {
+        name: 'Donna Thomas',
+        role: 'Support administratif',
+        summary: 'Devis, factures, suivi.',
+        pdfFile: 'assets/fiches-postes/donna-thomas-admin.pdf'
+      },
+      {
+        name: 'Olivia Petit',
+        role: 'Technicienne IT',
+        summary: 'Support, conseil, prise en main.',
+        pdfFile: 'assets/fiches-postes/olivia-petit-it.pdf'
+      }
+    ];
+
+    const FAQ = [
+      {
+        q: "Qu'est-ce qu'un ordinateur « prêt à l'emploi » ?",
+        a: "Un PC que nous préparons avant livraison : mises à jour, réglages essentiels, tests, et une configuration stable. Brancher et utiliser."
+      },
+      {
+        q: 'Est-ce adapté à une petite entreprise (TPE) ?',
+        a: 'Oui. Nous proposons des packs pros, une préparation homogène, et un accompagnement de prise en main.'
+      },
+      {
+        q: 'Puis-je acheter uniquement des accessoires ?',
+        a: 'Bien sûr : claviers, souris, casques, recommandations ergonomiques selon votre usage.'
+      },
+      {
+        q: 'Les prix affichés sont-ils définitifs ?',
+        a: 'Ils sont indicatifs. Le devis final dépend du stock, configuration, et vos besoins (quantité, logiciels, etc.).'
+      },
+      {
+        q: 'Quel est le délai de livraison ?',
+        a: 'Devis sous 24–48h ouvrées. Livraison : 3–7 jours selon complexité et stock.'
+      }
+    ];
+
+    // ============================================
+    // ÉTAT & STOCKAGE
+    // ============================================
+
+    const state = {
+      search: '',
+      category: 'Tous',
+      usecase: 'Tous',
+      devis: {},
+      currentProductId: null
+    };
+
+    const LS_KEY = 'salapex_devis';
+
+    function loadDevis() {
+      try {
+        const saved = localStorage.getItem(LS_KEY);
+        if (saved) state.devis = JSON.parse(saved);
+      } catch (e) {
+        console.error('Erreur localStorage:', e);
+      }
+    }
+
+    function saveDevis() {
+      try {
+        localStorage.setItem(LS_KEY, JSON.stringify(state.devis));
+      } catch (e) {
+        console.error('Erreur localStorage:', e);
+      }
+    }
+
+    // ============================================
+    // DOM HELPERS
+    // ============================================
+
+    const $ = (sel) => document.querySelector(sel);
+    const $$ = (sel) => Array.from(document.querySelectorAll(sel));
+
+    // ============================================
+    // MENU MOBILE
+    // ============================================
+
+    $('#menuToggle').addEventListener('click', () => {
+      $('#navMenu').classList.toggle('active');
+    });
+
+    // Fermer le menu au clic sur un lien
+    $$('#navMenu a').forEach((a) => {
+      a.addEventListener('click', () => {
+        $('#navMenu').classList.remove('active');
+      });
+    });
+
+    // ============================================
+    // FILTRES & PRODUITS
+    // ============================================
+
+    function getUniqueValues(arr, key) {
+      return [...new Set(PRODUCTS.map((p) => p[key]).flat())];
+    }
+
+    function renderChips() {
+      const categories = ['Tous', ...getUniqueValues(PRODUCTS, 'category')];
+      const usecases = ['Tous', ...getUniqueValues(PRODUCTS, 'usecases')];
+
+      $('#categoryChips').innerHTML = categories
+        .map((c) => {
+          const active = state.category === c ? 'active' : '';
+          return `<button class="chip ${active}" onclick="filterCategory('${c}')">${c}</button>`;
+        })
+        .join('');
+
+      $('#usecaseChips').innerHTML = usecases
+        .map((u) => {
+          const active = state.usecase === u ? 'active' : '';
+          return `<button class="chip ${active}" onclick="filterUsecase('${u}')">${u}</button>`;
+        })
+        .join('');
+    }
+
+    function filterCategory(c) {
+      state.category = c;
+      renderProducts();
+      renderChips();
+    }
+
+    function filterUsecase(u) {
+      state.usecase = u;
+      renderProducts();
+      renderChips();
+    }
+
+    function matchesProduct(p) {
+      const q = state.search.trim().toLowerCase();
+      const text = [p.name, p.category, p.description, ...p.features, ...p.usecases].join(' ').toLowerCase();
+      const okSearch = !q || text.includes(q);
+      const okCat = state.category === 'Tous' || p.category === state.category;
+      const okUse = state.usecase === 'Tous' || p.usecases.includes(state.usecase);
+      return okSearch && okCat && okUse;
+    }
+
+    function renderProducts() {
+      const filtered = PRODUCTS.filter(matchesProduct);
+      $('#resultCount').textContent = `${filtered.length} résultat(s)`;
+
+      $('#productsGrid').innerHTML = filtered
+        .map(
+          (p) => `
+        <article class="product-card">
+          <div style="background: linear-gradient(135deg, #047857, #10b981); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">
+            ${getCategoryEmoji(p.category)}
+          </div>
+          <h3>${p.name}</h3>
+          <p class="muted">${p.description}</p>
+          <div class="price">${p.price} € TTC</div>
+          <p style="padding: 0 16px; font-size: 0.9rem;">
+            ${p.usecases.map((u) => `<span class="badge">${u}</span>`).join('')}
+          </p>
+          <div class="actions">
+            <button class="btn" onclick="openProductModal(${p.id})">Détails</button>
+            <button class="btn" onclick="addToDevis(${p.id}, 1)">Ajouter</button>
+          </div>
+        </article>
+      `
+        )
+        .join('');
+    }
+
+    function getCategoryEmoji(cat) {
+      const emojis = {
+        Packs: '📦',
+        Ordinateurs: '💻',
+        Accessoires: '⌨️'
+      };
+      return emojis[cat] || '🛍️';
+    }
+
+    // ============================================
+    // MODAL PRODUIT
+    // ============================================
+
+    function openProductModal(productId) {
+      const product = PRODUCTS.find((p) => p.id === productId);
+      if (!product) return;
+
+      state.currentProductId = productId;
+
+      $('#modalTitle').textContent = product.name;
+      $('#modalDescription').textContent = product.description;
+      $('#modalPrice').textContent = `${product.price} € TTC`;
+      $('#modalNotes').textContent = product.notes;
+
+      $('#modalFeatures').innerHTML = `
+        <strong>Inclus :</strong>
+        <ul style="margin-left: 20px; margin-top: 8px;">
+          ${product.features.map((f) => `<li>${f}</li>`).join('')}
+        </ul>
+      `;
+
+      $('#productModal').classList.add('active');
+    }
+
+    function closeProductModal() {
+      $('#productModal').classList.remove('active');
+      state.currentProductId = null;
+    }
+
+    // ============================================
+    // DEVIS
+    // ============================================
+
+    function addToDevis(productId = null, qty = 1) {
+      const id = productId || state.currentProductId;
+      if (!id) return;
+
+      if (state.devis[id]) {
+        state.devis[id] += qty;
+      } else {
+        state.devis[id] = qty;
+      }
+
+      saveDevis();
+      renderDevis();
+      closeProductModal();
+
+      // Feedback
+      const product = PRODUCTS.find((p) => p.id === id);
+      alert(`✅ ${product.name} ajouté au devis !`);
+    }
+
+    function removeFromDevis(productId) {
+      delete state.devis[productId];
+      saveDevis();
+      renderDevis();
+    }
+
+    function updateQty(productId, newQty) {
+      const q = Math.max(1, Math.min(99, parseInt(newQty) || 1));
+      state.devis[productId] = q;
+      saveDevis();
+      renderDevis();
+    }
+
+    function computeTotal() {
+      let total = 0;
+      for (const [productId, qty] of Object.entries(state.devis)) {
+        const product = PRODUCTS.find((p) => p.id === parseInt(productId));
+        if (product) total += product.price * qty;
+      }
+      return total;
+    }
+
+    function renderDevis() {
+      const entries = Object.entries(state.devis);
+      const isEmpty = entries.length === 0;
+
+      if (isEmpty) {
+        $('#devisList').innerHTML = '<p class="muted center">Votre devis est vide. <a href="#produits">Ajouter des produits</a></p>';
+        $('#devisTotal').textContent = '0 €';
+        return;
+      }
+
+      $('#devisList').innerHTML = entries
+        .map(([productId, qty]) => {
+          const product = PRODUCTS.find((p) => p.id === parseInt(productId));
+          if (!product) return '';
+          return `
+          <div class="devis-item">
+            <div>
+              <strong>${product.name}</strong>
+              <p class="muted">${product.price} € × ${qty}</p>
+            </div>
+            <div style="display: flex; gap: 8px; align-items: center;">
+              <input type="number" min="1" max="99" value="${qty}" 
+                     onchange="updateQty(${productId}, this.value)" 
+                     style="width: 60px;" />
+              <button class="btn secondary" onclick="removeFromDevis(${productId})">Retirer</button>
+            </div>
+          </div>
+        `;
+        })
+        .join('');
+
+      $('#devisTotal').textContent = `${computeTotal()} €`;
+    }
+
+    function clearDevis() {
+      if (confirm('Êtes-vous sûr ? Le devis sera vidé.')) {
+        state.devis = {};
+        saveDevis();
+        renderDevis();
+      }
+    }
+
+    function printDevis() {
+      window.print();
+    }
+
+    function submitDevisForm(event) {
+      event.preventDefault();
+
+      const name = $('#devisName').value.trim();
+      const email = $('#devisEmail').value.trim();
+      const type = $('#devisType').value;
+      const need = $('#devisNeed').value.trim();
+      const consent = $('#devisConsent').checked;
+
+      if (!consent) {
+        alert('Veuillez accepter les conditions.');
+        return;
+      }
+
+      const items = Object.entries(state.devis)
+        .map(([productId, qty]) => {
+          const product = PRODUCTS.find((p) => p.id === parseInt(productId));
+          return `- ${product.name} (x${qty}) : ${product.price * qty} €`;
+        })
+        .join('\n');
+
+      const subject = `Demande de devis — ${name}`;
+      const body = `
+Bonjour Salapex,
+
+Je souhaite un devis.
+
+Profil : ${type}
+Nom : ${name}
+Email : ${email}
+
+Produits sélectionnés :
+${items || 'Aucun produit sélectionné'}
+
+Total indicatif : ${computeTotal()} €
+
+${need ? `Besoin / contexte :\n${need}` : 'Besoin : (non précisé)'}
+
+Merci,
+${name}
+      `.trim();
+
+      window.location.href = `mailto:contact@salapex.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // ============================================
+    // ÉQUIPE & FICHES
+    // ============================================
+
+    function renderTeam() {
+      $('#teamGrid').innerHTML = TEAM.map((member, idx) => {
+        return `
+        <article class="member">
+          <h3>${member.name}</h3>
+          <p class="role">${member.role}</p>
+          <p class="muted" style="font-size: 0.9rem; margin: 8px 0;">${member.summary}</p>
+          <a href="${member.pdfFile}" target="_blank" class="btn" style="display: inline-block; margin-top: 8px; font-size: 0.9rem;">
+            📄 Voir la fiche (PDF)
+          </a>
+        </article>
+      `;
+      }).join('');
+    }
+
+    // ============================================
+    // FAQ
+    // ============================================
+
+    function renderFAQ() {
+      $('#faqContainer').innerHTML = FAQ.map((item, idx) => {
+        return `
+        <div class="faq-item">
+          <div class="faq-question" onclick="toggleFAQ(${idx})">
+            <span>${item.q}</span>
+            <span style="font-size: 1.2rem;">▼</span>
+          </div>
+          <div class="faq-answer" id="faq-${idx}">
+            ${item.a}
+          </div>
+        </div>
+      `;
+      }).join('');
+    }
+
+    function toggleFAQ(idx) {
+      const btn = event.target.closest('.faq-question');
+      const ans = $(`#faq-${idx}`);
+
+      btn.classList.toggle('active');
+      ans.classList.toggle('active');
+    }
+
+    // ============================================
+    // CONTACT
+    // ============================================
+
+    function submitContactForm(event) {
+      event.preventDefault();
+
+      const name = $('#contactName').value.trim();
+      const email = $('#contactEmail').value.trim();
+      const subject = $('#contactSubject').value.trim();
+      const msg = $('#contactMessage').value.trim();
+      const consent = $('#contactConsent').checked;
+
+      if (!consent) {
+        alert('Veuillez accepter les conditions.');
+        return;
+      }
+
+      const body = `
+Bonjour Salapex,
+
+Nom : ${name}
+Email : ${email}
+Sujet : ${subject}
+
+Message :
+${msg}
+      `.trim();
+
+      window.location.href = `mailto:contact@salapex.fr?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    }
+
+    // ============================================
+    // INIT
+    // ============================================
+
+    document.addEventListener('DOMContentLoaded', () => {
+      loadDevis();
+      renderChips();
+      renderProducts();
+      renderDevis();
+      renderTeam();
+      renderFAQ();
+
+      // Search input
+      $('#searchInput').addEventListener('input', (e) => {
+        state.search = e.target.value;
+        renderProducts();
+      });
+    });
+  </script>
+</body>
+</html>
