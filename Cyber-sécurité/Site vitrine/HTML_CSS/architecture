@@ -1,7 +1,6 @@
 / HTML_CSS
 ├─ assets/
 │  ├─ img/
-│  │  ├─ hero.jpg
 │  │  ├─ logo-salapex.jpg
 │  │  └─ organigramme.jpg
 │  └─ pdf/
@@ -11,4 +10,6 @@
 │     ├─ fiche-poste-production.pdf
 │     └─ fiche-poste-technicien-it.pdf
 ├─ index.html
+├─ mentions-legales.html
+├─ politique-confidentialite.html
 └─ style.css
