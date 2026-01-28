@@ -6,15 +6,12 @@
   <title>Salapex — La technologie simplifiée</title>
   <meta name="description" content="Salapex : ordinateurs prêts à l’emploi, accessoires ergonomiques et packs tout-en-un pour particuliers et petites entreprises." />
   <meta name="theme-color" content="#047857" />
-
-  <!-- Tailwind CSS (CDN) -->
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-  <!-- Styles custom (thème deep emerald + modales + print) -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-200/80 selection:text-slate-900">
-  <!-- Skip link -->
   <a href="#contenu" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[999] focus:bg-white focus:text-slate-900 focus:px-4 focus:py-2 focus:rounded-xl focus:shadow">Aller au contenu</a>
 
   <!-- Header -->
@@ -65,8 +62,8 @@
     </div>
   </header>
 
+  <!-- Accueil -->
   <main id="contenu" class="mx-auto max-w-6xl px-4">
-    <!-- Hero / Accueil -->
     <section id="accueil" class="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
       <div class="absolute inset-0 bg-grid opacity-[.35]" aria-hidden="true"></div>
       <div class="relative grid gap-8 p-7 md:grid-cols-2 md:p-10">
@@ -216,7 +213,7 @@
       </div>
     </section>
 
-    <!-- Produits (primordial) -->
+    <!-- Produits -->
     <section id="produits" class="mt-12">
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
@@ -229,8 +226,8 @@
         </div>
       </div>
 
+      <!-- Filters -->
       <div class="mt-6 grid gap-4 lg:grid-cols-12">
-        <!-- Filters -->
         <aside class="no-print lg:col-span-4">
           <div class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm">
             <div class="flex items-center justify-between">
@@ -312,7 +309,7 @@
       </div>
     </section>
 
-    <!-- Devis rapide (panier) -->
+    <!-- Devis rapide -->
     <section id="devis" class="mt-12">
       <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
@@ -321,7 +318,6 @@
             <p class="mt-2 max-w-3xl text-slate-600">Ajoutez des produits, décrivez votre besoin, puis envoyez. Vous pouvez aussi imprimer une fiche.</p>
           </div>
           <div class="no-print flex flex-wrap gap-2">
-            <button id="printDevisBtn" class="rounded-2xl bg-slate-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-slate-800">Imprimer</button>
             <button id="clearDevisBtn" class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50">Vider</button>
           </div>
         </div>
@@ -395,11 +391,11 @@
     <section id="entreprise" class="mt-12">
       <div class="flex flex-col gap-2">
         <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Entreprise</h2>
-        <p class="max-w-3xl text-slate-600">Découvrez l’histoire, l’équipe, et une proposition d’architecture du site (structure recommandée).</p>
+        <p class="max-w-3xl text-slate-600">Découvrez l’histoire, l’équipe, et une proposition d’architecture du site.</p>
       </div>
 
+      <!-- Histoire -->
       <div class="mt-6 grid gap-6 lg:grid-cols-12">
-        <!-- Histoire -->
         <article class="lg:col-span-7 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
           <h3 class="text-lg font-extrabold">Notre histoire</h3>
           <p class="mt-2 text-sm text-slate-600">Une entreprise née d’une frustration simple : perdre du temps sur la configuration.</p>
@@ -433,9 +429,9 @@
           </ol>
         </article>
 
-        <!-- Architecture proposée -->
+        <!-- Architecture -->
         <aside class="lg:col-span-5 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <h3 class="text-lg font-extrabold">Architecture du site (proposée)</h3>
+          <h3 class="text-lg font-extrabold">Architecture du site</h3>
           <p class="mt-2 text-sm text-slate-600">Une structure claire, orientée produits, avec pages légales.</p>
 
           <div class="mt-5 rounded-2xl bg-slate-50 p-4 ring-1 ring-slate-100">
@@ -450,19 +446,14 @@
               <li>• Mentions légales + Politique de confidentialité</li>
             </ul>
           </div>
-
-          <div class="mt-4 rounded-2xl bg-blue-50 p-4 ring-1 ring-blue-100">
-            <div class="text-sm font-extrabold text-blue-900">Version actuelle</div>
-            <p class="mt-1 text-sm text-blue-900/80">Vous aviez une architecture multi-pages. Ici, je fournis une version one-page (démo) qui regroupe tout — tout en conservant une structure “par sections”.</p>
-          </div>
         </aside>
       </div>
 
-      <!-- Équipe + fiches de postes -->
+      <!-- Équipe -->
       <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <div class="flex flex-col gap-2 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h3 class="text-lg font-extrabold">Notre équipe (fiches de postes)</h3>
+            <h3 class="text-lg font-extrabold">Notre équipe</h3>
             <p class="mt-1 text-sm text-slate-600">Cliquez sur un rôle pour consulter les missions et compétences, ou ouvrir la fiche PDF.</p>
           </div>
           <div class="no-print flex flex-wrap gap-2">
@@ -473,16 +464,13 @@
 
         <div class="mt-6 rounded-3xl bg-slate-50 p-5 ring-1 ring-slate-100">
           <div class="text-sm font-extrabold text-slate-900">Documents (PDF)</div>
-          <p class="mt-1 text-sm text-slate-600">Placez vos fichiers dans <code>assets/pdf/</code> puis mettez à jour les chemins ci-dessous si besoin.</p>
           <div class="no-print mt-4 flex flex-wrap gap-2" id="pdfLinks">
-            <!-- Remplacez les noms des fichiers par les vôtres -->
             <button data-doc-open="assets/pdf/fiche-poste-pdg.pdf" data-doc-title="Fiche de poste — PDG" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — PDG</button>
             <button data-doc-open="assets/pdf/fiche-poste-marketing.pdf" data-doc-title="Fiche de poste — Responsable Marketing" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Marketing</button>
             <button data-doc-open="assets/pdf/fiche-poste-production.pdf" data-doc-title="Fiche de poste — Responsable Production" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Production</button>
             <button data-doc-open="assets/pdf/fiche-poste-admin.pdf" data-doc-title="Fiche de poste — Support administratif" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — Administratif</button>
             <button data-doc-open="assets/pdf/fiche-poste-technicien-it.pdf" data-doc-title="Fiche de poste — Technicien(ne) IT" class="rounded-2xl bg-emerald-900 px-4 py-2 text-sm font-extrabold text-white hover:bg-emerald-800">Fiche PDF — IT</button>
           </div>
-          <p class="mt-3 text-xs text-slate-500">Si un PDF est manquant, la modale affichera un message d’erreur. (Ceci est normal en démo.)</p>
         </div>
 
         <div id="teamGrid" class="mt-6 grid gap-4 md:grid-cols-2"></div>
@@ -553,9 +541,8 @@
               </dl>
 
               <div class="mt-5 overflow-hidden rounded-3xl ring-1 ring-slate-200">
-                <iframe title="Carte (exemple)" class="h-56 w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=2.337%2C48.853%2C2.357%2C48.863&layer=mapnik"></iframe>
+                <div id="map" class="h-56 w-full rounded-3xl"></div>
               </div>
-              <p class="mt-3 text-xs text-slate-500">Carte indicative (démo).</p>
             </div>
           </aside>
         </div>
@@ -589,7 +576,6 @@
 
       <div class="mt-6 flex flex-col gap-2 border-t border-slate-200 pt-6 text-xs text-slate-500 md:flex-row md:items-center md:justify-between">
         <p>© <span id="year"></span> Salapex — Tous droits réservés.</p>
-        <p>Démo one-page : pages légales à prévoir (mentions légales, confidentialité).</p>
       </div>
     </div>
   </footer>
@@ -895,7 +881,7 @@
       category: 'Tous',
       usecase: 'Tous',
       modalId: null,
-      devis: {} // {id: qty}
+      devis: {}
     };
 
     // ---------- DOM ----------
@@ -927,7 +913,6 @@
     const devisEmpty = $('#devisEmpty');
     const devisTotal = $('#devisTotal');
     const clearDevisBtn = $('#clearDevisBtn');
-    const printDevisBtn = $('#printDevisBtn');
     const printDate = $('#printDate');
     const printItems = $('#printItems');
     const printTotal = $('#printTotal');
@@ -1192,12 +1177,7 @@
       toast(devisToast, 'Devis vidé.', 2000);
     });
 
-    printDevisBtn.addEventListener('click', () => {
-      renderDevis();
-      window.print();
-    });
-
-    // ---------- Forms (mailto demo) ----------
+    // ---------- Forms ----------
     function buildDevisEmail(){
       const entries = Object.entries(state.devis);
       const items = entries.map(([id, qty]) => {
@@ -1362,7 +1342,7 @@
         .replaceAll("'",'&#039;');
     }
 
-    // ---------- Navigation (mobile + back to top) ----------
+    // ---------- Navigation ----------
     const menuBtn = $('#menuBtn');
     const mobileNav = $('#mobileNav');
     menuBtn?.addEventListener('click', () => {
@@ -1432,6 +1412,36 @@
     const params = new URLSearchParams(location.search);
     const openId = params.get('product');
     if (openId && PRODUCTS.some(p => p.id === openId)) openModal(openId);
+
+    // Sélectionne tous les boutons qui possèdent l'attribut data-doc-open
+    document.querySelectorAll("[data-doc-open]").forEach(button => {
+      button.addEventListener("click", () => {
+        const url = button.getAttribute("data-doc-open");
+        const title = button.getAttribute("data-doc-title") || "Document";
+        window.open(url, "_blank");
+      });
+    });
+
+    // ----------- Carte OpenStreetMap (Leaflet) -------------
+    function initMap() {
+      const lat = 47.2380;
+      const lon = 6.0243;
+
+      const map = L.map('map').setView([lat, lon], 15);
+
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        attribution: '© OpenStreetMap'
+      }).addTo(map);
+
+      L.marker([lat, lon])
+        .addTo(map)
+        .bindPopup("<b>Salapex</b><br>1 Rue Mégevand<br>25000 Besançon")
+        .openPopup();
+    }
+
+    document.addEventListener("DOMContentLoaded", initMap);
+
   </script>
 </body>
 </html>

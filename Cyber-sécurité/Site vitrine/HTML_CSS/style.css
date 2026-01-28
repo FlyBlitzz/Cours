@@ -1,13 +1,9 @@
-/* Salapex — styles custom (en complément de Tailwind CDN)
-   Objectif : thème “deep emerald”, accessibilité (focus), modales, impression.
-*/
-
 :root{
   color-scheme: light dark;
-  --brand: #065f46;            /* emerald-800 */
-  --brand-600: #059669;        /* emerald-600 */
-  --brand-700: #047857;        /* emerald-700 */
-  --brand-900: #064e3b;        /* emerald-900 */
+  --brand: #065f46;
+  --brand-600: #059669;
+  --brand-700: #047857;
+  --brand-900: #064e3b;
   --focus: rgba(5, 150, 105, .85);
 }
 
@@ -34,18 +30,13 @@ html{ scroll-behavior: smooth; }
   to { transform: translateY(0); opacity: 1; }
 }
 
-/* Print (devis) */
+/* Print */
 @media print{
   header, nav, .no-print, footer{ display:none !important; }
   body{ background: #fff !important; }
   .print-area{ display:block !important; }
   .print-card{ break-inside: avoid; }
 }
-
-/* ------------------------------------------------------------
-   Thème deep emerald (surcharge des utilitaires Tailwind “bleus”)
-   Objectif : garder le HTML tel quel tout en harmonisant la charte.
------------------------------------------------------------- */
 
 /* Backgrounds */
 .bg-blue-700{ background-color: var(--brand-700) !important; }
@@ -65,9 +56,23 @@ html{ scroll-behavior: smooth; }
 .ring-blue-100{ --tw-ring-color: rgba(5, 150, 105, .22) !important; }
 .border-blue-500{ border-color: rgba(5, 150, 105, .75) !important; }
 
-/* Gradients (quelques cas fréquents) */
+/* Gradients */
 .from-blue-50{ --tw-gradient-from: rgba(5, 150, 105, .10) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(5, 150, 105, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
 .to-indigo-50{ --tw-gradient-to: rgba(6, 95, 70, .10) var(--tw-gradient-to-position) !important; }
 
 /* Sélection */
 ::selection{ background: rgba(16, 185, 129, .25); color: #0f172a; }
+
+@import url("css/styles.css");
+
+/* Variantes Tailwind contenant des slashs */
+.text-blue-900\/80{ color: rgba(6, 95, 70, .8) !important; }
+.text-blue-900\/70{ color: rgba(6, 95, 70, .7) !important; }
+
+/* Ring utilisé par certains composants */
+.ring-blue-700{ --tw-ring-color: rgba(4, 120, 87, 1) !important; }
+
+/* Gradients restants */
+.to-blue-900{ --tw-gradient-to: rgba(6, 78, 59, 1) var(--tw-gradient-to-position) !important; }
+.via-blue-600{ --tw-gradient-via: rgba(5, 150, 105, 1) var(--tw-gradient-via-position) !important; }
+.from-blue-700{ --tw-gradient-from: rgba(4, 120, 87, 1) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(4, 120, 87, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
