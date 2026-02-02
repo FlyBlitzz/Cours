@@ -1,78 +1,159 @@
-:root{
+/*
+ * Salapex — Styles personnalisés
+ * Thème : Deep Emerald
+ * Complément de Tailwind CSS (CDN)
+ */
+
+/* ============================================
+   Variables CSS & Configuration
+   ============================================ */
+:root {
   color-scheme: light dark;
-  --brand: #065f46;
-  --brand-600: #059669;
-  --brand-700: #047857;
-  --brand-900: #064e3b;
+  --brand: #065f46;            /* emerald-800 */
+  --brand-600: #059669;        /* emerald-600 */
+  --brand-700: #047857;        /* emerald-700 */
+  --brand-900: #064e3b;        /* emerald-900 */
   --focus: rgba(5, 150, 105, .85);
 }
 
-html{ scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
-/* Focus visible */
-:focus-visible{
+/* ============================================
+   Accessibilité — Focus visible
+   ============================================ */
+:focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-/* Subtle background pattern */
-.bg-grid{
+/* ============================================
+   Motif de fond subtil
+   ============================================ */
+.bg-grid {
   background-image:
     radial-gradient(circle at 1px 1px, rgba(148,163,184,.35) 1px, transparent 0);
   background-size: 18px 18px;
 }
 
-/* Modal animation */
-.modal-enter{ animation: modalIn .18s ease-out; }
-@keyframes modalIn{
-  from { transform: translateY(10px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
+/* ============================================
+   Animation des modales
+   ============================================ */
+.modal-enter {
+  animation: modalIn .18s ease-out;
 }
 
-/* Print */
-@media print{
-  header, nav, .no-print, footer{ display:none !important; }
-  body{ background: #fff !important; }
-  .print-area{ display:block !important; }
-  .print-card{ break-inside: avoid; }
+@keyframes modalIn {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-/* Backgrounds */
-.bg-blue-700{ background-color: var(--brand-700) !important; }
-.bg-blue-800{ background-color: var(--brand-900) !important; }
-.bg-blue-50{ background-color: rgba(5, 150, 105, .10) !important; }
+/* ============================================
+   Impression (devis, fiches)
+   ============================================ */
+@media print {
+  header,
+  nav,
+  .no-print,
+  footer {
+    display: none !important;
+  }
+  body {
+    background: #fff !important;
+  }
+  .print-area {
+    display: block !important;
+  }
+  .print-card {
+    break-inside: avoid;
+  }
+}
 
-/* Text */
-.text-blue-700{ color: var(--brand-700) !important; }
-.text-blue-800{ color: var(--brand-900) !important; }
-.text-blue-900{ color: var(--brand-900) !important; }
+/* ============================================
+   Sélection de texte
+   ============================================ */
+::selection {
+  background: rgba(16, 185, 129, .25);
+  color: #0f172a;
+}
 
-/* Hover */
-.hover\:bg-blue-800:hover{ background-color: var(--brand-900) !important; }
-.hover\:text-blue-800:hover{ color: var(--brand-900) !important; }
+/* ============================================
+   Thème Deep Emerald
+   Surcharge des utilitaires Tailwind "bleus"
+   ============================================ */
 
-/* Rings / borders */
-.ring-blue-100{ --tw-ring-color: rgba(5, 150, 105, .22) !important; }
-.border-blue-500{ border-color: rgba(5, 150, 105, .75) !important; }
+/* --- Backgrounds --- */
+.bg-blue-700 {
+  background-color: var(--brand-700) !important;
+}
+.bg-blue-800 {
+  background-color: var(--brand-900) !important;
+}
+.bg-blue-50 {
+  background-color: rgba(5, 150, 105, .10) !important;
+}
 
-/* Gradients */
-.from-blue-50{ --tw-gradient-from: rgba(5, 150, 105, .10) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(5, 150, 105, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
-.to-indigo-50{ --tw-gradient-to: rgba(6, 95, 70, .10) var(--tw-gradient-to-position) !important; }
+/* --- Texte --- */
+.text-blue-700 {
+  color: var(--brand-700) !important;
+}
+.text-blue-800 {
+  color: var(--brand-900) !important;
+}
+.text-blue-900 {
+  color: var(--brand-900) !important;
+}
+.text-blue-900\/80 {
+  color: rgba(6, 95, 70, .8) !important;
+}
+.text-blue-900\/70 {
+  color: rgba(6, 95, 70, .7) !important;
+}
 
-/* Sélection */
-::selection{ background: rgba(16, 185, 129, .25); color: #0f172a; }
+/* --- Hover --- */
+.hover\:bg-blue-800:hover {
+  background-color: var(--brand-900) !important;
+}
+.hover\:text-blue-800:hover {
+  color: var(--brand-900) !important;
+}
 
-@import url("css/styles.css");
+/* --- Rings / Borders --- */
+.ring-blue-100 {
+  --tw-ring-color: rgba(5, 150, 105, .22) !important;
+}
+.ring-blue-700 {
+  --tw-ring-color: rgba(4, 120, 87, 1) !important;
+}
+.border-blue-500 {
+  border-color: rgba(5, 150, 105, .75) !important;
+}
 
-/* Variantes Tailwind contenant des slashs */
-.text-blue-900\/80{ color: rgba(6, 95, 70, .8) !important; }
-.text-blue-900\/70{ color: rgba(6, 95, 70, .7) !important; }
-
-/* Ring utilisé par certains composants */
-.ring-blue-700{ --tw-ring-color: rgba(4, 120, 87, 1) !important; }
-
-/* Gradients restants */
-.to-blue-900{ --tw-gradient-to: rgba(6, 78, 59, 1) var(--tw-gradient-to-position) !important; }
-.via-blue-600{ --tw-gradient-via: rgba(5, 150, 105, 1) var(--tw-gradient-via-position) !important; }
-.from-blue-700{ --tw-gradient-from: rgba(4, 120, 87, 1) var(--tw-gradient-from-position) !important; --tw-gradient-to: rgba(4, 120, 87, 0) var(--tw-gradient-to-position) !important; --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important; }
+/* --- Gradients --- */
+.from-blue-50 {
+  --tw-gradient-from: rgba(5, 150, 105, .10) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(5, 150, 105, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.from-blue-700 {
+  --tw-gradient-from: rgba(4, 120, 87, 1) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(4, 120, 87, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+}
+.via-blue-600 {
+  --tw-gradient-via: rgba(5, 150, 105, 1) var(--tw-gradient-via-position) !important;
+}
+.to-indigo-50 {
+  --tw-gradient-to: rgba(6, 95, 70, .10) var(--tw-gradient-to-position) !important;
+}
+.to-blue-900 {
+  --tw-gradient-to: rgba(6, 78, 59, 1) var(--tw-gradient-to-position) !important;
+}

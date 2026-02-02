@@ -1,1 +1,0 @@
-- le fichier index.html 100% html, le fichier style.css 100% css et faire un fichier main.js pour mettre tous les script -> le but est que tous soit mieux organisé
