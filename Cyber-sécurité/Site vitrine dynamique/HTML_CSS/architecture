@@ -9,6 +9,11 @@
 │     ├─ fiche-poste-pdg.pdf
 │     ├─ fiche-poste-production.pdf
 │     └─ fiche-poste-technicien-it.pdf
+├─ php/
+│  ├─ config/
+│  │  └─ database.php
+│  └─ db/
+│     └─ connexion.php
 ├─ index.html
 ├─ main.js
 ├─ mentions-legales.html
