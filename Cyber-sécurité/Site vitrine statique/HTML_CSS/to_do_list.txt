@@ -1,0 +1,2 @@
+- Transfert du maint.js dans style.css
+- Explication de tout le code
