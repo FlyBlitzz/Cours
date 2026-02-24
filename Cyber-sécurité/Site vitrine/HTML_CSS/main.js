@@ -827,10 +827,82 @@ function initMap() {
     attribution: '© OpenStreetMap'
   }).addTo(map);
 
-  L.marker([lat, lon])
+  const marker = L.marker([lat, lon])
     .addTo(map)
     .bindPopup("<b>Salapex</b><br>1 Rue Mégevand<br>25000 Besançon")
     .openPopup();
+
+  // Animation au clic
+  marker.on('click', () => {
+    marker._icon.classList.add('jump');
+    setTimeout(() => marker._icon.classList.remove('jump'), 600);
+  });
+
+  // Bouton Google Maps – en haut à droite
+  L.Control.Itineraire = L.Control.extend({
+    onAdd: function () {
+      const btn = L.DomUtil.create('a', 'leaflet-bar');
+      btn.innerHTML = '📍';
+      btn.href = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+      btn.target = "_blank";
+      btn.title = "Ouvrir dans Google Maps";
+      btn.style.textDecoration = "none";
+      btn.style.fontSize = "24px";
+      btn.style.padding = "4px 8px";
+      return btn;
+    }
+  });
+
+  L.control.itineraire = function(opts){ return new L.Control.Itineraire(opts); }
+  L.control.itineraire({ position: 'topright' }).addTo(map);
+
+  // Géolocalisation utilisateur
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      (pos) => {
+        const userLat = pos.coords.latitude;
+        const userLon = pos.coords.longitude;
+
+        // Marker utilisateur
+        L.marker([userLat, userLon], {
+          title: "Vous êtes ici"
+        })
+        .addTo(map)
+        .bindPopup("📍 Vous êtes ici")
+        .openPopup();
+
+        // Zoom automatique
+        map.flyTo([userLat, userLon], 15, { duration: 1.2 });
+      },
+      () => {
+        console.warn("Localisation refusée");
+      }
+    );
+  }
 }
 
 document.addEventListener("DOMContentLoaded", initMap);
+
+// ====================
+// Theme (clair / sombre)
+// ====================
+(function() {
+  const toggle = document.getElementById('themeToggle');
+
+  // état initial depuis localStorage
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark') {
+    document.body.classList.add('dark');
+    if (toggle) toggle.textContent = '☀️';
+  } else {
+    if (toggle) toggle.textContent = '🌙';
+  }
+
+  // clic
+  toggle?.addEventListener('click', () => {
+    document.body.classList.toggle('dark');
+    const isDark = document.body.classList.contains('dark');
+    localStorage.setItem('theme', isDark ? 'dark' : 'light');
+    toggle.textContent = isDark ? '☀️' : '🌙';
+  });
+})();

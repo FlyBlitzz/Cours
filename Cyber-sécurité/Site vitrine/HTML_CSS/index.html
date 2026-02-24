@@ -7,6 +7,8 @@
   <meta name="description" content="Salapex : ordinateurs prêts à l’emploi, accessoires ergonomiques et packs tout-en-un pour particuliers et petites entreprises." />
   <meta name="theme-color" content="#047857" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css">
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 selection:bg-blue-200/80 selection:text-slate-900">
@@ -41,7 +43,7 @@
             <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#entreprise">Entreprise</a></li>
             <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10" href="#contact">Contact</a></li>
             <li>
-              <a class="rounded-xl bg-white text-blue-700 px-3 py-2 text-sm font-extrabold shadow hover:bg-slate-50" href="#devis">Devis rapide</a>
+              <a class="rounded-2xl btn-gold px-3 py-2 text-sm font-extrabold shadow" href="#devis">Devis rapide</a>
             </li>
           </ul>
         </nav>
@@ -57,6 +59,9 @@
           <a class="rounded-xl bg-white px-3 py-2 text-sm font-extrabold text-blue-700 shadow hover:bg-slate-50" href="#devis">Devis rapide</a>
         </div>
       </nav>
+      <button id="themeToggle" class="btn btn-outline" style="margin-left:1rem;">
+        🌙
+      </button>
     </div>
   </header>
 
@@ -67,7 +72,7 @@
       <div class="relative grid gap-8 p-7 md:grid-cols-2 md:p-10">
         <div class="flex flex-col justify-center">
           <p class="inline-flex w-fit items-center gap-2 rounded-full bg-blue-50 px-4 py-2 text-sm font-semibold text-blue-700 ring-1 ring-blue-100">
-            <span class="h-2 w-2 rounded-full bg-blue-600"></span>
+            <span class="h-2 w-2 rounded-full bg-gold"></span>
             Ordinateurs prêts à l’emploi • Ergonomie • Packs tout-en-un
           </p>
           <h1 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-900 md:text-5xl">
@@ -102,7 +107,7 @@
               <h2 class="text-xl font-extrabold">Ce que vous recevez</h2>
               <p class="mt-1 text-sm text-white/80">Un poste de travail prêt à produire dès le premier jour.</p>
             </div>
-            <span class="rounded-2xl bg-white/10 px-3 py-1 text-xs font-bold ring-1 ring-white/15">Pack</span>
+            <span class="badge-gold">Pack</span>
           </div>
 
           <ul class="mt-5 grid gap-3">
@@ -134,7 +139,7 @@
     <section id="activite" class="mt-12">
       <div class="flex items-end justify-between gap-4">
         <div>
-          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Notre activité</h2>
+          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Notre activité</h2>
           <p class="mt-2 max-w-3xl text-slate-600">
             Nous combinons matériel, configuration et ergonomie pour réduire les frictions au quotidien — à la maison comme au bureau.
           </p>
@@ -205,7 +210,7 @@
               <li>• Migration vers un nouveau PC</li>
               <li>• Prévention fatigue & douleurs</li>
             </ul>
-            <a href="#produits" class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800">Voir les packs</a>
+            <a href="#produits" class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl btn-gold px-5 py-3 text-sm font-extrabold shadow">Voir les packs</a>
           </aside>
         </div>
       </div>
@@ -215,7 +220,7 @@
     <section id="produits" class="mt-12">
       <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
         <div>
-          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Produits & packs</h2>
+          <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Produits &amp; packs</h2>
           <p class="mt-2 max-w-3xl text-slate-600">Filtrez, comparez, puis ajoutez au devis. Les prix sont indicatifs : un conseiller finalise selon vos besoins.</p>
         </div>
         <div class="no-print flex gap-2">
@@ -269,7 +274,7 @@
             <h3 class="text-lg font-extrabold">Comparatif rapide (packs)</h3>
             <p class="mt-1 text-sm text-slate-600">Pour aller vite, voici 3 profils fréquents.</p>
           </div>
-          <a href="#devis" class="no-print text-sm font-extrabold text-blue-700 hover:text-blue-800">Ajouter un pack au devis →</a>
+          <a href="#devis" class="no-print text-sm font-extrabold text-gold hover:opacity-90">Ajouter un pack au devis →</a>
         </div>
 
         <div class="mt-5 overflow-x-auto">
@@ -312,7 +317,7 @@
       <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <div class="flex flex-col gap-3 sm:flex-row sm:items-end sm:justify-between">
           <div>
-            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Devis rapide</h2>
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Devis rapide</h2>
             <p class="mt-2 max-w-3xl text-slate-600">Ajoutez des produits, décrivez votre besoin, puis envoyez. Vous pouvez aussi imprimer une fiche.</p>
           </div>
           <div class="no-print flex flex-wrap gap-2">
@@ -375,9 +380,6 @@
               </div>
 
               <button class="no-print mt-5 inline-flex w-full items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800" type="submit">Envoyer</button>
-              <p class="mt-3 text-xs text-slate-500">
-                En production, on brancherait un backend (ou un service de formulaire).
-              </p>
 
               <div id="devisToast" class="mt-4 hidden rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900 ring-1 ring-emerald-100"></div>
             </form>
@@ -389,7 +391,7 @@
     <!-- Entreprise : histoire + équipe + architecture -->
     <section id="entreprise" class="mt-12">
       <div class="flex flex-col gap-2">
-        <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Entreprise</h2>
+        <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Entreprise</h2>
         <p class="max-w-3xl text-slate-600">Découvrez l’histoire, l’équipe, et l’architecture du site.</p>
       </div>
 
@@ -487,7 +489,7 @@
       <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
         <div class="grid gap-6 lg:grid-cols-12">
           <div class="lg:col-span-7">
-            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl">Contact</h2>
+            <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Contact</h2>
             <p class="mt-2 max-w-2xl text-slate-600">Une question, une demande de recommandation, ou un devis ? Écrivez-nous.</p>
 
             <form id="contactForm" class="mt-6">
@@ -516,8 +518,6 @@
               <button class="no-print mt-5 inline-flex items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800" type="submit">Envoyer</button>
 
               <div id="contactToast" class="mt-4 hidden rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900 ring-1 ring-emerald-100"></div>
-
-              <p class="mt-3 text-xs text-slate-500">Réponse sous 24–48h ouvrées. En production, ajout d’un backend.</p>
             </form>
           </div>
 
@@ -540,7 +540,7 @@
               </dl>
 
               <div class="mt-5 overflow-hidden rounded-3xl ring-1 ring-slate-200">
-                <iframe title="Carte (exemple)" class="h-56 w-full" loading="lazy" referrerpolicy="no-referrer-when-downgrade" src="https://www.openstreetmap.org/export/embed.html?bbox=2.337%2C48.853%2C2.357%2C48.863&layer=mapnik"></iframe>
+                <div id="map" class="map h-56 w-full"></div>
               </div>
             </div>
           </aside>
