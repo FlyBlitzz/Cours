@@ -287,11 +287,6 @@ body.dark td {
   color: #e2e8f0;
 }
 
-/* Map Leaflet */
-body.dark .leaflet-container {
-  filter: brightness(0.6) contrast(1.2);
-}
-
 /* fonds blancs / gris clair -> gris nuit */
 body.dark .bg-white,
 body.dark .bg-slate-50 {
@@ -332,22 +327,6 @@ body.dark .text-slate-700 {
   color: #e2e8f0 !important;
 }
 
-/* Leaflet buttons in dark mode */
-body.dark .leaflet-control-zoom a {
-  background-color: #fff !important;
-  color: #000 !important;
-  border: 1px solid #334155 !important;
-}
-
-body.dark .leaflet-control-zoom a:hover {
-  background-color: #e5e7eb !important;
-}
-
-/* Animation du marker (petit saut) */
-.leaflet-marker-icon.jump {
-  animation: jump 0.6s ease;
-}
-
 @keyframes jump {
   0%   { transform: translateY(0); }
   30%  { transform: translateY(-10px); }
@@ -355,27 +334,71 @@ body.dark .leaflet-control-zoom a:hover {
   100% { transform: translateY(0); }
 }
 
-/* Popup moderne */
-.leaflet-popup-content-wrapper,
-.leaflet-popup-tip {
-  background: #ffffff;
-  color: #1e293b;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0,0,0,.2);
+/* ============================================
+   Catalogue statique : filtres Catégorie + Usage (CSS :has())
+   ============================================ */
+
+/* Conteneur du catalogue */
+.catalog {
+  /* rien d'obligatoire ici, juste un hook pour :has() */
 }
 
-/* Popup en mode sombre */
-body.dark .leaflet-popup-content-wrapper,
-body.dark .leaflet-popup-tip {
-  background: #1e293b !important;
-  color: #e2e8f0 !important;
-  border: 1px solid #334155;
+/* Groupe de chips (radios) */
+.chips { display:flex; flex-wrap:wrap; gap:.5rem; }
+.chips input { position:absolute; left:-9999px; }
+.chip {
+  display:inline-block; padding:.4rem .7rem; border-radius:999px;
+  font-weight:800; font-size:.8rem; background:#eef2f6; color:#334155;
+  border:1px solid #e2e8f0; cursor:pointer; user-select:none;
+}
+.chips input:checked + .chip {
+  background: var(--brand-700); color:#fff; border-color: var(--brand-700);
 }
 
-/* Boutons zoom Leaflet – mode sombre */
-body.dark .leaflet-control-zoom a {
-  background-color: #ffffff !important;
-  color: #000 !important;
-  border: 1px solid #475569 !important;
-  font-weight: 900 !important;
+/* Grille produits : on part du principe qu'ils sont visibles,
+   puis on CACHE ce qui ne matche pas selon les radios cochés. */
+.catalog .product { display:block; }
+
+/* --- Catégories --- */
+.catalog:has(#cat-packs:checked)        .product:not(.cat-packs) { display:none; }
+.catalog:has(#cat-ordinateurs:checked)  .product:not(.cat-ordinateurs) { display:none; }
+.catalog:has(#cat-accessoires:checked)  .product:not(.cat-accessoires) { display:none; }
+/* Tous (par défaut) -> rien à cacher */
+
+/* --- Usages --- (intersection générique) */
+.catalog:has(#use-bureautique:checked)       .product:not(.use-bureautique) { display:none; }
+.catalog:has(#use-visioconference:checked)   .product:not(.use-visioconference) { display:none; }
+.catalog:has(#use-teletravail:checked)       .product:not(.use-teletravail) { display:none; }
+.catalog:has(#use-confort:checked)           .product:not(.use-confort) { display:none; }
+.catalog:has(#use-petite-entreprise:checked) .product:not(.use-petite-entreprise) { display:none; }
+.catalog:has(#use-productivite:checked)      .product:not(.use-productivite) { display:none; }
+.catalog:has(#use-migration:checked)         .product:not(.use-migration) { display:none; }
+.catalog:has(#use-simplicite:checked)        .product:not(.use-simplicite) { display:none; }
+.catalog:has(#use-ergonomie:checked)         .product:not(.use-ergonomie) { display:none; }
+/* Tous -> rien à cacher */
+
+/* ============================================
+   Modales CSS via :target (sans JS)
+   ============================================ */
+.modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:1.25rem; z-index:60; }
+.modal:target { display:flex; }
+.modal-backdrop { position:absolute; inset:0; background:rgba(2,6,23,.6); }
+.modal-card {
+  position:relative; max-width:900px; width:min(900px,92vw);
+  overflow:hidden; border-radius:1.25rem; border:1px solid #e2e8f0; background:#fff; box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+.modal-side {
+  background-image: linear-gradient(to bottom right, #0b1220, #0f172a);
+  color:#fff; padding:1.25rem;
+}
+.modal-close {
+  position:absolute; top:.75rem; right:.75rem; display:inline-block;
+  background:#fff; border:1px solid #e2e8f0; border-radius:12px;
+  padding:.4rem .7rem; font-weight:800; color:#0f172a; text-decoration:none;
+}
+
+/* Mode sombre via prefers-color-scheme */
+@media (prefers-color-scheme: dark){
+  .modal-card { background:#1e293b; border-color:#334155; }
+  .modal-close { background:#0f172a; border-color:#334155; color:#e2e8f0; }
 }
