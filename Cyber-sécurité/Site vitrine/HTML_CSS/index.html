@@ -896,33 +896,16 @@
             <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Contact</h2>
             <p class="mt-2 max-w-2xl text-slate-600">Une question, une demande de recommandation, ou un devis ? Écrivez-nous.</p>
 
-            <form id="contactForm" class="mt-6">
-              <div class="grid gap-4 sm:grid-cols-2">
-                <div>
-                  <label class="block text-sm font-bold text-slate-800" for="cName">Nom</label>
-                  <input id="cName" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="text" autocomplete="name" required />
-                </div>
-                <div>
-                  <label class="block text-sm font-bold text-slate-800" for="cEmail">Email</label>
-                  <input id="cEmail" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="email" autocomplete="email" inputmode="email" required />
-                </div>
-              </div>
+            <div class="mt-6">
+                <p class="text-sm text-slate-600 mb-4">
+                    Ce formulaire est statique : cliquez sur le bouton ci‑dessous pour ouvrir votre logiciel de messagerie.
+                </p>
 
-              <label class="mt-4 block text-sm font-bold text-slate-800" for="cSubject">Sujet</label>
-              <input id="cSubject" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" type="text" placeholder="Devis, pack, accessoires, support…" required />
-
-              <label class="mt-4 block text-sm font-bold text-slate-800" for="cMessage">Message</label>
-              <textarea id="cMessage" class="mt-2 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-sm shadow-sm focus:border-blue-500" rows="6" required placeholder="Décrivez votre besoin (usage, budget, contraintes, quantité)…"></textarea>
-
-              <div class="mt-4 flex items-start gap-2">
-                <input id="cConsent" type="checkbox" class="mt-1 h-4 w-4" required />
-                <label for="cConsent" class="text-sm text-slate-700">J’accepte que mes informations soient utilisées pour me répondre.</label>
-              </div>
-
-              <button class="no-print mt-5 inline-flex items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white shadow hover:bg-blue-800" type="submit">Envoyer</button>
-
-              <div id="contactToast" class="mt-4 hidden rounded-2xl bg-emerald-50 p-4 text-sm text-emerald-900 ring-1 ring-emerald-100"></div>
-            </form>
+                <a href="mailto:contact@salapex.fr?subject=Demande%20de%20contact%20Salapex&body=Bonjour,%0D%0A%0D%0AJe%20souhaite%20obtenir%20un%20devis%20ou%20des%20informations.%0D%0A%0D%0ANom%20:%0D%0AObjet%20:%0D%0AMessage%20:%0D%0A"
+                  class="inline-flex items-center justify-center rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white hover:bg-blue-800">
+                    Envoyer un email
+                </a>
+            </div>
           </div>
 
           <aside class="lg:col-span-5">

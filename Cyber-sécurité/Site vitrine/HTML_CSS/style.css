@@ -1,404 +1,258 @@
-/* ============================================
-   Variables CSS & Configuration
-   ============================================ */
+/* =========================================================
+   VARIABLES & COULEURS — BRANDING SALAPEX
+   ========================================================= */
 :root {
   color-scheme: light dark;
-  --brand: #065f46;            /* emerald-800 */
-  --brand-600: #059669;        /* emerald-600 */
-  --brand-700: #047857;        /* emerald-700 */
-  --brand-900: #064e3b;        /* emerald-900 */
-  --focus: rgba(5, 150, 105, .85);
-  /* Couleur secondaire - Doré */
+
+  /* Palette Emerald Salapex */
+  --brand-600: #059669;
+  --brand-700: #047857;
+  --brand-900: #064e3b;
+
+  /* Accent or (gold) */
   --gold-500: #d4af37;
   --gold-600: #b8942f;
-  --gold-700: #8c6e23;
+
+  /* Focus */
+  --focus: rgba(5,150,105,.85);
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-/* ============================================
-   Accessibilité — Focus visible
-   ============================================ */
+/* =========================================================
+   ACCESSIBILITÉ — FOCUS
+   ========================================================= */
 :focus-visible {
   outline: 3px solid var(--focus);
   outline-offset: 3px;
   border-radius: 10px;
 }
 
-/* ============================================
-   Motif de fond subtil
-   ============================================ */
+/* =========================================================
+   MOTIF DE FOND SUBTIL
+   ========================================================= */
 .bg-grid {
   background-image:
     radial-gradient(circle at 1px 1px, rgba(148,163,184,.35) 1px, transparent 0);
   background-size: 18px 18px;
 }
 
-/* ============================================
-   Animation des modales
-   ============================================ */
-.modal-enter {
-  animation: modalIn .18s ease-out;
-}
-
-@keyframes modalIn {
-  from {
-    transform: translateY(10px);
-    opacity: 0;
-  }
-  to {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-/* ============================================
-   Impression (devis, fiches)
-   ============================================ */
-@media print {
-  header,
-  nav,
-  .no-print,
-  footer {
-    display: none !important;
-  }
-  body {
-    background: #fff !important;
-  }
-  .print-area {
-    display: block !important;
-  }
-  .print-card {
-    break-inside: avoid;
-  }
-}
-
-/* ============================================
-   Sélection de texte
-   ============================================ */
+/* =========================================================
+   SÉLECTION DE TEXTE
+   ========================================================= */
 ::selection {
-  background: rgba(16, 185, 129, .25);
+  background: rgba(16,185,129,.25);
   color: #0f172a;
 }
 
-/* ============================================
-   Thème Deep Emerald
-   Surcharge des utilitaires Tailwind "bleus"
-   ============================================ */
+/* =========================================================
+   SURCHARGE TAILWIND — THÈME EMERALD SALAPEX
+   ========================================================= */
 
-/* --- Backgrounds --- */
-.bg-blue-700 {
-  background-color: var(--brand-700) !important;
-}
-.bg-blue-800 {
-  background-color: var(--brand-900) !important;
-}
-.bg-blue-50 {
-  background-color: rgba(5, 150, 105, .10) !important;
-}
+/* Backgrounds */
+.bg-blue-700 { background-color: var(--brand-700) !important; }
+.bg-blue-800 { background-color: var(--brand-900) !important; }
+.bg-blue-50  { background-color: rgba(5,150,105,.10) !important; }
 
-/* --- Texte --- */
-.text-blue-700 {
-  color: var(--brand-700) !important;
-}
-.text-blue-800 {
-  color: var(--brand-900) !important;
-}
-.text-blue-900 {
-  color: var(--brand-900) !important;
-}
-.text-blue-900\/80 {
-  color: rgba(6, 95, 70, .8) !important;
-}
-.text-blue-900\/70 {
-  color: rgba(6, 95, 70, .7) !important;
-}
+/* Textes */
+.text-blue-700 { color: var(--brand-700) !important; }
+.text-blue-800 { color: var(--brand-900) !important; }
 
-/* --- Hover --- */
-.hover\:bg-blue-800:hover {
-  background-color: var(--brand-900) !important;
-}
-.hover\:text-blue-800:hover {
-  color: var(--brand-900) !important;
-}
+/* Hover */
+.hover\:bg-blue-800:hover { background-color: var(--brand-900) !important; }
+.hover\:text-blue-800:hover { color: var(--brand-900) !important; }
 
-/* --- Rings / Borders --- */
-.ring-blue-100 {
-  --tw-ring-color: rgba(5, 150, 105, .22) !important;
-}
-.ring-blue-700 {
-  --tw-ring-color: rgba(4, 120, 87, 1) !important;
-}
-.border-blue-500 {
-  border-color: rgba(5, 150, 105, .75) !important;
-}
+/* Rings & Borders */
+.ring-blue-100 { --tw-ring-color: rgba(5,150,105,.22) !important; }
+.ring-blue-700 { --tw-ring-color: rgba(4,120,87,1) !important; }
+.border-blue-500 { border-color: rgba(5,150,105,.75) !important; }
 
-/* --- Gradients --- */
+/* Gradients */
 .from-blue-50 {
-  --tw-gradient-from: rgba(5, 150, 105, .10) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(5, 150, 105, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-from: rgba(5,150,105,.10) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(5,150,105,0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
 .from-blue-700 {
-  --tw-gradient-from: rgba(4, 120, 87, 1) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(4, 120, 87, 0) var(--tw-gradient-to-position) !important;
+  --tw-gradient-from: rgba(4,120,87,1) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(4,120,87,0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
-.via-blue-600 {
-  --tw-gradient-via: rgba(5, 150, 105, 1) var(--tw-gradient-via-position) !important;
-}
-.to-indigo-50 {
-  --tw-gradient-to: rgba(6, 95, 70, .10) var(--tw-gradient-to-position) !important;
-}
-.to-blue-900 {
-  --tw-gradient-to: rgba(6, 78, 59, 1) var(--tw-gradient-to-position) !important;
-}
 
+/* =========================================================
+   STYLES GOLD (ACCENTS VISUELS)
+   ========================================================= */
 .bg-gold { background: var(--gold-500); }
 .border-gold { border-color: var(--gold-500); }
-
 .text-gold { color: var(--gold-500); }
 
 .badge-gold {
-  display: inline-block;
-  background: var(--gold-500);
-  color: #fff;
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
-  box-shadow: 0 0 0 1px var(--gold-600) inset;
+  display:inline-block;
+  background:var(--gold-500);
+  color:#fff;
+  padding:0.25rem 0.75rem;
+  border-radius:9999px;
+  font-size:.75rem;
+  font-weight:700;
+  box-shadow:0 0 0 1px var(--gold-600) inset;
 }
 
 .btn-gold {
-  background: var(--gold-500);
-  color: #fff !important;
-  border: 1px solid var(--gold-600);
+  background:var(--gold-500);
+  color:#fff !important;
+  border:1px solid var(--gold-600);
 }
-.btn-gold:hover {
-  background: var(--gold-600);
-}
+.btn-gold:hover { background:var(--gold-600); }
 
 .underline-gold {
-  position: relative;
-  display: inline-block;
+  position:relative;
+  display:inline-block;
 }
 .underline-gold::after {
-  content: "";
-  position: absolute;
-  bottom: -4px;
-  left: 0;
-  width: 25%;
-  height: 3px;
-  background: var(--gold-500);
-  border-radius: 2px;
+  content:"";
+  position:absolute;
+  bottom:-4px; left:0;
+  width:25%; height:3px;
+  background:var(--gold-500);
+  border-radius:2px;
 }
 
-/* MODE SOMBRE */
-body.dark {
-  background: #0f172a;
-  color: #f8fafc;
+/* =========================================================
+   DARK MODE AUTOMATIQUE VIA prefers-color-scheme
+   ========================================================= */
+@media (prefers-color-scheme: dark) {
+
+  body { background:#0f172a; color:#f8fafc; }
+
+  .bg-white,
+  .bg-slate-50 {
+    background-color:#1e293b !important;
+  }
+
+  .border-slate-200,
+  .ring-slate-200,
+  .ring-slate-100,
+  .border {
+    border-color:#334155 !important;
+    --tw-ring-color:#334155 !important;
+  }
+
+  /* Textes */
+  .text-slate-900 { color:#f8fafc !important; }
+  .text-slate-800 { color:#f1f5f9 !important; }
+  .text-slate-700 { color:#e2e8f0 !important; }
+  .text-slate-600 { color:#cbd5e1 !important; }
+
+  .ring-1 { box-shadow:0 0 0 1px #334155 inset !important; }
+
+  /* Jetons produits (usecases) */
+  .bg-slate-100 { background:#334155 !important; }
 }
 
-/* Textes */
-body.dark p,
-body.dark span,
-body.dark li,
-body.dark dt,
-body.dark dd,
-body.dark label,
-body.dark summary {
-  color: #f1f5f9;
-}
+/* =========================================================
+   FILTRES PRODUITS (CSS :has)
+   ========================================================= */
 
-/* Buttons */
-body.dark .btn-primary {
-  background: var(--brand-600);
-}
-body.dark .btn-outline {
-  color: #f1f5f9;
-  border-color: #475569;
-}
-body.dark .btn-white {
-  background: #1e293b;
-  border-color: #334155;
-  color: #e2e8f0;
-}
-
-/* Cards, panels, sections */
-body.dark .card,
-body.dark .soft-panel,
-body.dark .white-panel,
-body.dark .section-card,
-body.dark .tile,
-body.dark .print-card {
-  background: #1e293b !important;
-  border-color: #334155 !important;
-  box-shadow: none !important;
-}
-
-/* Hero right panel */
-body.dark .hero-panel {
-  background-image: linear-gradient(to bottom right, #0a1527, #0f172a);
-  border-color: #334155;
-}
-
-/* Inputs */
-body.dark .input {
-  background: #0f172a !important;
-  border-color: #334155 !important;
-  color: #f8fafc !important;
-}
-
-/* Chips */
-body.dark .chip {
-  background: #334155;
-  color: #e2e8f0;
-}
-
-/* Footer */
-body.dark .site-footer {
-  background: #0f172a;
-}
-body.dark .site-footer p {
-  color: #cbd5e1;
-}
-
-/* Modals */
-body.dark .modal-card {
-  background: #1e293b;
-  border-color: #334155;
-}
-body.dark .modal-side {
-  background-image: linear-gradient(to bottom right, #0a1527, #0f172a);
-}
-body.dark .frame-wrap {
-  background: #0f172a;
-}
-
-/* Tables */
-body.dark thead {
-  background: #1e293b;
-}
-body.dark td {
-  background: #0f172a !important;
-  color: #e2e8f0;
-}
-
-/* fonds blancs / gris clair -> gris nuit */
-body.dark .bg-white,
-body.dark .bg-slate-50 {
-  background-color: #1e293b !important; /* slate-800-ish */
-}
-
-/* blocs avec bordure claire -> bordure sombre */
-body.dark .border-slate-200,
-body.dark .ring-slate-200,
-body.dark .ring-slate-100,
-body.dark .border {
-  border-color: #334155 !important;
-  --tw-ring-color: #334155 !important;
-}
-
-/* textes foncés -> texte clair */
-body.dark .text-slate-900 { color: #f8fafc !important; }
-body.dark .text-slate-800 { color: #f1f5f9 !important; }
-body.dark .text-slate-700 { color: #e2e8f0 !important; }
-body.dark .text-slate-600 { color: #cbd5e1 !important; }
-
-/* zones spéciales */
-body.dark .ring-1 { box-shadow: 0 0 0 1px #334155 inset !important; }
-
-/* tableaux */
-body.dark thead.bg-slate-50 { background-color:#1e293b !important; }
-body.dark tbody.bg-white td { background-color:#0f172a !important; color:#e2e8f0 !important; }
-
-/* cartes/panneaux nommés dans ton HTML */
-body.dark .print-card { background:#1e293b !important; border-color:#334155 !important; }
-
-/* BULLes usecase Produits */
-body.dark .bg-slate-100 {
-  background-color: #334155 !important;
-}
-
-body.dark .text-slate-700 {
-  color: #e2e8f0 !important;
-}
-
-@keyframes jump {
-  0%   { transform: translateY(0); }
-  30%  { transform: translateY(-10px); }
-  60%  { transform: translateY(0); }
-  100% { transform: translateY(0); }
-}
-
-/* ============================================
-   Catalogue statique : filtres Catégorie + Usage (CSS :has())
-   ============================================ */
-
-/* Conteneur du catalogue */
-.catalog {
-  /* rien d'obligatoire ici, juste un hook pour :has() */
-}
-
-/* Groupe de chips (radios) */
-.chips { display:flex; flex-wrap:wrap; gap:.5rem; }
-.chips input { position:absolute; left:-9999px; }
-.chip {
-  display:inline-block; padding:.4rem .7rem; border-radius:999px;
-  font-weight:800; font-size:.8rem; background:#eef2f6; color:#334155;
-  border:1px solid #e2e8f0; cursor:pointer; user-select:none;
-}
-.chips input:checked + .chip {
-  background: var(--brand-700); color:#fff; border-color: var(--brand-700);
-}
-
-/* Grille produits : on part du principe qu'ils sont visibles,
-   puis on CACHE ce qui ne matche pas selon les radios cochés. */
 .catalog .product { display:block; }
 
-/* --- Catégories --- */
-.catalog:has(#cat-packs:checked)        .product:not(.cat-packs) { display:none; }
-.catalog:has(#cat-ordinateurs:checked)  .product:not(.cat-ordinateurs) { display:none; }
-.catalog:has(#cat-accessoires:checked)  .product:not(.cat-accessoires) { display:none; }
-/* Tous (par défaut) -> rien à cacher */
+.chips {
+  display:flex;
+  flex-wrap:wrap;
+  gap:.5rem;
+}
+.chips input {
+  position:absolute;
+  left:-9999px;
+}
+.chip {
+  display:inline-block;
+  padding:.4rem .7rem;
+  border-radius:999px;
+  font-weight:800;
+  font-size:.8rem;
+  background:#eef2f6;
+  color:#334155;
+  border:1px solid #e2e8f0;
+  cursor:pointer;
+}
+.chips input:checked + .chip {
+  background:var(--brand-700);
+  color:#fff;
+  border-color:var(--brand-700);
+}
 
-/* --- Usages --- (intersection générique) */
-.catalog:has(#use-bureautique:checked)       .product:not(.use-bureautique) { display:none; }
-.catalog:has(#use-visioconference:checked)   .product:not(.use-visioconference) { display:none; }
-.catalog:has(#use-teletravail:checked)       .product:not(.use-teletravail) { display:none; }
-.catalog:has(#use-confort:checked)           .product:not(.use-confort) { display:none; }
-.catalog:has(#use-petite-entreprise:checked) .product:not(.use-petite-entreprise) { display:none; }
-.catalog:has(#use-productivite:checked)      .product:not(.use-productivite) { display:none; }
-.catalog:has(#use-migration:checked)         .product:not(.use-migration) { display:none; }
-.catalog:has(#use-simplicite:checked)        .product:not(.use-simplicite) { display:none; }
-.catalog:has(#use-ergonomie:checked)         .product:not(.use-ergonomie) { display:none; }
-/* Tous -> rien à cacher */
+/* Catégories */
+.catalog:has(#cat-packs:checked) .product:not(.cat-packs) { display:none; }
+.catalog:has(#cat-ordinateurs:checked) .product:not(.cat-ordinateurs) { display:none; }
+.catalog:has(#cat-accessoires:checked) .product:not(.cat-accessoires) { display:none; }
 
-/* ============================================
-   Modales CSS via :target (sans JS)
-   ============================================ */
-.modal { position:fixed; inset:0; display:none; align-items:center; justify-content:center; padding:1.25rem; z-index:60; }
+/* Usages */
+.catalog:has(#use-bureautique:checked)        .product:not(.use-bureautique) { display:none; }
+.catalog:has(#use-visioconference:checked)    .product:not(.use-visioconference) { display:none; }
+.catalog:has(#use-teletravail:checked)        .product:not(.use-teletravail) { display:none; }
+.catalog:has(#use-confort:checked)            .product:not(.use-confort) { display:none; }
+.catalog:has(#use-petite-entreprise:checked)  .product:not(.use-petite-entreprise) { display:none; }
+.catalog:has(#use-productivite:checked)       .product:not(.use-productivite) { display:none; }
+.catalog:has(#use-migration:checked)          .product:not(.use-migration) { display:none; }
+.catalog:has(#use-simplicite:checked)         .product:not(.use-simplicite) { display:none; }
+.catalog:has(#use-ergonomie:checked)          .product:not(.use-ergonomie) { display:none; }
+
+/* =========================================================
+   MODALES CSS (VIA :target)
+   ========================================================= */
+
+.modal {
+  position:fixed;
+  inset:0;
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding:1.25rem;
+  z-index:60;
+}
 .modal:target { display:flex; }
-.modal-backdrop { position:absolute; inset:0; background:rgba(2,6,23,.6); }
-.modal-card {
-  position:relative; max-width:900px; width:min(900px,92vw);
-  overflow:hidden; border-radius:1.25rem; border:1px solid #e2e8f0; background:#fff; box-shadow:0 15px 40px rgba(0,0,0,.2);
-}
-.modal-side {
-  background-image: linear-gradient(to bottom right, #0b1220, #0f172a);
-  color:#fff; padding:1.25rem;
-}
-.modal-close {
-  position:absolute; top:.75rem; right:.75rem; display:inline-block;
-  background:#fff; border:1px solid #e2e8f0; border-radius:12px;
-  padding:.4rem .7rem; font-weight:800; color:#0f172a; text-decoration:none;
+
+.modal-backdrop {
+  position:absolute;
+  inset:0;
+  background:rgba(2,6,23,.6);
 }
 
-/* Mode sombre via prefers-color-scheme */
-@media (prefers-color-scheme: dark){
+.modal-card {
+  position:relative;
+  max-width:900px;
+  width:min(900px,92vw);
+  overflow:hidden;
+  border-radius:1.25rem;
+  border:1px solid #e2e8f0;
+  background:#fff;
+  box-shadow:0 15px 40px rgba(0,0,0,.2);
+}
+
+.modal-side {
+  background-image:linear-gradient(to bottom right, #0b1220, #0f172a);
+  color:#fff;
+  padding:1.25rem;
+}
+
+.modal-close {
+  position:absolute;
+  top:.75rem;
+  right:.75rem;
+  display:inline-block;
+  background:#fff;
+  border:1px solid #e2e8f0;
+  border-radius:12px;
+  padding:.4rem .7rem;
+  font-weight:800;
+  color:#0f172a;
+  text-decoration:none;
+}
+
+/* Dark mode auto pour les modales */
+@media (prefers-color-scheme: dark) {
   .modal-card { background:#1e293b; border-color:#334155; }
   .modal-close { background:#0f172a; border-color:#334155; color:#e2e8f0; }
 }
