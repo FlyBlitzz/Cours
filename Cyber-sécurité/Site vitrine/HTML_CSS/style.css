@@ -1,18 +1,15 @@
 /* =========================================================
-   VARIABLES & COULEURS — BRANDING SALAPEX
+   VARIABLES & COULEURS
    ========================================================= */
 :root {
   color-scheme: light dark;
-
-  /* Palette Emerald Salapex */
+  /* Palette Emerald */
   --brand-600: #059669;
   --brand-700: #047857;
   --brand-900: #064e3b;
-
-  /* Accent or (gold) */
+  /* Accent gold */
   --gold-500: #d4af37;
   --gold-600: #b8942f;
-
   /* Focus */
   --focus: rgba(5,150,105,.85);
 }
@@ -48,7 +45,7 @@ html {
 }
 
 /* =========================================================
-   SURCHARGE TAILWIND — THÈME EMERALD SALAPEX
+   SURCHARGE TAILWIND — THÈME EMERALD
    ========================================================= */
 
 /* Backgrounds */
@@ -75,6 +72,7 @@ html {
   --tw-gradient-to: rgba(5,150,105,0) var(--tw-gradient-to-position) !important;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
 }
+
 .from-blue-700 {
   --tw-gradient-from: rgba(4,120,87,1) var(--tw-gradient-from-position) !important;
   --tw-gradient-to: rgba(4,120,87,0) var(--tw-gradient-to-position) !important;
@@ -82,7 +80,7 @@ html {
 }
 
 /* =========================================================
-   STYLES GOLD (ACCENTS VISUELS)
+   STYLES GOLD
    ========================================================= */
 .bg-gold { background: var(--gold-500); }
 .border-gold { border-color: var(--gold-500); }
@@ -104,12 +102,14 @@ html {
   color:#fff !important;
   border:1px solid var(--gold-600);
 }
+
 .btn-gold:hover { background:var(--gold-600); }
 
 .underline-gold {
   position:relative;
   display:inline-block;
 }
+
 .underline-gold::after {
   content:"";
   position:absolute;
@@ -144,17 +144,14 @@ html {
   .text-slate-800 { color:#f1f5f9 !important; }
   .text-slate-700 { color:#e2e8f0 !important; }
   .text-slate-600 { color:#cbd5e1 !important; }
-
   .ring-1 { box-shadow:0 0 0 1px #334155 inset !important; }
-
-  /* Jetons produits (usecases) */
+  /* Jetons produits */
   .bg-slate-100 { background:#334155 !important; }
 }
 
 /* =========================================================
-   FILTRES PRODUITS (CSS :has)
+   FILTRES PRODUITS
    ========================================================= */
-
 .catalog .product { display:block; }
 
 .chips {
@@ -162,10 +159,12 @@ html {
   flex-wrap:wrap;
   gap:.5rem;
 }
+
 .chips input {
   position:absolute;
   left:-9999px;
 }
+
 .chip {
   display:inline-block;
   padding:.4rem .7rem;
@@ -177,6 +176,7 @@ html {
   border:1px solid #e2e8f0;
   cursor:pointer;
 }
+
 .chips input:checked + .chip {
   background:var(--brand-700);
   color:#fff;
@@ -187,7 +187,6 @@ html {
 .catalog:has(#cat-packs:checked) .product:not(.cat-packs) { display:none; }
 .catalog:has(#cat-ordinateurs:checked) .product:not(.cat-ordinateurs) { display:none; }
 .catalog:has(#cat-accessoires:checked) .product:not(.cat-accessoires) { display:none; }
-
 /* Usages */
 .catalog:has(#use-bureautique:checked)        .product:not(.use-bureautique) { display:none; }
 .catalog:has(#use-visioconference:checked)    .product:not(.use-visioconference) { display:none; }
@@ -200,9 +199,8 @@ html {
 .catalog:has(#use-ergonomie:checked)          .product:not(.use-ergonomie) { display:none; }
 
 /* =========================================================
-   MODALES CSS (VIA :target)
+   MODALES CSS
    ========================================================= */
-
 .modal {
   position:fixed;
   inset:0;
@@ -212,6 +210,7 @@ html {
   padding:1.25rem;
   z-index:60;
 }
+
 .modal:target { display:flex; }
 
 .modal-backdrop {
