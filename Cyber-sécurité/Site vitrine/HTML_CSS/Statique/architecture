@@ -1,6 +1,14 @@
 / Statique
 ├─ assets/
 │  ├─ img/
+│  │  ├─ produits/
+│  │  │  ├─ casque-confort.jpg
+│  │  │  ├─ clavier-ergonomique-split.jpg
+│  │  │  ├─ pack-bureau-essentiel.jpg
+│  │  │  ├─ pack-pro-performance.jpg
+│  │  │  ├─ pack-teletravail-confort.jpg
+│  │  │  ├─ pc-pret-a-lemploi.jpg
+│  │  │  └─ souris-verticale.jpg
 │  │  ├─ logo-salapex.jpg
 │  │  └─ organigramme.jpg
 │  └─ pdf/

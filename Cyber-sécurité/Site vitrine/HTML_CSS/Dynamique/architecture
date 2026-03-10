@@ -1,15 +1,40 @@
-/ Statique
+/ Dynamique
 ├─ assets/
-│  ├─ img/
-│  │  ├─ logo-salapex.jpg
-│  │  └─ organigramme.jpg
-│  └─ pdf/
-│     ├─ fiche-poste-admin.pdf
-│     ├─ fiche-poste-marketing.pdf
-│     ├─ fiche-poste-pdg.pdf
-│     ├─ fiche-poste-production.pdf
-│     └─ fiche-poste-technicien-it.pdf
-├─ index.html
-├─ mentions-legales.html
-├─ politique-confidentialite.html
+│ ├─ img/
+│ │ ├─ produits/
+│ │ │ ├─ casque-confort.jpg
+│ │ │ ├─ clavier-ergonomique-split.jpg
+│ │ │ ├─ pack-bureau-essentiel.jpg
+│ │ │ ├─ pack-pro-performance.jpg
+│ │ │ ├─ pack-teletravail-confort.jpg
+│ │ │ ├─ pc-pret-a-lemploi.jpg
+│ │ │ └─ souris-verticale.jpg
+│ │ ├─ logo-salapex.jpg
+│ │ └─ organigramme.jpg
+│ └─ pdf/
+│ ├─ fiche-poste-admin.pdf
+│ ├─ fiche-poste-marketing.pdf
+│ ├─ fiche-poste-pdg.pdf
+│ ├─ fiche-poste-production.pdf
+│ └─ fiche-poste-technicien-it.pdf
+├─ config/
+│ └─ database.php
+├─ db/
+│ └─ connexion.php
+├─ includes/
+│ ├─ footer.php
+│ ├─ functions.php
+│ └─ header.php
+├─ pages/
+│ ├─ contact.php
+│ ├─ entreprise.php
+│ └─ produits.php
+├─ templates/
+│ ├─ modale-produit.php
+│ ├─ product-card.php
+│ └─ produits.php
+├─ cart.php
+├─ index.php
+├─ mentions-legales.php
+├─ politique-confidentialite.php
 └─ style.css

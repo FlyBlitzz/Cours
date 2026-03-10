@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mentions légales – Salapex</title>
   <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://www.salapex.fr/mentions-legales.html" />
+  <link rel="canonical" href="https://www.salapex.fr/mentions-legales.php" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -50,13 +51,15 @@
       <h2 class="text-xl font-extrabold">Responsabilité</h2>
       <p class="mt-2 text-sm text-slate-700">
         Salapex s’efforce d’assurer l’exactitude des informations publiées.
-        Cependant, des erreurs ou omissions peuvent survenir ; l’éditeur ne saurait être tenu responsable de l’utilisation du site.
+        Cependant, des erreurs ou omissions peuvent survenir ; l’éditeur ne saurait être tenu responsable de
+        l’utilisation du site.
       </p>
     </section>
 
     <p class="mt-8 text-sm text-slate-500">
-      <a href="index.html" class="text-blue-700 hover:text-blue-800">← Retour au site</a>
+      <a href="index.php" class="text-blue-700 hover:text-blue-800">← Retour au site</a>
     </p>
   </main>
 </body>
+
 </html>
