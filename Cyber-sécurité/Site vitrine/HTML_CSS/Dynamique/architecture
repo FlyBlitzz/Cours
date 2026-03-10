@@ -1,4 +1,4 @@
-/ Dynamique
+/ Statique
 ├─ assets/
 │  ├─ img/
 │  │  ├─ logo-salapex.jpg
@@ -9,10 +9,6 @@
 │     ├─ fiche-poste-pdg.pdf
 │     ├─ fiche-poste-production.pdf
 │     └─ fiche-poste-technicien-it.pdf
-├─ config/
-│  └─ database.php
-├─ db/
-│  └─ connexion.php
 ├─ index.html
 ├─ mentions-legales.html
 ├─ politique-confidentialite.html
