@@ -1,0 +1,15 @@
+/ Statique
+├─ assets/
+│  ├─ img/
+│  │  ├─ logo-salapex.jpg
+│  │  └─ organigramme.jpg
+│  └─ pdf/
+│     ├─ fiche-poste-admin.pdf
+│     ├─ fiche-poste-marketing.pdf
+│     ├─ fiche-poste-pdg.pdf
+│     ├─ fiche-poste-production.pdf
+│     └─ fiche-poste-technicien-it.pdf
+├─ index.html
+├─ mentions-legales.html
+├─ politique-confidentialite.html
+└─ style.css
