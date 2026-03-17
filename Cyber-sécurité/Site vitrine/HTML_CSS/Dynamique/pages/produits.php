@@ -1,10 +1,8 @@
 <?php
-require_once "../db/connexion.php";
+require_once __DIR__ . '/../includes/functions.php';
+$produits = all_products($pdo);
 
-$stmt = $pdo->query("SELECT * FROM produits");
-$produits = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-include "../includes/header.php";
+include __DIR__ . '/../includes/header.php';
 ?>
 
 <section id="produits" class="mt-12">
@@ -12,9 +10,9 @@ include "../includes/header.php";
 
     <div class="grid gap-5 md:grid-cols-2">
         <?php foreach ($produits as $p): ?>
-            <?php include "../templates/produit.php"; ?>
+            <?php include __DIR__ . '/../templates/product-card.php'; ?>
         <?php endforeach; ?>
     </div>
 </section>
 
-<?php include "../includes/footer.php"; ?>
+<?php include __DIR__ . '/../includes/footer.php'; ?>

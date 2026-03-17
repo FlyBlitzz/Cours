@@ -24,8 +24,8 @@
 
         <div class="flex gap-2">
             <a href="produit.php?id=<?= $p['id'] ?>" class="rounded-2xl border px-4 py-2 text-sm font-bold">Détails</a>
-            <a href="mailto:contact@salapex.fr?subject=Demande de devis — <?= urlencode($p['titre']) ?>"
-                class="rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white">Demande de devis</a>
+            <a href="mailto:contact@salapex.fr?subject=Contact%20—%20<?= urlencode($p['titre']) ?>"
+                class="rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white">Contact</a>
         </div>
     </div>
 </article>

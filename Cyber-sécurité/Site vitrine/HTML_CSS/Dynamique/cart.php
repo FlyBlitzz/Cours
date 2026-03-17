@@ -4,13 +4,19 @@ require_once __DIR__ . '/includes/functions.php';
 $action = $_POST['action'] ?? $_GET['action'] ?? null;
 
 if ($action === 'add') {
-  cart_add((int) $_POST['id'], (int) $_POST['qty']);
-  header('Location: /cart.php');
+  cart_add($pdo, (int) $_POST['id'], (int) $_POST['qty']);
+
+  $redirect = '/cart.php';
+  if (!empty($_POST['return_to']) && str_starts_with($_POST['return_to'], '/')) {
+    $redirect = $_POST['return_to'];
+  }
+
+  header('Location: ' . $redirect);
   exit;
 }
 if ($action === 'update') {
   foreach ($_POST['qty'] as $id => $qty) {
-    cart_update((int) $id, (int) $qty);
+    cart_update($pdo, (int) $id, (int) $qty);
   }
   header('Location: /cart.php');
   exit;
@@ -23,6 +29,33 @@ if ($action === 'remove') {
 if ($action === 'clear') {
   cart_clear();
   header('Location: /cart.php');
+  exit;
+}
+
+if ($action === 'checkout') {
+  $name = trim($_POST['customer_name'] ?? '');
+  $email = trim($_POST['customer_email'] ?? '');
+
+  $items = cart_items($pdo);
+  if (empty($items)) {
+    header('Location: /cart.php');
+    exit;
+  }
+
+  if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    $_SESSION['flash'] = [
+      'type' => 'error',
+      'message' => 'Merci de fournir un nom et une adresse e-mail valides pour valider la commande.',
+    ];
+    header('Location: /cart.php');
+    exit;
+  }
+
+  $total = cart_total($pdo);
+  $orderId = create_order($pdo, $name, $email, $items, $total);
+
+  cart_clear();
+  header('Location: /order-confirmation.php?id=' . $orderId);
   exit;
 }
 
@@ -40,11 +73,19 @@ include __DIR__ . '/includes/header.php';
       Votre panier
     </h1>
 
+    <?php if (isset($_SESSION['flash'])): ?>
+      <div
+        class="mt-6 rounded-2xl p-4 text-sm shadow-sm <?php echo $_SESSION['flash']['type'] === 'error' ? 'bg-rose-50 text-rose-700 ring-rose-100' : 'bg-emerald-50 text-emerald-700 ring-emerald-100'; ?> ring-1">
+        <?php echo htmlspecialchars($_SESSION['flash']['message']); ?>
+      </div>
+      <?php unset($_SESSION['flash']); ?>
+    <?php endif; ?>
+
     <?php if (!$items): ?>
 
       <p class="mt-6 text-slate-600">Votre panier est vide.</p>
       <a href="/index.php#produits"
-        class="mt-4 inline-block rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white hover:bg-blue-800">
+        class="mt-4 mb-16 inline-block rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white hover:bg-blue-800">
         Voir les produits
       </a>
 
@@ -71,7 +112,7 @@ include __DIR__ . '/includes/header.php';
                 <tr class="border-t border-slate-200">
                   <td class="p-4">
                     <div class="flex items-center gap-3">
-                      <img src="/assets/img/produits/<?php echo htmlspecialchars($it['image']); ?>"
+                      <img src="/<?php echo ltrim(htmlspecialchars($it['image']), '/'); ?>"
                         class="h-12 w-12 rounded-xl object-cover">
                       <div>
                         <div class="font-bold text-slate-900"><?php echo htmlspecialchars($it['nom']); ?></div>
@@ -118,16 +159,41 @@ include __DIR__ . '/includes/header.php';
               Mettre à jour
             </button>
 
-            <a href="mailto:contact@salapex.fr?subject=Demande%20de%20devis%20—%20Panier"
-              class="rounded-2xl bg-gold px-4 py-2 text-sm font-extrabold text-white hover:bg-gold-600">
-              Demander un devis
-            </a>
-
           </div>
 
         </div>
 
       </form>
+
+      <div class="mt-8 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-xl font-extrabold">Valider la commande</h2>
+        <p class="mt-2 text-sm text-slate-600">Renseignez vos coordonnées pour enregistrer la commande en base.</p>
+
+        <form class="mt-5 grid gap-4 md:grid-cols-2" method="post" action="/cart.php">
+          <input type="hidden" name="action" value="checkout">
+
+          <label class="block">
+            <span class="text-sm font-semibold text-slate-700">Nom</span>
+            <input type="text" name="customer_name" required
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:border-blue-500 focus:ring-blue-500" />
+          </label>
+
+          <label class="block">
+            <span class="text-sm font-semibold text-slate-700">E-mail</span>
+            <input type="email" name="customer_email" required
+              class="mt-1 w-full rounded-xl border border-slate-300 px-3 py-2 focus:border-blue-500 focus:ring-blue-500" />
+          </label>
+
+          <div class="md:col-span-2 flex flex-col gap-3">
+            <div class="text-sm text-slate-600">Montant total de la commande : <span
+                class="font-bold text-slate-900"><?php echo format_price($total); ?></span></div>
+            <button type="submit"
+              class="w-full rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-extrabold text-white hover:bg-emerald-800">
+              Valider la commande
+            </button>
+          </div>
+        </form>
+      </div>
 
     <?php endif; ?>
 
