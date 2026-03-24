@@ -1,6 +1,7 @@
 <?php
 require_once __DIR__ . '/functions.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -25,6 +26,7 @@ require_once __DIR__ . '/functions.php';
         class="relative sticky top-0 z-50 border-b border-white/10 bg-gradient-to-r from-emerald-900 via-emerald-800 to-emerald-700 text-white">
         <div class="relative">
             <div class="mx-auto max-w-6xl px-4">
+                <input type="checkbox" id="mobile-menu-toggle" class="peer hidden" />
                 <div class="flex items-center justify-between py-4">
                     <div class="flex items-center gap-3">
                         <a href="/" class="flex items-center gap-3" aria-label="Aller à l’accueil Salapex">
@@ -43,15 +45,15 @@ require_once __DIR__ . '/functions.php';
                     </div>
 
                     <div class="flex items-center gap-2">
-                        <button id="menuBtn"
-                            class="md:hidden inline-flex items-center gap-2 rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 backdrop-blur hover:bg-white/15"
-                            aria-expanded="false" aria-controls="mobileNav">
+                        <label for="mobile-menu-toggle" id="menuBtn"
+                            class="md:hidden inline-flex cursor-pointer items-center gap-2 rounded-xl bg-white/10 px-3 py-2 ring-1 ring-white/15 backdrop-blur hover:bg-white/15"
+                            aria-label="Ouvrir le menu">
                             <span class="text-sm font-semibold">Menu</span>
                             <svg id="menuIcon" class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                                 <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2"
                                     stroke-linecap="round" />
                             </svg>
-                        </button>
+                        </label>
 
                         <nav class="hidden md:block" aria-label="Navigation principale">
                             <ul class="flex flex-wrap items-center gap-2">
@@ -74,7 +76,7 @@ require_once __DIR__ . '/functions.php';
                     </div>
                 </div>
 
-                <nav id="mobileNav" class="md:hidden hidden pb-4" aria-label="Navigation mobile">
+                <nav id="mobileNav" class="md:hidden hidden peer-checked:block pb-4" aria-label="Navigation mobile">
                     <div class="grid gap-2 rounded-2xl bg-white/10 p-3 ring-1 ring-white/15 backdrop-blur">
                         <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10"
                             href="/#accueil">Accueil</a>

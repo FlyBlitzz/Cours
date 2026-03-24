@@ -20,7 +20,13 @@ function all_products(PDO $pdo)
                 "Descriptif"   AS descriptif
             FROM public.products
             ORDER BY "Code_produit" ASC';
-    return $pdo->query($sql)->fetchAll();
+    $st = $pdo->prepare($sql);
+    $st->execute();
+    $products = $st->fetchAll();
+    foreach ($products as &$p) {
+        $p['image'] = str_replace('.jpg', '.webp', $p['image']);
+    }
+    return $products;
 }
 
 function find_product(PDO $pdo, $id)
@@ -35,10 +41,14 @@ function find_product(PDO $pdo, $id)
             FROM public.products
             WHERE "Code_produit" = :id');
     $st->execute([':id' => $id]);
-    return $st->fetch();
+    $p = $st->fetch();
+    if ($p) {
+        $p['image'] = str_replace('.jpg', '.webp', $p['image']);
+    }
+    return $p;
 }
 
-// ------- Panier (sessions)
+// ------- Panier -------
 function cart_init()
 {
     if (!isset($_SESSION['cart']))
@@ -51,7 +61,7 @@ function cart_add(PDO $pdo, $id, $qty = 1)
     $id = (int) $id;
     $qty = max(1, (int) $qty);
 
-    // Ensure we don't add more than available stock.
+    // S'assure que nous n'ajoutons pas plus que le stock disponible.
     if (!$product = find_product($pdo, $id)) {
         return;
     }
@@ -119,12 +129,12 @@ function cart_items(PDO $pdo)
 
         $stock = (int) $p['stock'];
         if ($stock <= 0) {
-            // Remove out-of-stock products from cart
+            // Supprime les produits en rupture de stock du panier
             unset($_SESSION['cart'][$id]);
             continue;
         }
 
-        // Clamp qty to available stock
+        // Quantité de produit par rapport au stock disponible
         $qty = min((int) $qty, $stock);
         if ($qty !== (int) $_SESSION['cart'][$id]) {
             $_SESSION['cart'][$id] = $qty;

@@ -125,6 +125,7 @@ include __DIR__ . '/includes/header.php';
                   <td class="p-4">
                     <input type="number" name="qty[<?php echo (int) $it['id']; ?>]" min="0"
                       value="<?php echo (int) $it['qty']; ?>" max="<?php echo (int) $it['stock']; ?>"
+                      oninput="this.form.submit()"
                       class="w-20 rounded-xl border border-slate-300 px-3 py-2">
                   </td>
 
@@ -153,12 +154,6 @@ include __DIR__ . '/includes/header.php';
             <div class="text-xl font-extrabold">
               Total : <?php echo format_price($total); ?>
             </div>
-
-            <button type="submit"
-              class="rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white hover:bg-blue-800">
-              Mettre à jour
-            </button>
-
           </div>
 
         </div>

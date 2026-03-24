@@ -49,34 +49,34 @@ html {
    ========================================================= */
 
 /* Backgrounds */
-.bg-blue-700 { background-color: var(--brand-700) !important; }
-.bg-blue-800 { background-color: var(--brand-900) !important; }
-.bg-blue-50  { background-color: rgba(5,150,105,.10) !important; }
+html .bg-blue-700 { background-color: var(--brand-700); }
+html .bg-blue-800 { background-color: var(--brand-900); }
+html .bg-blue-50  { background-color: rgba(5,150,105,.10); }
 
 /* Textes */
-.text-blue-700 { color: var(--brand-700) !important; }
-.text-blue-800 { color: var(--brand-900) !important; }
+html .text-blue-700 { color: var(--brand-700); }
+html .text-blue-800 { color: var(--brand-900); }
 
 /* Hover */
-.hover\:bg-blue-800:hover { background-color: var(--brand-900) !important; }
-.hover\:text-blue-800:hover { color: var(--brand-900) !important; }
+html .hover\:bg-blue-800:hover { background-color: var(--brand-900); }
+html .hover\:text-blue-800:hover { color: var(--brand-900); }
 
 /* Rings & Borders */
-.ring-blue-100 { --tw-ring-color: rgba(5,150,105,.22) !important; }
-.ring-blue-700 { --tw-ring-color: rgba(4,120,87,1) !important; }
-.border-blue-500 { border-color: rgba(5,150,105,.75) !important; }
+html .ring-blue-100 { --tw-ring-color: rgba(5,150,105,.22); }
+html .ring-blue-700 { --tw-ring-color: rgba(4,120,87,1); }
+html .border-blue-500 { border-color: rgba(5,150,105,.75); }
 
 /* Gradients */
-.from-blue-50 {
-  --tw-gradient-from: rgba(5,150,105,.10) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(5,150,105,0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+html .from-blue-50 {
+  --tw-gradient-from: rgba(5,150,105,.10) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(5,150,105,0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
-.from-blue-700 {
-  --tw-gradient-from: rgba(4,120,87,1) var(--tw-gradient-from-position) !important;
-  --tw-gradient-to: rgba(4,120,87,0) var(--tw-gradient-to-position) !important;
-  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to) !important;
+html .from-blue-700 {
+  --tw-gradient-from: rgba(4,120,87,1) var(--tw-gradient-from-position);
+  --tw-gradient-to: rgba(4,120,87,0) var(--tw-gradient-to-position);
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to);
 }
 
 /* =========================================================
@@ -120,7 +120,7 @@ html {
 }
 
 /* =========================================================
-   DARK MODE AUTOMATIQUE VIA prefers-color-scheme
+   DARK MODE AUTOMATIQUE
    ========================================================= */
 @media (prefers-color-scheme: dark) {
 
@@ -128,25 +128,25 @@ html {
 
   .bg-white,
   .bg-slate-50 {
-    background-color:#1e293b !important;
+    background-color:#1e293b;
   }
 
   .border-slate-200,
   .ring-slate-200,
   .ring-slate-100,
   .border {
-    border-color:#334155 !important;
-    --tw-ring-color:#334155 !important;
+    border-color:#334155;
+    --tw-ring-color:#334155;
   }
 
   /* Textes */
-  .text-slate-900 { color:#f8fafc !important; }
-  .text-slate-800 { color:#f1f5f9 !important; }
-  .text-slate-700 { color:#e2e8f0 !important; }
-  .text-slate-600 { color:#cbd5e1 !important; }
-  .ring-1 { box-shadow:0 0 0 1px #334155 inset !important; }
+  .text-slate-900 { color:#f8fafc; }
+  .text-slate-800 { color:#f1f5f9; }
+  .text-slate-700 { color:#e2e8f0; }
+  .text-slate-600 { color:#cbd5e1; }
+  .ring-1 { box-shadow:0 0 0 1px #334155 inset; }
   /* Jetons produits */
-  .bg-slate-100 { background:#334155 !important; }
+  .bg-slate-100 { background:#334155; }
 }
 
 /* =========================================================

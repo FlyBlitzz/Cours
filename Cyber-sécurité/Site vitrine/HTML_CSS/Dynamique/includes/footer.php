@@ -1,8 +1,11 @@
 <footer class="border-t border-slate-200 bg-white">
     <?php
-    $isCartPage = basename($_SERVER['SCRIPT_NAME']) === 'cart.php';
-    $returnLabel = $isCartPage ? 'Retour' : 'Haut de page';
-    $returnHref = $isCartPage ? '/' : '/#accueil';
+    $currentPage = basename($_SERVER['SCRIPT_NAME']);
+    $secondaryPages = ['cart.php', 'order-confirmation.php', 'mentions-legales.php', 'politique-confidentialite.php'];
+    $isSecondaryPage = in_array($currentPage, $secondaryPages);
+    
+    $returnLabel = $isSecondaryPage ? 'Retour' : 'Haut de page';
+    $returnHref = $isSecondaryPage ? '/' : '/#accueil';
     ?>
     <div class="mx-auto max-w-6xl px-4 py-10">
         <div class="grid gap-6 md:grid-cols-2 md:items-center">
@@ -44,18 +47,6 @@
         </div>
     </div>
 </footer>
-
-<script>
-    // Mobile nav toggle (responsive)
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileNav = document.getElementById('mobileNav');
-
-    if (menuBtn && mobileNav) {
-        menuBtn.addEventListener('click', () => {
-            const isOpen = mobileNav.classList.toggle('hidden');
-            menuBtn.setAttribute('aria-expanded', isOpen ? 'false' : 'true');
-        });
-    }
-</script>
+</body>
 
 </html>

@@ -72,14 +72,6 @@ include __DIR__ . '/includes/header.php';
                     </div>
                 </div>
 
-                <div class="mt-6 flex flex-wrap gap-3">
-                    <a href="/"
-                        class="rounded-2xl bg-blue-700 px-5 py-3 text-sm font-extrabold text-white hover:bg-blue-800">Retour
-                        à l'accueil</a>
-                    <a href="/cart.php"
-                        class="rounded-2xl border border-slate-300 bg-white px-5 py-3 text-sm font-bold hover:bg-slate-50">Voir
-                        le panier</a>
-                </div>
             </div>
         <?php endif; ?>
     </section>

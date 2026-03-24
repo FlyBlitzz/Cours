@@ -1,71 +1,58 @@
-<!DOCTYPE html>
-<html lang="fr">
+<?php
+require_once __DIR__ . '/includes/functions.php';
+include __DIR__ . "/includes/header.php";
+?>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Politique de confidentialité – Salapex</title>
-  <meta name="robots" content="noindex,follow" />
-  <link rel="canonical" href="https://www.salapex.fr/politique-confidentialite.php" />
-  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-  <link rel="stylesheet" href="style.css" />
-</head>
-
-<body class="bg-slate-50 text-slate-900">
-  <main class="mx-auto max-w-5xl px-4 py-10">
-    <h1 class="text-3xl font-extrabold">Politique de confidentialité</h1>
+<main id="contenu" class="mx-auto max-w-6xl px-4 py-10">
+    <h1 class="text-3xl font-extrabold underline-gold">Politique de confidentialité</h1>
     <p class="mt-2 text-slate-600">Dernière mise à jour : janvier 2026</p>
 
     <!-- Données -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Données collectées</h2>
-      <p class="mt-2 text-sm text-slate-700">
-        Via les formulaires « Contact » : nom, email, sujet, message, consentement.
-      </p>
+        <h2 class="text-xl font-extrabold text-blue-700">Données collectées</h2>
+        <p class="mt-2 text-sm text-slate-700">
+            Via les formulaires « Contact » : nom, email, sujet, message, consentement.
+        </p>
     </section>
 
     <!-- Finalités -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Finalités & base légale</h2>
-      <p class="mt-2 text-sm text-slate-700">
-        Les informations transmises servent uniquement à répondre à votre demande.
-        Base légale : intérêt légitime + consentement explicite (case à cocher).
-      </p>
+        <h2 class="text-xl font-extrabold text-blue-700">Finalités & base légale</h2>
+        <p class="mt-2 text-sm text-slate-700">
+            Les informations transmises servent uniquement à répondre à votre demande.
+            Base légale : intérêt légitime + consentement explicite (case à cocher).
+        </p>
     </section>
 
     <!-- Durée -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Durée de conservation</h2>
-      <p class="mt-2 text-sm text-slate-700">12 mois maximum à compter du dernier échange.</p>
+        <h2 class="text-xl font-extrabold text-blue-700">Durée de conservation</h2>
+        <p class="mt-2 text-sm text-slate-700">12 mois maximum à compter du dernier échange.</p>
     </section>
 
     <!-- Destinataires -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Destinataires</h2>
-      <p class="mt-2 text-sm text-slate-700">Équipe Salapex uniquement.</p>
+        <h2 class="text-xl font-extrabold text-blue-700">Destinataires</h2>
+        <p class="mt-2 text-sm text-slate-700">Équipe Salapex uniquement.</p>
     </section>
 
     <!-- Droits -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Vos droits</h2>
-      <p class="mt-2 text-sm text-slate-700">
-        Vous pouvez demander l'accès, la rectification ou la suppression de vos données :<br />
-        <a href="mailto:contact@salapex.fr" class="text-blue-700 hover:text-blue-800">contact@salapex.fr</a>
-      </p>
+        <h2 class="text-xl font-extrabold text-blue-700">Vos droits</h2>
+        <p class="mt-2 text-sm text-slate-700">
+            Vous pouvez demander l'accès, la rectification ou la suppression de vos données :<br />
+            <a href="mailto:contact@salapex.fr" class="text-blue-700 font-bold hover:text-blue-800">contact@salapex.fr</a>
+        </p>
     </section>
 
     <!-- Sécurité -->
     <section class="mt-6 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <h2 class="text-xl font-extrabold">Sécurité</h2>
-      <p class="mt-2 text-sm text-slate-700">
-        Données stockées de manière sécurisée, accès limité, purge selon la durée définie.
-      </p>
+        <h2 class="text-xl font-extrabold text-blue-700">Sécurité</h2>
+        <p class="mt-2 text-sm text-slate-700">
+            Données stockées de manière sécurisée, accès limité, purge selon la durée définie.
+        </p>
     </section>
 
-    <p class="mt-8 text-sm text-slate-500">
-      <a href="index.php" class="text-blue-700 hover:text-blue-800">← Retour au site</a>
-    </p>
-  </main>
-</body>
+</main>
 
-</html>
+<?php include __DIR__ . "/includes/footer.php"; ?>
