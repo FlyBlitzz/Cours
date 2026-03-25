@@ -9,5 +9,6 @@
     "code-runner.runInTerminal": true,
     "code-runner.clearPreviousOutput": true,
     "liveServer.settings.donotShowInfoMsg": true,
-    "liveServer.settings.donotVerifyTags": true
+    "liveServer.settings.donotVerifyTags": true,
+    "chat.tips.enabled": false
 }
