@@ -31,7 +31,7 @@ require_once __DIR__ . '/functions.php';
                     <div class="flex items-center gap-3">
                         <a href="/" class="flex items-center gap-3" aria-label="Aller à l’accueil Salapex">
                             <span
-                                class="grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
+                                class="logo-animate grid h-11 w-11 place-items-center overflow-hidden rounded-2xl bg-white/10 ring-1 ring-white/15 backdrop-blur">
                                 <img src="/assets/img/logo-salapex.jpg" alt="Logo Salapex"
                                     class="h-full w-full object-cover"
                                     onerror="this.style.display='none'; this.parentElement.insertAdjacentHTML('beforeend', '<span class=\'text-sm font-extrabold\'>S</span>')" />
@@ -68,8 +68,8 @@ require_once __DIR__ . '/functions.php';
                                 <li><a class="navlink rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10"
                                         href="/#contact">Contact</a></li>
                                 <li><a class="rounded-2xl btn-gold px-3 py-2 text-sm font-extrabold shadow"
-                                        href="/cart.php">Panier
-                                        (<?php echo isset($_SESSION['cart']) ? array_sum($_SESSION['cart']) : 0; ?>)</a>
+                                        href="/panier.php">Panier
+                                        (<?php echo isset($_SESSION['panier']) ? array_sum($_SESSION['panier']) : 0; ?>)</a>
                                 </li>
                             </ul>
                         </nav>
@@ -89,7 +89,7 @@ require_once __DIR__ . '/functions.php';
                         <a class="rounded-xl px-3 py-2 text-sm font-semibold hover:bg-white/10"
                             href="/#contact">Contact</a>
                         <a class="rounded-xl bg-white px-3 py-2 text-sm font-extrabold text-blue-700 shadow hover:bg-slate-50"
-                            href="/cart.php">Panier</a>
+                            href="/panier.php">Panier</a>
                     </div>
                 </nav>
             </div>

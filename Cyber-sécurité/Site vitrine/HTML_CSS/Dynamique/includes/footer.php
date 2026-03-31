@@ -1,11 +1,11 @@
 <footer class="border-t border-slate-200 bg-white">
     <?php
-    $currentPage = basename($_SERVER['SCRIPT_NAME']);
-    $secondaryPages = ['cart.php', 'order-confirmation.php', 'mentions-legales.php', 'politique-confidentialite.php'];
-    $isSecondaryPage = in_array($currentPage, $secondaryPages);
-    
-    $returnLabel = $isSecondaryPage ? 'Retour' : 'Haut de page';
-    $returnHref = $isSecondaryPage ? '/' : '/#accueil';
+    $pageCourante = basename($_SERVER['SCRIPT_NAME']);
+    $pagesSecondaires = ['panier.php', 'confirmation-commande.php', 'mentions-legales.php', 'politique-confidentialite.php'];
+    $estPageSecondaire = in_array($pageCourante, $pagesSecondaires);
+
+    $libelleRetour = $estPageSecondaire ? 'Retour' : 'Haut de page';
+    $lienRetour = $estPageSecondaire ? '/' : '/#accueil';
     ?>
     <div class="mx-auto max-w-6xl px-4 py-10">
         <div class="grid gap-6 md:grid-cols-2 md:items-center">
@@ -32,7 +32,7 @@
                 <a class="rounded-2xl border border-slate-300 bg-white px-4 py-2 text-sm font-bold hover:bg-slate-50"
                     href="/#contact">Contact</a>
                 <a class="no-print rounded-2xl bg-blue-700 px-4 py-2 text-sm font-extrabold text-white hover:bg-blue-800"
-                    href="<?php echo $returnHref; ?>"><?php echo $returnLabel; ?></a>
+                    href="<?php echo $lienRetour; ?>"><?php echo $libelleRetour; ?></a>
             </div>
         </div>
 
@@ -47,6 +47,59 @@
         </div>
     </div>
 </footer>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const regionVocale = document.createElement('div');
+        regionVocale.setAttribute('aria-live', 'polite');
+        regionVocale.setAttribute('role', 'status');
+        regionVocale.className = 'sr-only';
+        document.body.appendChild(regionVocale);
+
+        const cibles = document.querySelectorAll('[data-animate], section[id], .product, .chip, .btn-gold, .navlink, .modal-card, .contact-field, .logo-animate');
+
+        cibles.forEach(el => {
+            if (el.dataset.animate) {
+                const classeAnim = `animate-${el.dataset.animate}`;
+                el.classList.add(classeAnim);
+            } else if (!el.classList.contains('reveal') && !el.classList.contains('animate-fade-up') && !el.classList.contains('animate-zoom-in') && !el.classList.contains('animate-flip')) {
+                el.classList.add('reveal');
+            }
+
+            if (el.dataset.animDelay) {
+                el.style.transitionDelay = el.dataset.animDelay;
+            }
+            if (el.dataset.animDuration) {
+                el.style.transitionDuration = el.dataset.animDuration;
+            }
+            if (el.dataset.animEasing) {
+                el.style.transitionTimingFunction = el.dataset.animEasing;
+            }
+        });
+
+        if ('IntersectionObserver' in window) {
+            const observateur = new IntersectionObserver((entries, obs) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        const label = entry.target.getAttribute('aria-label') || entry.target.id || entry.target.getAttribute('data-animate') || entry.target.tagName.toLowerCase();
+                        regionVocale.textContent = `${label} est maintenant visible.`;
+                        obs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.15 });
+            cibles.forEach(el => observateur.observe(el));
+        } else {
+            cibles.forEach(el => el.classList.add('is-visible'));
+            regionVocale.textContent = 'Animations activées.';
+        }
+
+        // Animation initiale du header
+        const logo = document.querySelector('.logo-animate');
+        if (logo) {
+            logo.classList.add('is-visible');
+        }
+    });
+</script>
 </body>
 
 </html>

@@ -1,12 +1,13 @@
 <?php
 require_once __DIR__ . '/includes/functions.php';
 include __DIR__ . "/includes/header.php";
-$products = all_products($pdo);
+$produits = tous_produits($pdo);
 ?>
 
 <!-- Accueil -->
 <main id="contenu" class="mx-auto max-w-6xl px-4">
-  <section id="accueil" class="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
+  <section id="accueil" data-animate="fade-up" data-anim-delay="0.2s" data-anim-duration="0.8s"
+    class="relative mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
     <div class="absolute inset-0 bg-grid opacity-[.35]" aria-hidden="true"></div>
     <div class="relative grid gap-8 p-7 md:grid-cols-2 md:p-10">
       <div class="flex flex-col justify-center">
@@ -85,7 +86,7 @@ $products = all_products($pdo);
   </section>
 
   <!-- Activité -->
-  <section id="activite" class="mt-12">
+  <section id="activite" data-animate="fade-up" data-anim-delay="0.35s" data-anim-duration="0.75s" class="mt-12">
     <div class="flex items-end justify-between gap-4">
       <div>
         <h2 class="text-2xl font-extrabold tracking-tight text-slate-900 md:text-3xl underline-gold">Notre activité

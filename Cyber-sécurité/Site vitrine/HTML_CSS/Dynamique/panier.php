@@ -1,12 +1,12 @@
 <?php
 require_once __DIR__ . '/includes/functions.php';
 
-$action = $_POST['action'] ?? $_GET['action'] ?? null;
+$operationPanier = $_POST['action'] ?? $_GET['action'] ?? null;
 
-if ($action === 'add') {
-  cart_add($pdo, (int) $_POST['id'], (int) $_POST['qty']);
+if ($operationPanier === 'add') {
+  panier_ajouter($pdo, (int) $_POST['id'], (int) $_POST['qty']);
 
-  $redirect = '/cart.php';
+  $redirect = '/panier.php';
   if (!empty($_POST['return_to']) && str_starts_with($_POST['return_to'], '/')) {
     $redirect = $_POST['return_to'];
   }
@@ -14,60 +14,60 @@ if ($action === 'add') {
   header('Location: ' . $redirect);
   exit;
 }
-if ($action === 'update') {
+if ($operationPanier === 'update') {
   foreach ($_POST['qty'] as $id => $qty) {
-    cart_update($pdo, (int) $id, (int) $qty);
+    panier_modifier($pdo, (int) $id, (int) $qty);
   }
-  header('Location: /cart.php');
+  header('Location: /panier.php');
   exit;
 }
-if ($action === 'remove') {
-  cart_remove((int) $_GET['id']);
-  header('Location: /cart.php');
+if ($operationPanier === 'remove') {
+  panier_supprimer((int) $_GET['id']);
+  header('Location: /panier.php');
   exit;
 }
-if ($action === 'clear') {
-  cart_clear();
-  header('Location: /cart.php');
+if ($operationPanier === 'clear') {
+  panier_effacer();
+  header('Location: /panier.php');
   exit;
 }
 
-if ($action === 'checkout') {
-  $name = trim($_POST['customer_name'] ?? '');
+if ($operationPanier === 'checkout') {
+  $nom = trim($_POST['customer_name'] ?? '');
   $email = trim($_POST['customer_email'] ?? '');
 
-  $items = cart_items($pdo);
-  if (empty($items)) {
-    header('Location: /cart.php');
+  $articles = panier_articles($pdo);
+  if (empty($articles)) {
+    header('Location: /panier.php');
     exit;
   }
 
-  if ($name === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
+  if ($nom === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $_SESSION['flash'] = [
       'type' => 'error',
       'message' => 'Merci de fournir un nom et une adresse e-mail valides pour valider la commande.',
     ];
-    header('Location: /cart.php');
+    header('Location: /panier.php');
     exit;
   }
 
-  $total = cart_total($pdo);
-  $orderId = create_order($pdo, $name, $email, $items, $total);
+  $totalPanier = panier_total($pdo);
+  $idCommande = creer_commande($pdo, $nom, $email, $articles, $totalPanier);
 
-  cart_clear();
-  header('Location: /order-confirmation.php?id=' . $orderId);
+  panier_effacer();
+  header('Location: /confirmation-commande.php?id=' . $idCommande);
   exit;
 }
 
-$items = cart_items($pdo);
-$total = cart_total($pdo);
+$articles = panier_articles($pdo);
+$totalPanier = panier_total($pdo);
 
 include __DIR__ . '/includes/header.php';
 ?>
 
-<main class="mx-auto max-w-6xl px-4">
+<main class="mx-auto max-w-6xl px-4 pb-16">
 
-  <section class="mt-12">
+  <section class="mt-12 mb-10">
 
     <h1 class="text-3xl font-extrabold tracking-tight text-slate-900 underline-gold">
       Votre panier
@@ -81,7 +81,7 @@ include __DIR__ . '/includes/header.php';
       <?php unset($_SESSION['flash']); ?>
     <?php endif; ?>
 
-    <?php if (!$items): ?>
+    <?php if (!$articles): ?>
 
       <p class="mt-6 text-slate-600">Votre panier est vide.</p>
       <a href="/index.php#produits"
@@ -91,7 +91,7 @@ include __DIR__ . '/includes/header.php';
 
     <?php else: ?>
 
-      <form method="post" action="/cart.php">
+      <form method="post" action="/panier.php">
         <input type="hidden" name="action" value="update">
 
         <div class="mt-6 overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
@@ -108,31 +108,30 @@ include __DIR__ . '/includes/header.php';
             </thead>
 
             <tbody>
-              <?php foreach ($items as $it): ?>
+              <?php foreach ($articles as $article): ?>
                 <tr class="border-t border-slate-200">
                   <td class="p-4">
                     <div class="flex items-center gap-3">
-                      <img src="/<?php echo ltrim(htmlspecialchars($it['image']), '/'); ?>"
+                      <img src="/<?php echo ltrim(htmlspecialchars($article['image']), '/'); ?>"
                         class="h-12 w-12 rounded-xl object-cover">
                       <div>
-                        <div class="font-bold text-slate-900"><?php echo htmlspecialchars($it['nom']); ?></div>
+                        <div class="font-bold text-slate-900"><?php echo htmlspecialchars($article['nom']); ?></div>
                       </div>
                     </div>
                   </td>
 
-                  <td class="p-4 font-semibold"><?php echo format_price($it['prix']); ?></td>
+                  <td class="p-4 font-semibold"><?php echo format_prix($article['prix']); ?></td>
 
                   <td class="p-4">
-                    <input type="number" name="qty[<?php echo (int) $it['id']; ?>]" min="0"
-                      value="<?php echo (int) $it['qty']; ?>" max="<?php echo (int) $it['stock']; ?>"
-                      oninput="this.form.submit()"
-                      class="w-20 rounded-xl border border-slate-300 px-3 py-2">
+                    <input type="number" name="qty[<?php echo (int) $article['id']; ?>]" min="0"
+                      value="<?php echo (int) $article['qty']; ?>" max="<?php echo (int) $article['stock']; ?>"
+                      oninput="this.form.submit()" class="w-20 rounded-xl border border-slate-300 px-3 py-2">
                   </td>
 
-                  <td class="p-4 font-bold"><?php echo format_price($it['total']); ?></td>
+                  <td class="p-4 font-bold"><?php echo format_prix($article['total']); ?></td>
 
                   <td class="p-4 text-right">
-                    <a href="/cart.php?action=remove&id=<?php echo (int) $it['id']; ?>"
+                    <a href="/panier.php?action=remove&id=<?php echo (int) $article['id']; ?>"
                       class="text-red-600 hover:text-red-800 font-bold">
                       Retirer
                     </a>
@@ -146,13 +145,13 @@ include __DIR__ . '/includes/header.php';
 
         <div class="mt-6 flex justify-between items-center">
 
-          <a href="/cart.php?action=clear" class="text-slate-500 hover:text-slate-700 text-sm">
+          <a href="/panier.php?action=clear" class="text-slate-500 hover:text-slate-700 text-sm">
             Vider le panier
           </a>
 
           <div class="flex items-center gap-4">
             <div class="text-xl font-extrabold">
-              Total : <?php echo format_price($total); ?>
+              Total : <?php echo format_prix($totalPanier); ?>
             </div>
           </div>
 
@@ -164,7 +163,7 @@ include __DIR__ . '/includes/header.php';
         <h2 class="text-xl font-extrabold">Valider la commande</h2>
         <p class="mt-2 text-sm text-slate-600">Renseignez vos coordonnées pour enregistrer la commande en base.</p>
 
-        <form class="mt-5 grid gap-4 md:grid-cols-2" method="post" action="/cart.php">
+        <form class="mt-5 grid gap-4 md:grid-cols-2" method="post" action="/panier.php">
           <input type="hidden" name="action" value="checkout">
 
           <label class="block">
@@ -181,7 +180,7 @@ include __DIR__ . '/includes/header.php';
 
           <div class="md:col-span-2 flex flex-col gap-3">
             <div class="text-sm text-slate-600">Montant total de la commande : <span
-                class="font-bold text-slate-900"><?php echo format_price($total); ?></span></div>
+                class="font-bold text-slate-900"><?php echo format_prix($total); ?></span></div>
             <button type="submit"
               class="w-full rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-extrabold text-white hover:bg-emerald-800">
               Valider la commande

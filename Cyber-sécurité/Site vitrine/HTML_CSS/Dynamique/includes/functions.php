@@ -4,12 +4,12 @@ if (session_status() === PHP_SESSION_NONE) {
 }
 require_once __DIR__ . '/../db/connexion.php';
 
-function format_price($euros)
+function format_prix($euros)
 {
     return number_format((float) $euros, 0, ',', ' ') . ' €';
 }
 
-function all_products(PDO $pdo)
+function tous_produits(PDO $pdo)
 {
     $sql = 'SELECT
                 "Code_produit" AS id,
@@ -29,7 +29,7 @@ function all_products(PDO $pdo)
     return $products;
 }
 
-function find_product(PDO $pdo, $id)
+function trouver_produit(PDO $pdo, $id)
 {
     $st = $pdo->prepare('SELECT
                 "Code_produit" AS id,
@@ -49,20 +49,20 @@ function find_product(PDO $pdo, $id)
 }
 
 // ------- Panier -------
-function cart_init()
+function panier_init()
 {
-    if (!isset($_SESSION['cart']))
-        $_SESSION['cart'] = [];
+    if (!isset($_SESSION['panier']))
+        $_SESSION['panier'] = [];
 }
-function cart_add(PDO $pdo, $id, $qty = 1)
+function panier_ajouter(PDO $pdo, $id, $qty = 1)
 {
-    cart_init();
+    panier_init();
 
     $id = (int) $id;
     $qty = max(1, (int) $qty);
 
     // S'assure que nous n'ajoutons pas plus que le stock disponible.
-    if (!$product = find_product($pdo, $id)) {
+    if (!$product = trouver_produit($pdo, $id)) {
         return;
     }
 
@@ -71,29 +71,29 @@ function cart_add(PDO $pdo, $id, $qty = 1)
         return;
     }
 
-    $current = (int) ($_SESSION['cart'][$id] ?? 0);
+    $current = (int) ($_SESSION['panier'][$id] ?? 0);
     $newQty = min($current + $qty, $stock);
 
     if ($newQty <= 0) {
-        unset($_SESSION['cart'][$id]);
+        unset($_SESSION['panier'][$id]);
     } else {
-        $_SESSION['cart'][$id] = $newQty;
+        $_SESSION['panier'][$id] = $newQty;
     }
 }
 
-function cart_update(PDO $pdo, $id, $qty)
+function panier_modifier(PDO $pdo, $id, $qty)
 {
-    cart_init();
+    panier_init();
 
     $id = (int) $id;
     $qty = (int) $qty;
 
     if ($qty <= 0) {
-        unset($_SESSION['cart'][$id]);
+        unset($_SESSION['panier'][$id]);
         return;
     }
 
-    if (!$product = find_product($pdo, $id)) {
+    if (!$product = trouver_produit($pdo, $id)) {
         return;
     }
 
@@ -101,63 +101,63 @@ function cart_update(PDO $pdo, $id, $qty)
     $qty = min($qty, max(0, $stock));
 
     if ($qty <= 0) {
-        unset($_SESSION['cart'][$id]);
+        unset($_SESSION['panier'][$id]);
     } else {
-        $_SESSION['cart'][$id] = $qty;
+        $_SESSION['panier'][$id] = $qty;
     }
 }
 
-function cart_remove($id)
+function panier_supprimer($id)
 {
-    cart_init();
-    unset($_SESSION['cart'][$id]);
+    panier_init();
+    unset($_SESSION['panier'][$id]);
 }
-function cart_clear()
+function panier_effacer()
 {
-    $_SESSION['cart'] = [];
+    $_SESSION['panier'] = [];
 }
 
-function cart_items(PDO $pdo)
+function panier_articles(PDO $pdo)
 {
-    cart_init();
-    $items = [];
+    panier_init();
+    $articles = [];
 
-    foreach ($_SESSION['cart'] as $id => $qty) {
-        if (!$p = find_product($pdo, $id)) {
+    foreach ($_SESSION['panier'] as $id => $qty) {
+        if (!$p = trouver_produit($pdo, $id)) {
             continue;
         }
 
         $stock = (int) $p['stock'];
         if ($stock <= 0) {
             // Supprime les produits en rupture de stock du panier
-            unset($_SESSION['cart'][$id]);
+            unset($_SESSION['panier'][$id]);
             continue;
         }
 
         // Quantité de produit par rapport au stock disponible
         $qty = min((int) $qty, $stock);
-        if ($qty !== (int) $_SESSION['cart'][$id]) {
-            $_SESSION['cart'][$id] = $qty;
+        if ($qty !== (int) $_SESSION['panier'][$id]) {
+            $_SESSION['panier'][$id] = $qty;
         }
 
         $p['qty'] = $qty;
         $p['total'] = $qty * (float) $p['prix'];
-        $items[] = $p;
+        $articles[] = $p;
     }
 
-    return $items;
+    return $articles;
 }
 
-function cart_total(PDO $pdo)
+function panier_total(PDO $pdo)
 {
-    $s = 0;
-    foreach (cart_items($pdo) as $it) {
-        $s += $it['total'];
+    $totalPanier = 0;
+    foreach (panier_articles($pdo) as $article) {
+        $totalPanier += $article['total'];
     }
-    return $s;
+    return $totalPanier;
 }
 
-function create_order(PDO $pdo, string $customerName, string $customerEmail, array $items, float $total)
+function creer_commande(PDO $pdo, string $customerName, string $customerEmail, array $items, float $total)
 {
     $pdo->beginTransaction();
     try {
@@ -190,14 +190,14 @@ function create_order(PDO $pdo, string $customerName, string $customerEmail, arr
     }
 }
 
-function find_order(PDO $pdo, $id)
+function trouver_commande(PDO $pdo, $id)
 {
     $st = $pdo->prepare('SELECT * FROM public.commandes WHERE id = :id');
     $st->execute([':id' => $id]);
     return $st->fetch();
 }
 
-function find_order_items(PDO $pdo, $orderId)
+function trouver_items_commande(PDO $pdo, $orderId)
 {
     $st = $pdo->prepare('SELECT * FROM public.commande_items WHERE commande_id = :orderId');
     $st->execute([':orderId' => $orderId]);

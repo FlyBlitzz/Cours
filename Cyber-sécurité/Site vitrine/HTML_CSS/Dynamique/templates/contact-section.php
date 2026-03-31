@@ -1,4 +1,4 @@
-<section id="contact" class="mt-12 mb-16">
+<section id="contact" data-animate="fade-up" data-anim-delay="0.4s" data-anim-duration="0.8s" class="mt-12 mb-16">
   <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
     <div class="grid gap-6 lg:grid-cols-12">
       <div class="lg:col-span-7">
@@ -27,6 +27,15 @@
               Envoyer un email
             </a>
           </div>
+
+          <form class="contact-form mt-6" action="#" method="post" aria-label="Contact Salapex">
+            <input type="text" name="nom" placeholder="Nom" required class="contact-field" />
+            <input type="email" name="email" placeholder="Email" required class="contact-field" />
+            <input type="text" name="objet" placeholder="Objet" required class="contact-field" />
+            <textarea name="message" placeholder="Votre message" rows="4" required class="contact-field"></textarea>
+            <button type="submit" class="btn-gold w-full rounded-2xl px-4 py-3 font-extrabold">Envoyer la
+              demande</button>
+          </form>
         </div>
       </div>
 

@@ -18,6 +18,20 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+footer {
+  margin-top: auto;
+}
+
 /* =========================================================
    ACCESSIBILITÉ — FOCUS
    ========================================================= */
@@ -117,6 +131,170 @@ html .from-blue-700 {
   width:25%; height:3px;
   background:var(--gold-500);
   border-radius:2px;
+}
+
+/* =========================================================
+   ANIMATIONS & EFFETS DYNAMIQUES
+   ========================================================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(14px) scale(0.995);
+  transition: opacity .65s ease-out, transform .65s ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(212,175,55,0.6); }
+  50% { box-shadow: 0 0 14px 6px rgba(212,175,55,0.2); }
+}
+
+.btn-gold,
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  transition: transform .2s ease, box-shadow .2s ease, background .2s ease;
+}
+
+.btn-gold:hover,
+.btn-gold:focus-visible {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 12px 25px rgba(5,103,58,.25);
+}
+
+.navlink,
+.badge-gold,
+.chip,
+.product,
+section[id] {
+  transition: transform .3s ease, box-shadow .3s ease, color .2s ease, background-color .2s ease;
+}
+
+.navlink:hover,
+.chip:hover,
+.product:hover,
+section[id]:hover {
+  transform: translateY(-2px);
+}
+
+.product {
+  will-change: transform;
+}
+
+.product:hover {
+  box-shadow: 0 12px 34px rgba(15,23,42,0.20), 0 4px 16px rgba(15,23,42,0.12);
+}
+
+.badge-gold {
+  animation: pulse-glow 2.8s ease-in-out infinite;
+}
+
+.logo-animate {
+  opacity: 0;
+  transform: scale(.8) rotate(-4deg);
+  transition: opacity .6s ease-out, transform .6s ease-out;
+}
+
+.logo-animate.is-visible {
+  opacity: 1;
+  transform: scale(1) rotate(0deg);
+}
+
+.sr-only {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.animate-fade-up,
+.animate-zoom-in,
+.animate-flip,
+.reveal {
+  opacity: 0;
+  transform: translateY(16px) scale(.98);
+  transition: opacity .65s ease-out, transform .65s ease-out;
+  will-change: opacity, transform;
+}
+
+.animate-fade-up.is-visible,
+.animate-zoom-in.is-visible,
+.animate-flip.is-visible,
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.animate-zoom-in {
+  transform: scale(.92);
+}
+
+.animate-zoom-in.is-visible {
+  transform: scale(1);
+}
+
+.animate-flip {
+  transform: perspective(980px) rotateX(-12deg) scale(.94);
+}
+
+.animate-flip.is-visible {
+  transform: perspective(980px) rotateX(0deg) scale(1);
+}
+
+/* Animation formulaires de contact */
+#contact .contact-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+#contact .contact-field {
+  border: 1px solid #cbd5e1;
+  border-radius: .75rem;
+  padding: .75rem 1rem;
+  background: #fff;
+  color: #0f172a;
+  box-shadow: 0 6px 15px rgba(15,23,42,.08);
+  transition: transform .28s ease, box-shadow .28s ease, border-color .28s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  #contact .contact-field {
+    background: #0f172a;
+    color: #fff;
+    border-color: #334155;
+    box-shadow: 0 6px 15px rgba(0,0,0,.25);
+  }
+}
+
+#contact .contact-field:focus {
+  outline: none;
+  border-color: var(--brand-700);
+  box-shadow: 0 8px 20px rgba(5,150,105,.18);
+  transform: translateY(-1px) scale(1.002);
+}
+
+#contact .contact-field::placeholder {
+  color: #94a3b8;
+}
+
+.modal-card {
+  transform: perspective(980px) rotateX(-12deg) scale(.95);
+  opacity: 0;
+  transition: transform .35s ease, opacity .35s ease;
+}
+
+.modal:target .modal-card {
+  transform: perspective(980px) rotateX(0deg) scale(1);
+  opacity: 1;
 }
 
 /* =========================================================
