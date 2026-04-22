@@ -61,9 +61,6 @@
             <input type="radio" name="use" id="use-productivite">
             <label class="chip" for="use-productivite">Productivité</label>
 
-            <input type="radio" name="use" id="use-simplicite">
-            <label class="chip" for="use-simplicite">Simplicité</label>
-
             <input type="radio" name="use" id="use-ergonomie">
             <label class="chip" for="use-ergonomie">Ergonomie</label>
           </div>
@@ -93,7 +90,7 @@
           $name = strtolower($produit['nom']);
           if (str_contains($name, 'ordinateur') || str_contains($name, 'pc')) {
             $catClass = 'cat-ordinateurs';
-            $useClasses = ['use-migration', 'use-simplicite'];
+            $useClasses = ['use-teletravail', 'use-productivite'];
           } elseif (str_contains($name, 'clavier') || str_contains($name, 'souris') || str_contains($name, 'casque')) {
             $catClass = 'cat-accessoires';
             if (str_contains($name, 'clavier') || str_contains($name, 'souris')) {
@@ -112,7 +109,7 @@
           $imagePath = '/' . ltrim((string) $produit['image'], '/');
           ?>
           <article id="produit-<?php echo (int) $produit['id']; ?>"
-            class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm produit <?php echo $catClass; ?> <?php echo implode(' ', $useClasses); ?> flex flex-col h-full">
+            class="rounded-3xl border border-slate-200 bg-white p-5 shadow-sm product <?php echo $catClass; ?> <?php echo implode(' ', $useClasses); ?> flex flex-col h-full">
 
             <div class="aspect-[16/9] w-full overflow-hidden rounded-2xl mb-4">
               <img src="<?php echo htmlspecialchars($imagePath); ?>" class="w-full h-full object-cover"

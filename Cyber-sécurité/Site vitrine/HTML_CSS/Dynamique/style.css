@@ -372,8 +372,6 @@ section[id]:hover {
 .catalog:has(#use-confort:checked)            .product:not(.use-confort) { display:none; }
 .catalog:has(#use-petite-entreprise:checked)  .product:not(.use-petite-entreprise) { display:none; }
 .catalog:has(#use-productivite:checked)       .product:not(.use-productivite) { display:none; }
-.catalog:has(#use-migration:checked)          .product:not(.use-migration) { display:none; }
-.catalog:has(#use-simplicite:checked)         .product:not(.use-simplicite) { display:none; }
 .catalog:has(#use-ergonomie:checked)          .product:not(.use-ergonomie) { display:none; }
 
 /* =========================================================

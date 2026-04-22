@@ -179,8 +179,6 @@ include __DIR__ . '/includes/header.php';
           </label>
 
           <div class="md:col-span-2 flex flex-col gap-3">
-            <div class="text-sm text-slate-600">Montant total de la commande : <span
-                class="font-bold text-slate-900"><?php echo format_prix($total); ?></span></div>
             <button type="submit"
               class="w-full rounded-2xl bg-emerald-700 px-4 py-3 text-sm font-extrabold text-white hover:bg-emerald-800">
               Valider la commande

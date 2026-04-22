@@ -179,8 +179,8 @@ $produits = tous_produits($pdo);
   <?php include __DIR__ . '/templates/entreprise-section.php'; ?>
   <?php include __DIR__ . '/templates/contact-section.php'; ?>
 
-  <?php foreach ($products as $p): ?>
-    <?php include __DIR__ . '/templates/modale-produit.php'; ?>
+  <?php foreach ($produits as $p): ?>
+    <?php $produit = $p; include __DIR__ . '/templates/modale-produit.php'; ?>
   <?php endforeach; ?>
 
 </main>
