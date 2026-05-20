@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulateur de réservation de salle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <main class="conteneur">
+        <section class="simulateur">
+            <h1>Simulateur de réservation de salle</h1>
+
+            <form id="formulaireReservation">
+
+                <div class="groupe">
+                    <label for="typeSalle">Type de salle</label>
+                    <select id="typeSalle"></select>
+                </div>
+
+                <div class="groupe">
+                    <label for="nombrePersonnes">Nombre de personnes</label>
+                    <input
+                        type="number"
+                        id="nombrePersonnes"
+                        min="1"
+                        max="100"
+                        value="10"
+                    >
+                </div>
+
+                <div class="groupe">
+                    <label for="duree">Durée de réservation</label>
+                    <input
+                        type="number"
+                        id="duree"
+                        min="1"
+                        max="12"
+                        value="2"
+                    >
+                    <small>Durée exprimée en heures</small>
+                </div>
+
+                <div class="groupe">
+                    <p class="titre-groupe">Type de réservation</p>
+                    <div id="zoneTypesReservation"></div>
+                </div>
+
+                <div class="groupe">
+                    <p class="titre-groupe">Options</p>
+                    <div id="zoneOptions"></div>
+                </div>
+
+                <div class="zone-boutons">
+                    <button type="submit" id="boutonSubmit">Calculer</button>
+
+                    <button type="button" id="boutonReinitialiser" class="secondaire">
+                        Réinitialiser
+                    </button>
+                </div>
+            </form>
+
+            <div class="resultat">
+                <p>Prix total estimé</p>
+                <strong id="prixTotal">0 €</strong>
+            </div>
+
+            <p id="messageCapacite" class="message-capacite"></p>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
